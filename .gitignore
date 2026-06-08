@@ -1,9 +1,8 @@
-军民融合/.DS_Store
-军民融合/main.synctex.gz
-军民融合/main.aux
-军民融合/main.bbl
-军民融合/main.blg
-军民融合/main.log
-军民融合/main.out
+*.DS_Store
+*.synctex.gz
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
 军民融合/main.pdf
-军民融合/main.synctex(busy)
