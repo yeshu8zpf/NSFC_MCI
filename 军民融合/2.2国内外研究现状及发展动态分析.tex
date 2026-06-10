@@ -7,6 +7,80 @@ xxx
 
 % A
 
+\textbf{频谱数据价值评估与量化模型:}
+无人机侦察平台受载荷、功耗和算力约束显著，端侧通常仅具备飞控级嵌入式处理能力和有限本地存储，缺乏独立 AI 推理算力，难以对宽频段频谱数据进行复杂识别和深度特征分析。因此，频谱数据管理的前提在于建立轻量、可解释、可部署的数据价值评估模型，为后续压缩、存储与回传提供量化依据。围绕数据价值评估与量化问题，现有研究大体可从模型贡献、信号状态和信息选择三个角度展开。
+
+（1）基于模型贡献的数据价值评估方法，主要从样本对模型训练或任务性能的影响出发，衡量不同数据样本的重要性。Ghorbani等人\cite{GhorbaniZ19}提出 Data Shapley 方法，利用 Shapley value 对训练数据在模型性能中的边际贡献进行量化。Yoon等人\cite{YoonAP20}提出基于强化学习的数据价值评估方法，通过数据价值估计器学习不同样本对目标任务性能的影响。Sener等人\cite{SenerS18}从核心集选择角度构建主动学习方法，通过选择具有代表性的数据子集降低标注与训练开销。
+
+（2）基于信号状态的频谱价值判别方法，主要利用能量、协方差、历史状态和可信度等低成本特征判断频谱片段是否包含有效信号或异常变化。Zeng等人\cite{ZengL09}基于统计协方差构建频谱感知算法，通过有限接收样本的协方差结构区分信号存在与噪声背景。Huang等人\cite{HuangXWZ17}面向非协作频谱感知场景，引入历史感知数据挖掘机制，利用历史频谱状态提升频谱感知性能。在国内研究中，高鹏等人\cite{GaoLGLC18}提出基于可信度的双门限 DMM 协作频谱感知算法，通过可信度和双门限机制提升频谱状态判断的可靠性。
+
+（3）基于信息效用的数据选择方法，主要从传感数据质量、事件检测收益和状态估计增益等角度选择更有价值的数据或传感观测，减少资源受限条件下的无效采集与传输。Bisdikian等人\cite{BisdikianKS13}围绕传感网络中的信息质量与信息价值进行建模，分析传感信息在决策过程中的效用差异。Bajovic等人\cite{BajovicSX11}面向无线传感网络事件检测任务，利用 Kullback--Leibler 距离和 Chernoff 距离构建传感器选择准则，以提升有限观测条件下的检测性能。Shen等人\cite{ShenV14}基于广义信息增益研究大规模传感网络中的传感器选择问题，通过选择信息贡献更高的观测降低目标跟踪误差。
+
+
+
+\begin{table}[htbp]\kaishu
+	\centering
+	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
+		\hline
+		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 频谱数据价值评估与量化模型}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于模型贡献的数据价值评估} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ghorbani 等人 \cite{GhorbaniZ19}，Yoon 等人 \cite{YoonAP20}，Sener 等人 \cite{SenerS18}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从样本对模型训练或任务性能的贡献出发，量化数据重要性，为数据价值建模和样本选择提供理论基础} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于信号状态的频谱价值判别} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等人 \cite{ZengL09}，Huang 等人 \cite{HuangXWZ17}，高鹏等人 \cite{GaoLGLC18}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用协方差、历史频谱状态和可信度等低成本特征判断信号存在性与频谱状态可靠性，具备轻量端侧部署基础} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于信息效用的数据选择} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Bisdikian 等人 \cite{BisdikianKS13}，Bajovic 等人 \cite{BajovicSX11}，Shen 等人 \cite{ShenV14}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从信息质量、事件检测收益和状态估计增益等角度选择高价值观测，减少资源受限条件下的冗余采集与无效传输} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 第二小点待补充}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 第三小点待补充}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		\hline
+		
+	\end{tabular}
+	\caption{\kaishu{海杂波场景下有限算力端侧频谱数据智能存储技术
+	}}
+	\label{tab:resource_constrained_spectrum_data_management_related_work}
+\end{table}
+
 % B
 
 % C
