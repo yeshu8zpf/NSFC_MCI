@@ -2,10 +2,12 @@
 xxx
 
 % 内容一
+\subsubsection{2.2.1 海杂波环境下电磁频谱信号提取}
 
 % 内容二
 
 % A
+\subsubsection{2.2.2 端侧频谱数据存储和管理}
 
 \textbf{频谱数据价值评估与量化模型:}
 无人机侦察平台受载荷、功耗和算力约束显著，端侧通常仅具备飞控级嵌入式处理能力和有限本地存储，缺乏独立 AI 推理算力，难以对宽频段频谱数据进行复杂识别和深度特征分析。因此，频谱数据管理的前提在于建立轻量、可解释、可部署的数据价值评估模型，为后续压缩、存储与回传提供量化依据。围绕数据价值评估与量化问题，现有研究大体可从模型贡献、信号状态和信息选择三个角度展开。
@@ -45,20 +47,7 @@ xxx
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从信息质量、事件检测收益和状态估计增益等角度选择高价值观测，减少资源受限条件下的冗余采集与无效传输} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 第二小点待补充}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
-		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
-		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
-		\hline
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering \linespread{0.6}\selectfont 频谱数据压缩与分级存储}}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量特征的分级存储机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态场景的存储更新机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
 					\linespread{0.6}\selectfont 第三小点待补充}}}  
@@ -93,6 +82,7 @@ xxx
 % C
 
 % 内容三
+\subsubsection{2.2.3 xxx}
 
 %从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
 %\newpage
