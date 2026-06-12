@@ -4,6 +4,67 @@ xxx
 
 % 方案一
 
+% A
+\textbf{A. 复杂海洋环境下电磁频谱信号时空耦合传播规律建模}
+
+本项目拟研究复杂海洋环境下电磁频谱信号时空耦合传播规律建模方法，围绕海面粗糙散射、海杂波统计起伏、低掠射角多径传播和海气边界层折射等因素对弱目标频谱信号显现过程的影响，构建“环境状态--传播通道--杂波背景--可观测性”一体化分析框架。设海上观测状态为
+\begin{equation}\notag
+	\boldsymbol{s}_t =
+	\left(f,p,\theta_g,h_t,h_r,R,U_{10},H_s,\phi_w,\boldsymbol{m}_t\right),
+\end{equation}
+其中，$f$ 表示工作频率，$p$ 表示极化方式，$\theta_g$ 表示掠射角，$h_t$ 和 $h_r$ 分别表示目标端与接收端等效天线高度，$R$ 表示传播距离，$U_{10}$、$H_s$ 和 $\phi_w$ 分别表示海面风速、显著波高和浪向，$\boldsymbol{m}_t$ 表示温湿压、海温及平台姿态等环境与观测状态。本研究以 $\boldsymbol{s}_t$ 为统一状态变量，刻画复杂海洋环境对频谱信号传播损耗、相位起伏、频谱展宽和空间相关性的共同影响。
+
+针对海面散射与海杂波背景随海况、掠射角、极化和频段动态演化的问题，本研究首先构建\textbf{海面散射--杂波统计联合表征模型}。在海面散射层面，以归一化散射截面 $\sigma^0$ 描述单位海面面积对入射电磁波的散射能力，将其表示为海况、观测几何和极化状态的函数：
+\begin{equation}\notag
+	\sigma^0_t =
+	F_{\mathrm{scat}}
+	\left(f,p,\theta_g,U_{10},H_s,\phi_w\right).
+\end{equation}
+在杂波统计层面，将接收端海杂波建模为慢变纹理与快变散斑的复合过程：
+\begin{equation}\notag
+	c_t(\tau,\nu)
+	=
+	\sqrt{\eta_t}\,g_t(\tau,\nu),
+\end{equation}
+其中，$\tau$ 和 $\nu$ 分别表示时延和多普勒频率，$\eta_t$ 表示由海况和局部强散射单元决定的纹理变量，$g_t(\tau,\nu)$ 表示快变散斑分量。通过估计 $\eta_t$ 的形状参数、海尖峰率、短时多普勒谱宽和谱中心频移，建立海面散射强度与杂波幅度长尾、频谱展宽之间的关联关系，从而解释复杂海况下频谱背景的时频演化规律。
+
+针对低空近海观测链路中直达波、海面反射波和异常折射路径叠加导致接收频谱非单调起伏的问题，本研究进一步构建\textbf{低掠射角多径与海气折射耦合传播模型}。将接收信号传播通道表示为直达分量、海面反射分量和折射/波导分量的叠加：
+\begin{equation}\notag
+	h_t(\tau,\nu)
+	=
+	h_{\mathrm{los}}(\tau,\nu)
+	+
+	\Gamma_p h_{\mathrm{ref}}(\tau-\Delta\tau,\nu-\Delta\nu)
+	+
+	h_{\mathrm{duct}}(\tau,\nu;\boldsymbol{m}_t),
+\end{equation}
+其中，$h_{\mathrm{los}}$ 表示直达传播分量，$h_{\mathrm{ref}}$ 表示海面反射分量，$\Gamma_p$ 表示与极化、海水介电常数和掠射角相关的复反射系数，$\Delta\tau$ 和 $\Delta\nu$ 分别表示由几何路径差和相对运动引起的时延差与多普勒差，$h_{\mathrm{duct}}$ 表示由大气折射率剖面和蒸发波导条件引起的异常传播分量。基于该模型，分析天线高度、目标距离、平台姿态、折射率剖面和海面状态对传播损耗、相位起伏、覆盖边界和频谱强度非单调变化的影响机理。
+
+针对多目标、多平台观测条件下频谱信号在时间、频率和空间维度上耦合变化的问题，本研究最后建立\textbf{面向弱目标可观测性的时空传播规律提取方法}。将接收端频谱观测表示为
+\begin{equation}\notag
+	y_t(f,\boldsymbol{r})
+	=
+	h_t(f,\boldsymbol{r};\boldsymbol{s}_t)x_t(f,\boldsymbol{r})
+	+
+	c_t(f,\boldsymbol{r};\boldsymbol{s}_t)
+	+
+	n_t(f,\boldsymbol{r}),
+\end{equation}
+其中，$x_t(f,\boldsymbol{r})$ 表示目标电磁频谱信号，$c_t(f,\boldsymbol{r};\boldsymbol{s}_t)$ 表示与环境状态相关的海杂波背景，$n_t(f,\boldsymbol{r})$ 表示接收噪声和其他非结构化干扰。进一步定义弱目标可观测性函数：
+\begin{equation}\notag
+	\mathcal{O}_t
+	=
+	\Phi
+	\left(
+	L_p(t),
+	\kappa_t,
+	B_{\nu,t},
+	T_{c,t},
+	\rho_{\boldsymbol{r},t}
+	\right),
+\end{equation}
+其中，$L_p(t)$ 表示传播损耗，$\kappa_t$ 表示杂波长尾形状参数，$B_{\nu,t}$ 表示多普勒谱宽，$T_{c,t}$ 表示杂波相干时间，$\rho_{\boldsymbol{r},t}$ 表示空间相关特征。通过对上述参数进行联合估计，提取复杂海洋环境下电磁频谱信号的时空耦合传播规律，形成面向微弱信号提取的场景先验、可感知性边界和关键传播参数，为后续认知无线电智能感知和频谱特征增强提供物理机理支撑。
+
 % 方案二
 
 % A
