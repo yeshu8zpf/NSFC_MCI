@@ -46,7 +46,14 @@ xxx
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从信息质量、事件检测收益和状态估计增益等角度选择高价值观测，减少资源受限条件下的冗余采集与无效传输} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering \linespread{0.6}\selectfont 频谱数据压缩与分级存储}}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量特征的分级存储机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态场景的存储更新机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				频谱数据语义压缩与磁盘索引存储
+			}
+		}& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱数据语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱语义向量的磁盘索引构建机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱语义向量的磁盘索引维护机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
 					\linespread{0.6}\selectfont 第三小点待补充}}}  
@@ -70,13 +77,14 @@ xxx
 \end{table}
 
 % B
-\textbf{频谱数据压缩与分级存储：}随着复杂电磁环境的日益密集与端侧设备感知能力的提升，海量连续的频谱数据带来的存储瓶颈已成为制约端侧系统持续执行任务的关键挑战。如何在算力与存储介质双重约束的前提下，实现高维频谱数据的高效压缩与异构存储介质的分级管理，已成为学术界与工业界共同关注的核心议题。现有研究主要围绕以下三个维度展开：
+\textbf{频谱数据语义压缩与磁盘索引存储。}
+随着端侧感知能力提升，海量连续频谱数据呈现高维、冗余和价值稀疏等特点，有限存储难以支撑其长期驻留与高效检索。现有研究逐渐从原始数据存储转向语义压缩管理，即提取紧凑频谱语义向量，并通过磁盘索引实现外存存储、在线检索与动态更新。因此，频谱语义压缩、磁盘索引构建和动态索引维护成为相关研究的主要方向。
 
 （1） 基于自监督表征的频谱数据语义压缩： 频谱语义压缩通过将高维原始信号映射为低维稠密特征向量，实现数据降维与语义保留的有效权衡，其核心挑战在于强杂波与无标签环境下的鲁棒特征提取。Wen 等人\cite{DBLP:journals/tmc/WenZWLZS26}提出自适应频率掩码自编码器，通过动态掩蔽能量分布提取无标签射频数据的内在规律，在大幅压缩数据体积的同时有效重构了关键电磁特征。Zhou 等人\cite{DBLP:journals/jsac/ZhouLZWWQC26}构建面向频谱管理的基础大模型，利用多任务自监督机制处理海量原始信号，实现了跨频段、抗干扰的高密度通用特征编码。针对大规模频谱态势高开销的存储难题，Zhou 等人\cite{DBLP:conf/icc/ZhouWWZC25}进一步探索物理增强的语义压缩框架，仅提取并缓存表征电磁传播行为的稀疏物理语义，以极低的存储与检索开销实现了射频特征的高精度重建。
 
-（2） 海量特征的分级存储机制：特征分级存储通过异构介质协同突破端侧内存物理边界，其核心挑战在于缓解高维向量带来的外存拥塞与随机读取瓶颈。Simhadri等人\cite{DBLP:conf/nips/SubramanyaDSKK19}提出面向异构介质的索引架构，将轻量压缩表示驻留内存、全量特征下沉外存，初步解除了索引全量驻留内存的物理限制。为降低频繁的外存读取开销，Chen等人\cite{DBLP:conf/nips/ChenZWLLLYW21}通过特征数据聚类实现外存连续存储，发挥顺序读写的高效性以减少端侧访存次数。Wang等人\cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}聚焦于图索引的块内局部性优化，通过紧凑的数据块重构，使得单次随机外存访问能够获取更多有效路由数据。在此基础上，Yue等人\cite{DBLP:journals/pvldb/YueZXXZDGZJ25}提出单调路径感知的图布局优化机制，通过智能边筛选使高维图拓扑深度贴合底层物理介质，将随机跨页读取深度转化为局部顺序数据流，显著降低了外存访问开销。
+（2） 海量频谱语义向量的磁盘索引构建机制：磁盘索引构建旨在通过内外存协同组织突破端侧内存容量限制，其核心挑战在于缓解高维向量带来的外存拥塞与随机读取瓶颈。Simhadri等人\cite{DBLP:conf/nips/SubramanyaDSKK19}提出面向异构介质的索引架构，将轻量压缩表示驻留内存、全量特征下沉外存，初步解除了索引全量驻留内存的物理限制。为降低频繁的外存读取开销，Chen等人\cite{DBLP:conf/nips/ChenZWLLLYW21}通过特征数据聚类实现外存连续存储，发挥顺序读写的高效性以减少端侧访存次数。Wang等人\cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}聚焦于图索引的块内局部性优化，通过紧凑的数据块重构，使得单次随机外存访问能够获取更多有效路由数据。在此基础上，Yue等人\cite{DBLP:journals/pvldb/YueZXXZDGZJ25}提出单调路径感知的图布局优化机制，通过智能边筛选使高维图拓扑深度贴合底层物理介质，将随机跨页读取深度转化为局部顺序数据流，显著降低了外存访问开销。
 
-（3）动态场景的存储更新机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟索引维护的同时保障高并发处理效率。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
+（3）动态频谱语义向量的磁盘索引维护机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟的索引维护。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
 
 % C
 
