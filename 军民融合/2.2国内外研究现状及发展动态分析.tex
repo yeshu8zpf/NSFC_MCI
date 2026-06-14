@@ -1,14 +1,16 @@
 \subsubsection{2.2 国内外研究现状及发展动态分析}
-xxx
+
+对应本项目的主要研究内容，拟从海杂波环境下微弱电磁频谱信号的传播建模与精确提取、有限算力端侧频谱数据的轻量存储与可信管理，以及面向海域自主侦测任务的边缘频谱智能处理这三个方面，对国内外研究现状进行总结分析。
 
 % 内容一
 \subsubsection{2.2.1 海杂波环境下电磁频谱信号提取}
 
-% 内容二
 
-% A
+
+% 内容二
 \subsubsection{2.2.2 端侧频谱数据存储和管理}
 
+% A
 \textbf{频谱数据价值评估与量化模型:}
 无人机侦察平台受载荷、功耗和算力约束显著，端侧通常仅具备飞控级嵌入式处理能力和有限本地存储，缺乏独立 AI 推理算力，难以对宽频段频谱数据进行复杂识别和深度特征分析。因此，频谱数据管理的前提在于建立轻量、可解释、可部署的数据价值评估模型，为后续压缩、存储与回传提供量化依据。围绕数据价值评估与量化问题，现有研究大体可从模型贡献、信号状态和信息选择三个角度展开。
 
@@ -17,7 +19,6 @@ xxx
 （2）基于信号状态的频谱价值判别方法，主要利用能量、协方差、历史状态和可信度等低成本特征判断频谱片段是否包含有效信号或异常变化。Zeng等人\cite{ZengL09}基于统计协方差构建频谱感知算法，通过有限接收样本的协方差结构区分信号存在与噪声背景。Huang等人\cite{HuangXWZ17}面向非协作频谱感知场景，引入历史感知数据挖掘机制，利用历史频谱状态提升频谱感知性能。在国内研究中，高鹏等人\cite{GaoLGLC18}提出基于可信度的双门限 DMM 协作频谱感知算法，通过可信度和双门限机制提升频谱状态判断的可靠性。
 
 （3）基于信息效用的数据选择方法，主要从传感数据质量、事件检测收益和状态估计增益等角度选择更有价值的数据或传感观测，减少资源受限条件下的无效采集与传输。Bisdikian等人\cite{BisdikianKS13}围绕传感网络中的信息质量与信息价值进行建模，分析传感信息在决策过程中的效用差异。Bajovic等人\cite{BajovicSX11}面向无线传感网络事件检测任务，利用 Kullback--Leibler 距离和 Chernoff 距离构建传感器选择准则，以提升有限观测条件下的检测性能。Shen等人\cite{ShenV14}基于广义信息增益研究大规模传感网络中的传感器选择问题，通过选择信息贡献更高的观测降低目标跟踪误差。
-
 
 \begin{table}[htbp]\kaishu
 	\centering
@@ -56,18 +57,18 @@ xxx
 		}& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱数据语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱语义向量的磁盘索引构建机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱语义向量的磁盘索引维护机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 第三小点待补充}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+					\linespread{0.6}\selectfont 链上链下协同的频谱数据可信管理}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{链上链下协同的分层可信存证} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Freire 等人 \cite{FreireMNNS22}，王云涛等人 \cite{WangYT23}，鄢港澳 \cite{YanGA23}，林玮等人 \cite{LinW26}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将海量原始数据置于链下、摘要与元数据锚定上链，以低成本实现海上与船舶频谱数据的防篡改存证与事后追溯审计} \\
 		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向溯源的可验证查询与认证数据结构} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人 \cite{XuZX19}，Wang 等人 \cite{WangXZXPP22}，Zhang 等人 \cite{ZhangXXTC19}，武沫旬等人 \cite{WuMX25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于累加器与 Merkle 类认证数据结构支持轻节点验证查询完整性，在链上链下混合存储下兼顾验证效率与 Gas 开销} \\
 		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{学习索引增强的轻量化可验证更新} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Kraska 等人 \cite{KraskaBCDP18}，Chang 等人 \cite{ChangLXLJ23}，谢晴晴等人 \cite{XieQQ23}，李瑾 \cite{LiJ25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以学习索引替代树形结构并结合账本分割、分片与链下扩容，降低端侧索引维护与可验证更新的存储和共识开销} \\
 		\hline
 		
 	\end{tabular}
@@ -87,12 +88,24 @@ xxx
 （3）动态频谱语义向量的磁盘索引维护机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟的索引维护。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
 
 % C
+\textbf{链上链下协同的频谱数据可信存证与可验证管理:}
+海上侦察频谱数据需在多无人平台间长期留存并支撑事后追溯与执法举证，而端侧算力、存储与链路均严重受限，全量数据上链将带来难以承受的存储与共识开销。因此，如何借助区块链以最小代价保障频谱数据的防篡改、可见证与可溯源，成为可信管理的核心问题。现有研究主要从链上链下协同存证、可验证查询与认证数据结构、以及学习索引增强的轻量化维护三个方向展开。
+
+（1） 链上链下协同的分层可信存证：此类方法将海量原始数据置于链下存储、仅将摘要或元数据锚定上链，在保证可追溯的同时降低端侧开销，其核心挑战在于资源受限弱网环境下的低成本可信存证。Freire 等人\cite{FreireMNNS22}面向海上监测构建基于 HyperLedger Fabric 的许可链原型，利用软件无线电和树莓派低成本节点采集 AIS 数据，并以 Raft 共识在端侧实现可信存证。王云涛等人\cite{WangYT23}面向协作频谱感知设计链上链下协同的轻量审计区块链，将审计证据存于链下数据仓库、元数据公开发布于审计链。鄢港澳\cite{YanGA23}针对远洋通信受限和拓扑动态问题提出简化随机分组共识与网状组件式船舶区块链架构，实现近岸数据卸载与事后审计的分层存证。林玮等人\cite{LinW26}进一步面向流数据构建链上链下混合存储的可认证结构，链下自适应存储完整流数据、链上仅存认证根节点，在即来即验的同时降低了 Gas 消耗。
+
+（2） 面向溯源的可验证查询与认证数据结构：此类方法通过认证数据结构使轻节点无须保存全量数据即可验证查询结果的完整性与正确性，其核心挑战在于兼顾验证开销与查询效率。Xu 等人\cite{XuZX19}提出 vChain 框架，基于累加器认证数据结构支持可验证布尔范围查询，显著降低用户的存储与计算成本；Wang 等人\cite{WangXZXPP22}进一步设计滑动窗口累加器索引与对象注册索引，将最坏情形下的查询性能提升达 913 倍。面向链上链下混合存储，Zhang 等人\cite{ZhangXXTC19}提出 Gas 高效的 GEM$^2$-Tree，将元数据上链、原始数据外包链下，兼顾认证范围查询效率与智能合约维护开销。武沫旬等人\cite{WuMX25}在不改变原有数据库存储模式的前提下设计基于属性编码的索引树，实现可验证查询与数据溯源，存储空间减少约 90\%、验证效率提升约 77\%。
+
+（3） 学习索引增强的轻量化可验证更新：此类方法以学习索引替代传统树形结构并结合区块链轻量化技术，降低端侧索引维护与可验证更新的开销，其核心挑战在于在高频更新下兼顾查询效率与可信验证。Kraska 等人\cite{KraskaBCDP18}提出学习索引思想，以机器学习模型拟合数据分布替代 B 树，在大幅压缩内存占用的同时提升查询速度。Chang 等人\cite{ChangLXLJ23}将学习索引引入区块链，构建轻量且可验证的时间范围查询索引 Anole，以更小的存储代价支撑链上可验证查询。面向端侧降本，谢晴晴等人\cite{XieQQ23}从轻量计算与轻量存储两方面系统梳理了轻量级区块链技术；李瑾\cite{LiJ25}进一步提出账本分割存储与可延迟确认机制，通过分片和链下扩容降低资源受限节点的存储与共识负载。
+
+尽管xxx
+
+
 
 % 内容三
 \subsubsection{2.2.3 xxx}
 
 % A
-\textbf{知识库构建与动态管理相关研究：}随着多源异构数据持续增长，如何对复杂数据进行统一表征、结构化组织和动态维护，已成为数据管理、知识工程和智能系统领域的重要问题。现有研究主要围绕以下三个方面展开：
+\textbf{多源异构数据知识表征与图谱演化：}随着多源异构数据持续增长，如何对复杂数据进行统一表征、结构化组织和动态维护，已成为数据管理、知识工程和智能系统领域的重要问题。现有研究主要围绕以下三个方面展开：
 
 （1）多源异构数据表征与融合：多源异构数据表征旨在解决不同来源、不同结构和不同模态数据难以统一建模的问题。Hu 等人提出\cite{DBLP:conf/www/HuDWS20} Heterogeneous Graph Transformer，通过类型相关注意力机制和时间编码建模大规模异构动态图，实现不同类型节点和关系的统一表示。Vashishth 等人\cite{DBLP:conf/iclr/VashishthSNT20}提出 CompGCN，将多关系图卷积用于实体与关系的联合表示学习，提升了复杂关系结构下的图表示能力。频谱领域中，孙佳琛等人\cite{SUN2021}提出频谱知识图谱概念，探索频谱资源、用频设备和业务场景之间的三元组表达；Ma 等人\cite{ma2024research}面向低轨卫星频谱感知数据开展知识图谱构建与语义表示，为频谱感知数据的结构化组织提供了参考。
 
@@ -114,7 +127,6 @@ xxx
 （2）轻量级加密方法。Shafique等人\cite{Shafique22}结合位平面提取、混沌映射与离散小波变换设计面向无人机的抗噪轻量加密方案，在保证安全强度的同时显著缩短加解密时延；Sharma等人\cite{SharmaD21}将功能加密技术引入无人机异构网络，提供细粒度的访问授权能力。
 
 （3）物理层安全与隐蔽传输方法。郭振鑫\cite{GuoZX25}面向多无人机通信提出基于深度强化学习的抗干扰与反窃听传输策略，在不增加密码计算负担的前提下抑制敌方侦听。
-
 
 
 \begin{table}[htbp]\kaishu
@@ -201,10 +213,27 @@ xxx
 \end{table}
 
 % B
+\textbf{xxx:}
+
+% C
+\textbf{xxx:}
+
+% D
+\textbf{资源受限环境下频谱数据轻量化安全传输:}
+海上数据链带宽窄、易被侦听，端侧处理结果及高价值频谱数据须以最小开销实现安全回传。当前研究主要可划分为以下三类。
+
+（1）任务与语义驱动的选择性压缩传输方法。Joshi等人\cite{JoshiP26}面向无人机网络提出上下文感知的数字语义通信框架 DSC-UAV，仅传输任务相关语义特征，大幅压缩回传数据量；姜俊等人\cite{JiangJ25}提出差分动态压缩机制，依据数据价值动态调整传输频次与精度。
+
+（2）轻量级加密方法。Shafique等人\cite{Shafique22}结合位平面提取、混沌映射与离散小波变换设计面向无人机的抗噪轻量加密方案，在保证安全强度的同时显著缩短加解密时延；Sharma等人\cite{SharmaD21}将功能加密技术引入无人机异构网络，提供细粒度的访问授权能力。
+
+（3）物理层安全与隐蔽传输方法。郭振鑫\cite{GuoZX25}面向多无人机通信提出基于深度强化学习的抗干扰与反窃听传输策略，在不增加密码计算负担的前提下抑制敌方侦听。
 
 尽管上述方法在模型轻量化、边缘自适应、可信协同与高效传输等方面取得了显著进展，但面向海杂波场景下的海域自主侦测任务，仍存在以下不足：（1）\textbf{端侧频谱认知能力碎片化，难以适应海杂波背景下的被动频谱观测}。现有轻量化方法聚焦于单一模型的压缩加速，鲁棒识别、未知目标发现与端侧部署各自独立、缺乏统一建模；且多在实验室数据或雷达回波域验证，未考虑海杂波与海况变化引起的频谱域偏移，跨场景部署时识别精度急剧退化。（2）\textbf{边缘在线学习缺乏知识驱动的触发机制与演化闭环}。现有测试时自适应方法依赖持续更新，其计算与能耗代价远超端侧承载能力，且长期运行易发生性能崩塌；模型更新的触发时机与更新对象缺乏频谱先验知识的引导，新发现目标的知识亦无法回馈知识库，难以支撑长航时任务中的持续认知演化。（3）\textbf{多平台协同侦测缺乏决策级的可信保障机制}。现有区块链无人机研究集中于身份认证与数据存证，仅能保证数据来源真实，未解决欺骗干扰与节点损毁条件下联合侦测判决的可信聚合问题；且经典共识协议面向稳定有线网络设计，在高动态、强对抗的海上自组网中难以兼顾开销与鲁棒性。（4）\textbf{安全传输与数据价值脱节，难以兼顾窄带链路下的时效与机密}。现有方案对全量数据统一加密回传，传输内容的筛选与传输过程的保密彼此割裂，缺乏价值驱动的选择性传输与轻量加密的协同设计，在带宽受限、敌方侦听的海上环境中传输效率与安全强度难以两全。
 
-% C
+
+
+% 综合总结
+综上所述，尽管现有研究在微弱信号检测、海量数据存储管理与边缘智能处理等方面取得了阶段性进展，但相关理论与方法大多面向单一环节、稳定信道或实验室数据，仍难以系统支撑海杂波强干扰、端侧算力与链路严重受限、多平台动态对抗条件下的海域电磁频谱自主侦测任务，海杂波场景下“感知—存储—认知”全链条的协同处理仍面临诸多挑战。因此，本项目首先研究海杂波环境下电磁频谱信号的时空耦合传播规律与干扰对消增强机理，实现强杂波背景下微弱目标频谱特征的精确提取，为后续处理提供高质量的频谱信息输入；其次，探索事件驱动价值评估、语义压缩与链上链下协同存证一体化的轻量管理方法，实现有限算力端侧频谱数据的高效存储与可信溯源，为频谱数据全生命周期提供可靠的数据基座；接着，构建频谱知识库、边缘在线学习与分布式可信决策一体化框架，实现云边端知识的低损迁移与多平台协同的可信判决，为自主侦测提供敏捷而可信的决策保障；最后，在海杂波场景电磁频谱数据智能处理原型系统中进行关键技术的抽样验证。本项目的顺利实施，一方面有望破解海域自主侦测中“微弱信号提取难”“端侧轻量可信管理难”“多平台协同可信决策难”三大挑战，另一方面能够为我国海洋权益维护、海上执法与海域态势感知提供坚实的科技支撑。
 
 %从2023.12.30版本开始，采用GB/T 7714 (numerical) 样式以支持中文文献，这样做的另外一个优点是该包兼容natbib，修改参考文献的行距也比较方便，缩短了一些。如有需要，也可以切换回之前版本用的ieeetrNSFC
 %\newpage
