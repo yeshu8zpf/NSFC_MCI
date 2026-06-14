@@ -4,6 +4,8 @@ xxx
 % 内容一
 \subsubsection{2.2.1 海杂波环境下电磁频谱信号提取}
 
+
+
 % 内容二
 
 % A
@@ -17,7 +19,6 @@ xxx
 （2）基于信号状态的频谱价值判别方法，主要利用能量、协方差、历史状态和可信度等低成本特征判断频谱片段是否包含有效信号或异常变化。Zeng等人\cite{ZengL09}基于统计协方差构建频谱感知算法，通过有限接收样本的协方差结构区分信号存在与噪声背景。Huang等人\cite{HuangXWZ17}面向非协作频谱感知场景，引入历史感知数据挖掘机制，利用历史频谱状态提升频谱感知性能。在国内研究中，高鹏等人\cite{GaoLGLC18}提出基于可信度的双门限 DMM 协作频谱感知算法，通过可信度和双门限机制提升频谱状态判断的可靠性。
 
 （3）基于信息效用的数据选择方法，主要从传感数据质量、事件检测收益和状态估计增益等角度选择更有价值的数据或传感观测，减少资源受限条件下的无效采集与传输。Bisdikian等人\cite{BisdikianKS13}围绕传感网络中的信息质量与信息价值进行建模，分析传感信息在决策过程中的效用差异。Bajovic等人\cite{BajovicSX11}面向无线传感网络事件检测任务，利用 Kullback--Leibler 距离和 Chernoff 距离构建传感器选择准则，以提升有限观测条件下的检测性能。Shen等人\cite{ShenV14}基于广义信息增益研究大规模传感网络中的传感器选择问题，通过选择信息贡献更高的观测降低目标跟踪误差。
-
 
 \begin{table}[htbp]\kaishu
 	\centering
@@ -56,18 +57,18 @@ xxx
 		}& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱数据语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱语义向量的磁盘索引构建机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱语义向量的磁盘索引维护机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 第三小点待补充}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+					\linespread{0.6}\selectfont 链上链下协同的频谱数据可信管理}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{链上链下协同的分层可信存证} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Freire 等人 \cite{FreireMNNS22}，王云涛等人 \cite{WangYT23}，鄢港澳 \cite{YanGA23}，林玮等人 \cite{LinW26}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将海量原始数据置于链下、摘要与元数据锚定上链，以低成本实现海上与船舶频谱数据的防篡改存证与事后追溯审计} \\
 		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向溯源的可验证查询与认证数据结构} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人 \cite{XuZX19}，Wang 等人 \cite{WangXZXPP22}，Zhang 等人 \cite{ZhangXXTC19}，武沫旬等人 \cite{WuMX25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于累加器与 Merkle 类认证数据结构支持轻节点验证查询完整性，在链上链下混合存储下兼顾验证效率与 Gas 开销} \\
 		\cline{2-4}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待补充} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{学习索引增强的轻量化可验证更新} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Kraska 等人 \cite{KraskaBCDP18}，Chang 等人 \cite{ChangLXLJ23}，谢晴晴等人 \cite{XieQQ23}，李瑾 \cite{LiJ25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以学习索引替代树形结构并结合账本分割、分片与链下扩容，降低端侧索引维护与可验证更新的存储和共识开销} \\
 		\hline
 		
 	\end{tabular}
@@ -87,6 +88,16 @@ xxx
 （3）动态频谱语义向量的磁盘索引维护机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟的索引维护。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
 
 % C
+\textbf{链上链下协同的频谱数据可信存证与可验证管理:}
+海上侦察频谱数据需在多无人平台间长期留存并支撑事后追溯与执法举证，而端侧算力、存储与链路均严重受限，全量数据上链将带来难以承受的存储与共识开销。因此，如何借助区块链以最小代价保障频谱数据的防篡改、可见证与可溯源，成为可信管理的核心问题。现有研究主要从链上链下协同存证、可验证查询与认证数据结构、以及学习索引增强的轻量化维护三个方向展开。
+
+（1） 链上链下协同的分层可信存证：此类方法将海量原始数据置于链下存储、仅将摘要或元数据锚定上链，在保证可追溯的同时降低端侧开销，其核心挑战在于资源受限弱网环境下的低成本可信存证。Freire 等人\cite{FreireMNNS22}面向海上监测构建基于 HyperLedger Fabric 的许可链原型，利用软件无线电和树莓派低成本节点采集 AIS 数据，并以 Raft 共识在端侧实现可信存证。王云涛等人\cite{WangYT23}面向协作频谱感知设计链上链下协同的轻量审计区块链，将审计证据存于链下数据仓库、元数据公开发布于审计链。鄢港澳\cite{YanGA23}针对远洋通信受限和拓扑动态问题提出简化随机分组共识与网状组件式船舶区块链架构，实现近岸数据卸载与事后审计的分层存证。林玮等人\cite{LinW26}进一步面向流数据构建链上链下混合存储的可认证结构，链下自适应存储完整流数据、链上仅存认证根节点，在即来即验的同时降低了 Gas 消耗。
+
+（2） 面向溯源的可验证查询与认证数据结构：此类方法通过认证数据结构使轻节点无须保存全量数据即可验证查询结果的完整性与正确性，其核心挑战在于兼顾验证开销与查询效率。Xu 等人\cite{XuZX19}提出 vChain 框架，基于累加器认证数据结构支持可验证布尔范围查询，显著降低用户的存储与计算成本；Wang 等人\cite{WangXZXPP22}进一步设计滑动窗口累加器索引与对象注册索引，将最坏情形下的查询性能提升达 913 倍。面向链上链下混合存储，Zhang 等人\cite{ZhangXXTC19}提出 Gas 高效的 GEM$^2$-Tree，将元数据上链、原始数据外包链下，兼顾认证范围查询效率与智能合约维护开销。武沫旬等人\cite{WuMX25}在不改变原有数据库存储模式的前提下设计基于属性编码的索引树，实现可验证查询与数据溯源，存储空间减少约 90\%、验证效率提升约 77\%。
+
+（3） 学习索引增强的轻量化可验证更新：此类方法以学习索引替代传统树形结构并结合区块链轻量化技术，降低端侧索引维护与可验证更新的开销，其核心挑战在于在高频更新下兼顾查询效率与可信验证。Kraska 等人\cite{KraskaBCDP18}提出学习索引思想，以机器学习模型拟合数据分布替代 B 树，在大幅压缩内存占用的同时提升查询速度。Chang 等人\cite{ChangLXLJ23}将学习索引引入区块链，构建轻量且可验证的时间范围查询索引 Anole，以更小的存储代价支撑链上可验证查询。面向端侧降本，谢晴晴等人\cite{XieQQ23}从轻量计算与轻量存储两方面系统梳理了轻量级区块链技术；李瑾\cite{LiJ25}进一步提出账本分割存储与可延迟确认机制，通过分片和链下扩容降低资源受限节点的存储与共识负载。
+
+
 
 % 内容三
 \subsubsection{2.2.3 xxx}
