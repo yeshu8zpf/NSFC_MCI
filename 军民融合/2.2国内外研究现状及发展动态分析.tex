@@ -94,11 +94,11 @@ xxx
 % A
 \textbf{知识库构建与动态管理相关研究：}随着多源异构数据持续增长，如何对复杂数据进行统一表征、结构化组织和动态维护，已成为数据管理、知识工程和智能系统领域的重要问题。现有研究主要围绕以下三个方面展开：
 
-（1）多源异构数据表征与融合：多源异构数据表征旨在解决不同来源、不同结构和不同模态数据难以统一建模的问题。Hu 等人提出 Heterogeneous Graph Transformer，通过类型相关注意力机制和时间编码建模大规模异构动态图，实现不同类型节点和关系的统一表示（Heterogeneous Graph Transformer）。Vashishth 等人提出 CompGCN，将多关系图卷积用于实体与关系的联合表示学习，提升了复杂关系结构下的图表示能力（Composition-based Multi-Relational Graph Convolutional Networks）。频谱领域中，孙佳琛等人提出频谱知识图谱概念，探索频谱资源、用频设备和业务场景之间的三元组表达（频谱知识图谱：面向未来频谱管理的智能引擎）；Ma 等人面向低轨卫星频谱感知数据开展知识图谱构建与语义表示，为频谱感知数据的结构化组织提供了参考（Research on Knowledge Graph Construction and Semantic Representation of Low Earth Orbit Satellite Spectrum Sensing Data）。
+（1）多源异构数据表征与融合：多源异构数据表征旨在解决不同来源、不同结构和不同模态数据难以统一建模的问题。Hu 等人提出\cite{DBLP:conf/www/HuDWS20} Heterogeneous Graph Transformer，通过类型相关注意力机制和时间编码建模大规模异构动态图，实现不同类型节点和关系的统一表示。Vashishth 等人\cite{DBLP:conf/iclr/VashishthSNT20}提出 CompGCN，将多关系图卷积用于实体与关系的联合表示学习，提升了复杂关系结构下的图表示能力。频谱领域中，孙佳琛等人\cite{SUN2021}提出频谱知识图谱概念，探索频谱资源、用频设备和业务场景之间的三元组表达；Ma 等人\cite{ma2024research}面向低轨卫星频谱感知数据开展知识图谱构建与语义表示，为频谱感知数据的结构化组织提供了参考。
 
-（2）知识图谱构建与实体关系建模：知识图谱构建关注如何将分散数据转化为实体、属性和关系，并通过图结构表达复杂对象之间的语义联系。Gottschalk 等人构建 EventKG，将事件、实体、时间关系和多源背景知识组织为事件中心时序知识图谱（EventKG: A Multilingual Event-Centric Temporal Knowledge Graph）。Mao 等人提出 RREA，通过关系反射机制提升跨知识图谱实体对齐能力（Relational Reflection Entity Alignment）；Ge 等人提出 LargeEA，面向大规模知识图谱开展实体对齐，提高了大规模知识库之间实体匹配和融合能力（LargeEA: Aligning Entities for Large-scale Knowledge Graphs）。海杂波目标检测方面，Xu 等人利用多特征孤立森林方法检测海杂波背景下海面漂浮小目标（Sea-Surface Floating Small Target Detection by Multifeature Detector Based on Isolation Forest），许述文等人系统总结了海杂波背景下雷达目标特征检测方法，为异常事件和疑似目标线索的提取提供了相关基础（海杂波背景下雷达目标特征检测方法的现状与展望）。
+（2）知识图谱构建与实体关系建模：知识图谱构建关注如何将分散数据转化为实体、属性和关系，并通过图结构表达复杂对象之间的语义联系。Gottschalk 等人\cite{DBLP:conf/esws/GottschalkD18}构建 EventKG，将事件、实体、时间关系和多源背景知识组织为事件中心时序知识图谱。Mao 等人\cite{DBLP:conf/cikm/MaoWXWL20}提出 RREA，通过关系反射机制提升跨知识图谱实体对齐能力；Ge 等人\cite{DBLP:journals/pvldb/GeLCZG2}提出 LargeEA，面向大规模知识图谱开展实体对齐，提高了大规模知识库之间实体匹配和融合能力。海杂波目标检测方面，Xu 等人\cite{DBLP:journals/staeors/XuZJS21}利用多特征孤立森林方法检测海杂波背景下海面漂浮小目标，许述文等人\cite{XU2020}系统总结了海杂波背景下雷达目标特征检测方法，为异常事件和疑似目标线索的提取提供了相关基础。
 
-（3）动态知识图谱更新与演化：动态知识图谱研究关注新实体、新关系和新事件不断加入条件下的知识状态维护与演化问题。Jin 等人提出 RE-NET，通过历史事件序列建模时序知识图谱结构演化，用于预测未来事件关系（Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs）。Niu 等人引入逻辑和常识约束，增强时序事件关系推理能力（Logic and Commonsense-Guided Temporal Knowledge Graph Completion）。Wang 等人利用大语言模型从历史数据中抽取时间逻辑规则，并根据最新事件进行动态适应（Large Language Models-guided Dynamic Adaptation for Temporal Knowledge Graph Reasoning）。Wang 等人进一步研究持续增长知识图谱中的实体对齐问题，面向新实体和新关系不断加入的场景实现连续知识对齐（Facing Changes: Continual Entity Alignment for Growing Knowledge Graphs）。
+（3）动态知识图谱更新与演化：动态知识图谱研究关注新实体、新关系和新事件不断加入条件下的知识状态维护与演化问题。Jin 等人\cite{jin2020recurrent}提出 RE-NET，通过历史事件序列建模时序知识图谱结构演化，用于预测未来事件关系。Niu 等人\cite{DBLP:conf/aaai/NiuL23}引入逻辑和常识约束，增强时序事件关系推理能力。Wang 等人\cite{DBLP:conf/nips/WangSLWHLPY24}利用大语言模型从历史数据中抽取时间逻辑规则，并根据最新事件进行动态适应。Wang 等人\cite{DBLP:conf/semweb/WangCLSJHH22}进一步研究持续增长知识图谱中的实体对齐问题，面向新实体和新关系不断加入的场景实现连续知识对齐。
 
 总体来看，现有研究已在异构数据表征、多源数据融合、知识图谱构建、实体关系建模和动态知识演化等方面形成了较好的方法基础，也有少量工作开始探索频谱知识图谱和频谱感知数据语义表示。然而，这些工作多面向开放域知识库、互联网知识图谱、频谱资源管理或卫星频谱感知数据，尚未充分考虑海上电磁侦察任务中多源异构频谱数据的时空频谱语义融合、面向态势生成的多源信息关联，以及动态复杂场景下知识图谱的增量更新与演化。因此，仍需进一步研究面向端侧智能存储与态势认知需求的电磁频谱知识库构建与动态管理方法。
 
@@ -128,20 +128,20 @@ xxx
 		\hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 轻量化边缘频谱数据认知模型}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于模型压缩与知识蒸馏的轻量化方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{MLD-Net \cite{ZhangX25}，ClST \cite{HouD24}，Baishya 等人 \cite{Baishya24}，孙妤等人 \cite{SunY26}，蒋婷等人 \cite{JiangT26}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过剪枝、量化与多粒度师生蒸馏，将大模型频谱认知能力迁移至端侧可承载的紧凑网络，以极小参数量保持高识别精度} \\
+					\linespread{0.6}\selectfont 多源异构数据知识表征与图谱演化}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多源异构数据表征与融合} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{ CompGCN\cite{DBLP:conf/iclr/VashishthSNT20}, HGT\cite{DBLP:conf/www/HuDWS20}, 孙佳琛等人\cite{SUN2021}, Ma等人\cite{ma2024research}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过异构图建模与多关系表示学习，统一表达不同类型的数据、实体及关系，为复杂数据融合与结构化表征提供基础} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向低信噪比与小样本条件的鲁棒识别方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Jing 等人 \cite{JingZ24}，TFAF-Net \cite{MuS24}，IRelNet \cite{WuZ23}，姜鹏 \cite{JiangP23}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{融合注意力机制、度量学习与元学习，提升强杂波、样本稀缺条件下的辐射源识别判别力，已嵌入无人机/无人艇端侧平台} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{知识图谱构建与实体关系建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{EventKG\cite{DBLP:conf/esws/GottschalkD18}，RREA\cite{DBLP:conf/cikm/MaoWXWL20}, LargeEA\cite{DBLP:journals/pvldb/GeLCZG2}, Xu等人\cite{DBLP:journals/staeors/XuZJS21}, 许述文等人\cite{XU2020}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕事件、实体和时间关系建立图谱关联，并结合实体对齐实现跨源知识匹配与融合} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向未知频谱目标的开集与开放世界识别方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Li 等人 \cite{LiT23}，Han 等人 \cite{HanZ25}，Krasnov 等人 \cite{Krasnov25}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{突破闭集假设，引入专家知识与自监督机制，实现训练集外新型辐射源的拒识、发现与增量纳管} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态知识图谱更新与演化} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{RE-NET\cite{jin2020recurrent}, Niu 等人\cite{DBLP:conf/aaai/NiuL23}, Wang 等人\cite{DBLP:conf/nips/WangSLWHLPY24}, Continual Entity Alignment\cite{DBLP:conf/semweb/WangCLSJHH22}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时序事件建模、规则推理与持续实体对齐，实现新增实体、关系和事件条件下的图谱动态更新} \\
 		\hline
 		
 		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
