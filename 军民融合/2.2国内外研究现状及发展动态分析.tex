@@ -4,67 +4,83 @@
 
 % 内容一
 \subsubsection{2.2.1 海杂波环境下电磁频谱信号提取}
-% A
-\textbf{A. 复杂海洋环境下电磁频谱信号时空耦合传播规律建模
 
+% A
+\textbf{复杂海洋环境下电磁频谱信号时空耦合传播规律建模:}
 复杂海洋环境下电磁频谱信号时空耦合传播规律建模涉及海面散射、海杂波统计、海气传播通道和多平台观测几何等多类因素。国外研究较早从 HF/VHF 海面回波机理出发，Barrick 建立了粗糙海面上 HF/VHF 传播与一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础\cite{Barrick1971RoughSeaPropagation}。在高分辨率海杂波统计建模方面，Jakeman 和 Pusey 提出的 K 分布散射模型以及 Ward 等关于海杂波散射、K 分布与雷达性能的系统研究，说明低掠射角海杂波具有明显非高斯长尾和海尖峰特征，平均功率模型难以解释弱目标可观测性变化\cite{Jakeman1978KDistribution,Ward2006SeaClutter}。近年来，国外研究逐步从经验统计模型转向复合高斯、多极化协方差和全波物理求解等方向，以提升模型对复杂海况和不同观测体制的适应性\cite{Ozgun2022FullWaveSeaClutter,Xie2022PolarimetricCompoundGaussian,Watts2022ChallengesSeaClutter}。
-﻿
+
 国内在海杂波多普勒谱和海面微波散射方面形成了较系统的研究积累。Zhao 等基于 UHF 低掠射角现场数据，分析显著波高、风速、波向和入射角对海杂波 Doppler 频移与谱宽的影响，表明海况增强和观测几何变化会直接改变频谱背景形态\cite{Zhao2023UHFDopplerSeaClutter}。张金鹏等从 Bragg、白冠和破碎波等不同散射机制出发建立时变多普勒谱模型，指出短时谱不是稳定平均谱的简单截取，而会随散射机制占比变化呈现非平稳演化\cite{Zhang2018TimeVaryingDopplerSeaClutter}。姜文正等基于双尺度粗糙面散射模型研究微波海面散射场 Doppler 频移和谱宽，揭示极化、倾斜调制和遮蔽效应对频谱结构的影响\cite{Jiang2012MicrowaveSeaSurfaceDoppler}。在传播通道方面，ITU-R P.453 给出的无线电折射率表达为海气边界层传播建模提供标准依据，蒸发波导和表面波导研究进一步说明温湿压剖面会导致超视距传播、盲区漂移和远距离同频干扰\cite{ITURP453,Sit2021AtmosphericDuctingDL}。总体来看，国内外研究已从单一杂波强度建模扩展到“海面散射--杂波统计--传播通道”多因素耦合建模，但面向海警船/无人机等多平台、低空近海、多目标场景的时空耦合传播规律仍缺少统一描述。
-﻿
-\begin{table}[htbp]
-\centering
-\caption{复杂海洋环境下电磁频谱信号传播规律相关工作的总结}
-\label{tab:marine_em_propagation_related_work}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{p{2.4cm}p{3.0cm}p{4.2cm}p{5.7cm}}
-\hline
-\textbf{方向} & \textbf{分类} & \textbf{代表工作} & \textbf{主要贡献点} \\
-\hline
-\multirow{2}{*}{海面散射与传播理论}
-& HF/VHF Bragg 散射与粗糙海面传播
-& Barrick\cite{Barrick1971RoughSeaPropagation}
-& 揭示海面 Bragg 散射、一阶海杂波谱峰与雷达波长、海浪相速度之间的关系，奠定低频海面传播和海杂波谱分析基础。 \\
-\cline{2-4}
-& 粗糙海面散射与全波物理建模
-& Ozgun 等\cite{Ozgun2022FullWaveSeaClutter}
-& 从海面反射率、归一化散射截面和全波数值求解角度刻画不同频段、极化、掠射角和风速条件下的海面散射响应。 \\
-\hline
-\multirow{2}{*}{海杂波统计建模}
-& K 分布与长尾统计
-& Jakeman 和 Pusey\cite{Jakeman1978KDistribution}, Ward 等\cite{Ward2006SeaClutter}
-& 建立海杂波非高斯、长尾和海尖峰统计描述，为低虚警区间的目标可观测性分析提供基础模型。 \\
-\cline{2-4}
-& 复合高斯与极化协方差建模
-& Xie 等\cite{Xie2022PolarimetricCompoundGaussian}
-& 利用复合高斯、正则化协方差和非参数密度估计描述复杂海况下的分布变化和多极化统计特征。 \\
-\hline
-\multirow{3}{*}{多普勒谱与时频结构}
-& UHF 低掠射角实测谱建模
-& Zhao 等\cite{Zhao2023UHFDopplerSeaClutter}
-& 基于现场数据揭示显著波高、风速、波向和入射角对 Doppler 频移与谱宽的影响。 \\
-\cline{2-4}
-& 多散射机制时变谱
-& 张金鹏等\cite{Zhang2018TimeVaryingDopplerSeaClutter}
-& 将 Bragg、白冠和破碎波等机制纳入时变谱建模，解释短时海杂波谱的非平稳演化。 \\
-\cline{2-4}
-& 微波散射场 Doppler 谱
-& 姜文正等\cite{Jiang2012MicrowaveSeaSurfaceDoppler}
-& 分析双尺度粗糙面下极化、倾斜调制和遮蔽对 Doppler 频移与谱宽的作用。 \\
-\hline
-\multirow{2}{*}{海气传播通道}
-& 折射率与蒸发波导
-& ITU-R P.453\cite{ITURP453}, Sit 和 Earls\cite{Sit2021AtmosphericDuctingDL}
-& 给出无线电折射率标准表达，并利用数据驱动方法表征海上大气波导状态，解释超视距传播和覆盖边界变化。 \\
-\cline{2-4}
-& 海浪与海上无线链路
-& Huo 等\cite{Huo2020OceanWavesMaritimeIoT}
-& 分析海浪遮挡对海上无线通信链路质量的影响，为海面运动与链路可用性耦合提供参考。 \\
-\hline
-\end{tabular}
+
+\begin{table}[htbp]\kaishu
+	\centering
+	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
+		\hline
+		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 海面散射与传播理论}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{HF/VHF Bragg 散射与粗糙海面传播} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Barrick \cite{Barrick1971RoughSeaPropagation}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{揭示海面 Bragg 散射、一阶海杂波谱峰与雷达波长、海浪相速度之间的关系，奠定低频海面传播和海杂波谱分析基础} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{粗糙海面散射与全波物理建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ozgun 等 \cite{Ozgun2022FullWaveSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从海面反射率、归一化散射截面和全波数值求解角度刻画不同频段、极化、掠射角和风速条件下的海面散射响应} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 海杂波统计建模}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{K 分布与长尾统计} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Jakeman 和 Pusey \cite{Jakeman1978KDistribution}，Ward 等 \cite{Ward2006SeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{建立海杂波非高斯、长尾和海尖峰统计描述，为低虚警区间的目标可观测性分析提供基础模型} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{复合高斯与极化协方差建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xie 等 \cite{Xie2022PolarimetricCompoundGaussian}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用复合高斯、正则化协方差和非参数密度估计描述复杂海况下的分布变化和多极化统计特征} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 多普勒谱与时频结构}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{UHF 低掠射角实测谱建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhao 等 \cite{Zhao2023UHFDopplerSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于现场数据揭示显著波高、风速、波向和入射角对 Doppler 频移与谱宽的影响} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多散射机制时变谱} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{张金鹏等 \cite{Zhang2018TimeVaryingDopplerSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将 Bragg、白冠和破碎波等机制纳入时变谱建模，解释短时海杂波谱的非平稳演化} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{微波散射场 Doppler 谱} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{姜文正等 \cite{Jiang2012MicrowaveSeaSurfaceDoppler}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析双尺度粗糙面下极化、倾斜调制和遮蔽对 Doppler 频移与谱宽的作用} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 海气传播通道}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{折射率与蒸发波导} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{ITU-R P.453 \cite{ITURP453}，Sit 和 Earls \cite{Sit2021AtmosphericDuctingDL}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{给出无线电折射率标准表达，并利用数据驱动方法表征海上大气波导状态，解释超视距传播和覆盖边界变化} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海浪与海上无线链路} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Huo 等 \cite{Huo2020OceanWavesMaritimeIoT}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析海浪遮挡对海上无线通信链路质量的影响，为海面运动与链路可用性耦合提供参考} \\
+		\hline
+		
+	\end{tabular}
+	\caption{\kaishu{复杂海洋环境下电磁频谱信号传播规律相关工作的总结}}
+	\label{tab:marine_em_propagation_related_work}
 \end{table}
-﻿
+
 现有工作仍存在三方面不足。第一，多数研究分别关注海面散射、杂波统计或传播通道，缺少将海况、掠射角、平台运动、折射率剖面和目标信号显现程度统一到同一状态空间的时空耦合建模框架。第二，海杂波模型常依赖特定频段、海域和观测体制，HF/VHF 的 Bragg 谱、UHF 低掠射角谱展宽和微波极化散射之间缺乏统一的跨频段参数映射，导致模型外推能力不足。第三，现有研究多以杂波抑制或目标检测性能为最终目标，对“传播规律如何改变弱目标可感知性边界”的解释仍不充分，难以直接服务复杂海洋环境下多平台频谱感知任务。因此，本项目有必要围绕海面散射、杂波统计和传播通道建立时空耦合传播规律模型，提取传播损耗、短时谱结构、长尾统计和空间相关特征之间的联合关系，为后续微弱电磁频谱信号感知与增强提供物理先验。
-﻿
+
 % B
 
 % C
