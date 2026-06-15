@@ -122,7 +122,7 @@
 
 （1）多源异构数据表征与融合：多源异构数据表征旨在解决不同来源、不同结构和不同模态数据难以统一建模的问题。Hu 等人提出\cite{DBLP:conf/www/HuDWS20} Heterogeneous Graph Transformer，通过类型相关注意力机制和时间编码建模大规模异构动态图，实现不同类型节点和关系的统一表示。Vashishth 等人\cite{DBLP:conf/iclr/VashishthSNT20}提出 CompGCN，将多关系图卷积用于实体与关系的联合表示学习，提升了复杂关系结构下的图表示能力。频谱领域中，孙佳琛等人\cite{SUN2021}提出频谱知识图谱概念，探索频谱资源、用频设备和业务场景之间的三元组表达；Ma 等人\cite{ma2024research}面向低轨卫星频谱感知数据开展知识图谱构建与语义表示，为频谱感知数据的结构化组织提供了参考。
 
-（2）知识图谱构建与实体关系建模：知识图谱构建关注如何将分散数据转化为实体、属性和关系，并通过图结构表达复杂对象之间的语义联系。Gottschalk 等人\cite{DBLP:conf/esws/GottschalkD18}构建 EventKG，将事件、实体、时间关系和多源背景知识组织为事件中心时序知识图谱。Mao 等人\cite{DBLP:conf/cikm/MaoWXWL20}提出 RREA，通过关系反射机制提升跨知识图谱实体对齐能力；Ge 等人\cite{DBLP:journals/pvldb/GeLCZG2}提出 LargeEA，面向大规模知识图谱开展实体对齐，提高了大规模知识库之间实体匹配和融合能力。海杂波目标检测方面，Xu 等人\cite{DBLP:journals/staeors/XuZJS21}利用多特征孤立森林方法检测海杂波背景下海面漂浮小目标，许述文等人\cite{XU2020}系统总结了海杂波背景下雷达目标特征检测方法，为异常事件和疑似目标线索的提取提供了相关基础。
+（2）知识图谱构建与实体关系建模：知识图谱构建关注如何将分散数据转化为实体、属性和关系，并通过图结构表达复杂对象之间的语义联系。Gottschalk 等人\cite{DBLP:conf/esws/GottschalkD18}构建 EventKG，将事件、实体、时间关系和多源背景知识组织为事件中心时序知识图谱。Mao 等人\cite{DBLP:conf/cikm/MaoWXWL20}提出 RREA，通过关系反射机制提升跨知识图谱实体对齐能力；Ge 等人\cite{DBLP:journals/pvldb/GeLCZG21}提出 LargeEA，面向大规模知识图谱开展实体对齐，提高了大规模知识库之间实体匹配和融合能力。海杂波目标检测方面，Xu 等人\cite{DBLP:journals/staeors/XuZJS21}利用多特征孤立森林方法检测海杂波背景下海面漂浮小目标，许述文等人\cite{XU2020}系统总结了海杂波背景下雷达目标特征检测方法，为异常事件和疑似目标线索的提取提供了相关基础。
 
 （3）动态知识图谱更新与演化：动态知识图谱研究关注新实体、新关系和新事件不断加入条件下的知识状态维护与演化问题。Jin 等人\cite{jin2020recurrent}提出 RE-NET，通过历史事件序列建模时序知识图谱结构演化，用于预测未来事件关系。Niu 等人\cite{DBLP:conf/aaai/NiuL23}引入逻辑和常识约束，增强时序事件关系推理能力。Wang 等人\cite{DBLP:conf/nips/WangSLWHLPY24}利用大语言模型从历史数据中抽取时间逻辑规则，并根据最新事件进行动态适应。Wang 等人\cite{DBLP:conf/semweb/WangCLSJHH22}进一步研究持续增长知识图谱中的实体对齐问题，面向新实体和新关系不断加入的场景实现连续知识对齐。
 
@@ -160,7 +160,7 @@
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{知识图谱构建与实体关系建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{EventKG\cite{DBLP:conf/esws/GottschalkD18}，RREA\cite{DBLP:conf/cikm/MaoWXWL20}, LargeEA\cite{DBLP:journals/pvldb/GeLCZG2}, Xu等人\cite{DBLP:journals/staeors/XuZJS21}, 许述文等人\cite{XU2020}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{EventKG\cite{DBLP:conf/esws/GottschalkD18}，RREA\cite{DBLP:conf/cikm/MaoWXWL20}, LargeEA\cite{DBLP:journals/pvldb/GeLCZG21}, Xu等人\cite{DBLP:journals/staeors/XuZJS21}, 许述文等人\cite{XU2020}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕事件、实体和时间关系建立图谱关联，并结合实体对齐实现跨源知识匹配与融合} \\
 		\cline{2-4}
 		
