@@ -7,79 +7,93 @@
 
 % A
 \textbf{复杂海洋环境下电磁频谱信号时空耦合传播规律建模:}
-复杂海洋环境下电磁频谱信号时空耦合传播规律建模涉及海面散射、海杂波统计、海气传播通道和多平台观测几何等多类因素。国外研究较早从 HF/VHF 海面回波机理出发，Barrick 建立了粗糙海面上 HF/VHF 传播与一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础\cite{Barrick1971RoughSeaPropagation}。在高分辨率海杂波统计建模方面，Jakeman 和 Pusey 提出的 K 分布散射模型以及 Ward 等关于海杂波散射、K 分布与雷达性能的系统研究，说明低掠射角海杂波具有明显非高斯长尾和海尖峰特征，平均功率模型难以解释弱目标可观测性变化\cite{Jakeman1978KDistribution,Ward2006SeaClutter}。近年来，国外研究逐步从经验统计模型转向复合高斯、多极化协方差和全波物理求解等方向，以提升模型对复杂海况和不同观测体制的适应性\cite{Ozgun2022FullWaveSeaClutter,Xie2022PolarimetricCompoundGaussian,Watts2022ChallengesSeaClutter}。
+复杂海洋环境下电磁频谱信号时空耦合传播规律建模涉及海面散射、海杂波统计、海气传播通道和多平台观测几何等多类因素。国外研究较早从 HF 与 VHF 海面回波机理出发，Barrick 建立了粗糙海面上 HF 与 VHF 传播与一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础\cite{Barrick1971RoughSeaPropagation}。在高分辨率海杂波统计建模方面，Jakeman 和 Pusey 提出的 K 分布散射模型以及 Ward 等关于海杂波散射、K 分布与雷达性能的系统研究，说明低掠射角海杂波具有明显非高斯长尾和海尖峰特征，平均功率模型难以解释弱目标可观测性变化\cite{Jakeman1978KDistribution,Ward2006SeaClutter}。近年来，国外研究逐步从经验统计模型转向复合高斯、多极化协方差和全波物理求解等方向，以提升模型对复杂海况和不同观测体制的适应性\cite{Ozgun2022FullWaveSeaClutter,Xie2022PolarimetricCompoundGaussian,Watts2022ChallengesSeaClutter}。
 
-国内在海杂波多普勒谱和海面微波散射方面形成了较系统的研究积累。Zhao 等基于 UHF 低掠射角现场数据，分析显著波高、风速、波向和入射角对海杂波 Doppler 频移与谱宽的影响，表明海况增强和观测几何变化会直接改变频谱背景形态\cite{Zhao2023UHFDopplerSeaClutter}。张金鹏等从 Bragg、白冠和破碎波等不同散射机制出发建立时变多普勒谱模型，指出短时谱不是稳定平均谱的简单截取，而会随散射机制占比变化呈现非平稳演化\cite{Zhang2018TimeVaryingDopplerSeaClutter}。姜文正等基于双尺度粗糙面散射模型研究微波海面散射场 Doppler 频移和谱宽，揭示极化、倾斜调制和遮蔽效应对频谱结构的影响\cite{Jiang2012MicrowaveSeaSurfaceDoppler}。在传播通道方面，ITU-R P.453 给出的无线电折射率表达为海气边界层传播建模提供标准依据，蒸发波导和表面波导研究进一步说明温湿压剖面会导致超视距传播、盲区漂移和远距离同频干扰\cite{ITURP453,Sit2021AtmosphericDuctingDL}。总体来看，国内外研究已从单一杂波强度建模扩展到“海面散射--杂波统计--传播通道”多因素耦合建模，但面向海警船/无人机等多平台、低空近海、多目标场景的时空耦合传播规律仍缺少统一描述。
+国内在海杂波多普勒谱和海面微波散射方面形成了较系统的研究积累。Zhao 等基于 UHF 低掠射角现场数据，分析显著波高、风速、波向和入射角对海杂波 Doppler 频移与谱宽的影响，表明海况增强和观测几何变化会直接改变频谱背景形态\cite{Zhao2023UHFDopplerSeaClutter}。张金鹏等从 Bragg、白冠和破碎波等不同散射机制出发建立时变多普勒谱模型，指出短时谱不是稳定平均谱的简单截取，而会随散射机制占比变化呈现非平稳演化\cite{Zhang2018TimeVaryingDopplerSeaClutter}。姜文正等基于双尺度粗糙面散射模型研究微波海面散射场 Doppler 频移和谱宽，揭示极化、倾斜调制和遮蔽效应对频谱结构的影响\cite{Jiang2012MicrowaveSeaSurfaceDoppler}。在传播通道方面，ITU-R P.453 给出的无线电折射率表达为海气边界层传播建模提供标准依据，蒸发波导和表面波导研究进一步说明温湿压剖面会导致超视距传播、盲区漂移和远距离同频干扰\cite{ITURP453,Sit2021AtmosphericDuctingDL}。总体来看，国内外研究已从单一杂波强度建模扩展到海面散射、杂波统计和传播通道的多因素耦合建模，但面向海警船、无人机等多平台、低空近海、多目标场景的时空耦合传播规律仍缺少统一描述。
 
 \begin{table}[htbp]\kaishu
 	\centering
 	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
 		\hline
-		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
+		\multicolumn{1}{|c|}{{\kaishu\wuhao }} & 
+		\multicolumn{1}{c|}{{\kaishu\wuhao 分类}} & 
+		\multicolumn{1}{c|}{{\kaishu\wuhao 代表工作}} & 
+		\multicolumn{1}{c|}{{\kaishu\wuhao 主要贡献点}} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 海面散射与传播理论}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{HF/VHF Bragg 散射与粗糙海面传播} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Barrick \cite{Barrick1971RoughSeaPropagation}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{揭示海面 Bragg 散射、一阶海杂波谱峰与雷达波长、海浪相速度之间的关系，奠定低频海面传播和海杂波谱分析基础} \\
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				时空耦合传播规律建模
+			}
+		}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海面散射与杂波统计联合表征} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Barrick \cite{Barrick1971RoughSeaPropagation}，Jakeman 和 Pusey \cite{Jakeman1978KDistribution}，Ward 等 \cite{Ward2006SeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{揭示 Bragg 散射、一阶海杂波谱峰、非高斯长尾和海尖峰统计特征，为弱目标可观测性分析提供基础模型} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{粗糙海面散射与全波物理建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ozgun 等 \cite{Ozgun2022FullWaveSeaClutter}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从海面反射率、归一化散射截面和全波数值求解角度刻画不同频段、极化、掠射角和风速条件下的海面散射响应} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{粗糙海面全波与极化统计建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ozgun 等 \cite{Ozgun2022FullWaveSeaClutter}，Xie 等 \cite{Xie2022PolarimetricCompoundGaussian}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从全波数值求解、复合高斯和多极化协方差角度刻画复杂海况、频段、极化和掠射角变化下的海面散射响应} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多普勒谱与海气传播通道建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhao 等 \cite{Zhao2023UHFDopplerSeaClutter}，张金鹏等 \cite{Zhang2018TimeVaryingDopplerSeaClutter}，ITU-R P.453 \cite{ITURP453}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析海况、风浪、散射机制和折射率剖面对 Doppler 频移、谱宽、传播损耗和覆盖边界的影响} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 海杂波统计建模}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{K 分布与长尾统计} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Jakeman 和 Pusey \cite{Jakeman1978KDistribution}，Ward 等 \cite{Ward2006SeaClutter}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{建立海杂波非高斯、长尾和海尖峰统计描述，为低虚警区间的目标可观测性分析提供基础模型} \\
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				空域干扰对消特征增强
+			}
+		}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{复合高斯与极化协方差建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xie 等 \cite{Xie2022PolarimetricCompoundGaussian}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用复合高斯、正则化协方差和非参数密度估计描述复杂海况下的分布变化和多极化统计特征} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{待填充} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 多普勒谱与时频结构}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{UHF 低掠射角实测谱建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhao 等 \cite{Zhao2023UHFDopplerSeaClutter}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于现场数据揭示显著波高、风速、波向和入射角对 Doppler 频移与谱宽的影响} \\
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				多维联合表征精确提取
+			}
+		}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于解析统计特征的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等 \cite{Zeng2009EVD}，Tekbiyik 等 \cite{Tekbiyik2021SCF}，闫文康等 \cite{Yan2021WaveletHOC}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用协方差特征值、循环谱和高阶统计量提取可判别特征，支撑低信噪比条件下的信号检测与调制识别} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多散射机制时变谱} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{张金鹏等 \cite{Zhang2018TimeVaryingDopplerSeaClutter}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将 Bragg、白冠和破碎波等机制纳入时变谱建模，解释短时海杂波谱的非平稳演化} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于时频结构特征的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等 \cite{Zhang2016TFD}，Akyon 等 \cite{Akyon2018FFCNN}，Liu 等 \cite{Liu2019SeaClutterHF}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时频分布、瞬时频率、相位结构和高维特征刻画非平稳信号，增强复杂海杂波背景下目标特征表达} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{微波散射场 Doppler 谱} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{姜文正等 \cite{Jiang2012MicrowaveSeaSurfaceDoppler}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析双尺度粗糙面下极化、倾斜调制和遮蔽对 Doppler 频移与谱宽的作用} \\
-		\hline
-		
-		\vspace{1em}\raisebox{-1em}{\multirow{2}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 海气传播通道}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{折射率与蒸发波导} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{ITU-R P.453 \cite{ITURP453}，Sit 和 Earls \cite{Sit2021AtmosphericDuctingDL}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{给出无线电折射率标准表达，并利用数据驱动方法表征海上大气波导状态，解释超视距传播和覆盖边界变化} \\
-		\cline{2-4}
-		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海浪与海上无线链路} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Huo 等 \cite{Huo2020OceanWavesMaritimeIoT}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析海浪遮挡对海上无线通信链路质量的影响，为海面运动与链路可用性耦合提供参考} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于数据驱动表征学习的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{O'Shea 等 \cite{OShea2016CRMN,OShea2016URL}，Cai 等 \cite{Cai2022CLCNN}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从原始 IQ 数据、频谱图和时频图中自动学习多尺度深度表征，提升复杂噪声和少样本条件下的特征泛化能力} \\
 		\hline
 		
 	\end{tabular}
-	\caption{\kaishu{复杂海洋环境下电磁频谱信号传播规律相关工作的总结}}
-	\label{tab:marine_em_propagation_related_work}
+	\caption{\kaishu{海杂波环境下电磁频谱信号提取相关工作的总结}}
+	\label{tab:spectrum_signal_extraction_related_work}
 \end{table}
-
-现有工作仍存在三方面不足。第一，多数研究分别关注海面散射、杂波统计或传播通道，缺少将海况、掠射角、平台运动、折射率剖面和目标信号显现程度统一到同一状态空间的时空耦合建模框架。第二，海杂波模型常依赖特定频段、海域和观测体制，HF/VHF 的 Bragg 谱、UHF 低掠射角谱展宽和微波极化散射之间缺乏统一的跨频段参数映射，导致模型外推能力不足。第三，现有研究多以杂波抑制或目标检测性能为最终目标，对“传播规律如何改变弱目标可感知性边界”的解释仍不充分，难以直接服务复杂海洋环境下多平台频谱感知任务。因此，本项目有必要围绕海面散射、杂波统计和传播通道建立时空耦合传播规律模型，提取传播损耗、短时谱结构、长尾统计和空间相关特征之间的联合关系，为后续微弱电磁频谱信号感知与增强提供物理先验。
 
 % B
 
@@ -87,12 +101,14 @@
 \textbf{基于多维联合表征的电磁频谱信号精确提取方法:}
 海杂波干扰对消后，电磁频谱数据中仍存在残余海杂波、同频干扰、接收噪声和多径畸变等复杂成分，雷达、通信等微弱辐射信号的有效特征易出现能量弱化、边界模糊、时频结构破碎和调制信息退化等问题。电磁频谱信号精确提取的关键，不仅在于判断信号是否存在，更在于从复杂背景中提取能够表征目标信号有效成分的特征信息，包括统计结构、循环特征、时频轨迹、脉冲参数、调制纹理和深度表征等。围绕复杂背景下电磁频谱信号特征提取问题，现有研究大体可从解析统计特征提取、时频结构特征提取和数据驱动表征学习三个角度展开。
 
-（1）基于解析统计特征的电磁频谱信号特征提取方法，主要从接收信号的能量分布、协方差结构、特征值、高阶累积量、循环平稳特征和谱相关结构等角度提取可判别特征，用于低信噪比条件下的信号检测、调制识别和频谱感知。Zeng等人\cite{Zeng2009EVD}提出基于协方差矩阵特征值的频谱感知方法，通过最大/最小特征值比、平均/最小特征值比等统计量实现低先验条件下的弱信号检测。Tekbiyik等人\cite{Tekbiyik2021SCF}将谱相关函数与卷积神经网络结合，利用无线信号的循环平稳特性开展频谱感知与信号识别，说明循环谱特征能够增强低信噪比条件下人工辐射信号的可辨识性。闫文康等人\cite{Yan2021WaveletHOC}将小波变换熵与高阶累积量联合用于卫星信号调制识别，体现了高阶统计特征在复杂调制结构表征中的作用。
+（1）基于解析统计特征的电磁频谱信号特征提取方法，主要从接收信号的能量分布、协方差结构、特征值、高阶累积量、循环平稳特征和谱相关结构等角度提取可判别特征，用于低信噪比条件下的信号检测、调制识别和频谱感知。Zeng等人\cite{Zeng2009EVD}提出基于协方差矩阵特征值的频谱感知方法，通过最大特征值与最小特征值比、平均特征值与最小特征值比等统计量实现低先验条件下的弱信号检测。Tekbiyik等人\cite{Tekbiyik2021SCF}将谱相关函数与卷积神经网络结合，利用无线信号的循环平稳特性开展频谱感知与信号识别，说明循环谱特征能够增强低信噪比条件下人工辐射信号的可辨识性。闫文康等人\cite{Yan2021WaveletHOC}将小波变换熵与高阶累积量联合用于卫星信号调制识别，体现了高阶统计特征在复杂调制结构表征中的作用。
 
-（2）基于时频结构特征的电磁频谱信号特征提取方法，主要利用短时傅里叶变换、小波变换、Wigner--Ville分布、Choi--Williams分布、重排谱图和瞬时相位分析等方法，将非平稳电磁信号映射到时频平面，提取脉冲边界、时频脊线、瞬时频率、扫频率、带宽变化和突发结构等特征。Zhang等人\cite{Zhang2016TFD}面向LPI雷达波形识别，利用Choi--Williams时频分布、瞬时频率、瞬时相位和图像形状特征表征雷达脉内调制结构。Akyon等人\cite{Akyon2018FFCNN}融合重排时频谱和瞬时相位特征开展雷达脉内调制分类，体现了时频轨迹与相位结构特征在雷达信号特征提取中的作用。Liu等人\cite{Liu2019SeaClutterHF}面向海上智能监测网络，研究海杂波和目标信号的高维特征提取，说明海杂波背景下目标信号特征需要结合多维表征进行刻画。
+（2）基于时频结构特征的电磁频谱信号特征提取方法，主要利用短时傅里叶变换、小波变换、Wigner-Ville 分布、Choi-Williams 分布、重排谱图和瞬时相位分析等方法，将非平稳电磁信号映射到时频平面，提取脉冲边界、时频脊线、瞬时频率、扫频率、带宽变化和突发结构等特征。Zhang等人\cite{Zhang2016TFD}面向 LPI 雷达波形识别，利用 Choi-Williams 时频分布、瞬时频率、瞬时相位和图像形状特征表征雷达脉内调制结构。Akyon等人\cite{Akyon2018FFCNN}融合重排时频谱和瞬时相位特征开展雷达脉内调制分类，体现了时频轨迹与相位结构特征在雷达信号特征提取中的作用。Liu等人\cite{Liu2019SeaClutterHF}面向海上智能监测网络，研究海杂波和目标信号的高维特征提取，说明海杂波背景下目标信号特征需要结合多维表征进行刻画。
 
 （3）基于数据驱动表征学习的电磁频谱信号特征提取方法，主要利用卷积神经网络、循环神经网络、注意力机制、自编码器和对比学习等模型，从原始IQ数据、频谱图、时频图或循环谱中自动学习多尺度特征，用于调制识别、雷达波形识别和宽带信号分析。O'Shea等人\cite{OShea2016CRMN}将卷积神经网络用于无线电调制识别，证明深度网络能够直接从复数IQ时序中学习调制特征。O'Shea等人\cite{OShea2016URL}进一步研究无监督无线电信号表征学习，利用卷积自编码器从未标注无线电采样序列中学习潜在特征表示。Cai等人\cite{Cai2022CLCNN}将自监督对比学习引入雷达脉内调制分类，通过未标注时频图预训练和少样本微调提升复杂噪声条件下的特征泛化能力。
 
+
+尽管现有研究在海面散射建模、海杂波统计描述、弱信号检测和多维特征提取等方面已形成一定基础，但面向海杂波强干扰下微弱电磁频谱信号传播规律分析与精确提取，仍存在以下不足：（1）传播机理与目标可观测性之间的耦合描述不足。多数研究分别关注海面散射、杂波统计、多普勒谱或海气传播通道，缺少将海况、掠射角、平台运动、折射率剖面、空间相关特征和弱目标显现程度统一到同一状态空间的时空耦合建模框架，难以解释不同海况和观测几何下弱目标频谱特征的可感知边界变化；（2）待填写；（3）复杂背景下多维特征的协同提取与参数保持能力不足。现有解析统计、时频分析和深度表征方法多侧重单一特征域或单一任务目标，难以同步兼顾候选区域定位、邻近频谱成分分离，以及调制、循环、能量和方位等关键特征保持与参数反演，导致弱目标频谱片段在复杂海杂波残余和低信噪比条件下提取不稳、解释不足。因此，本项目有必要围绕传播规律建模、空域干扰对消增强和多维联合表征提取建立一体化方法，形成支撑海杂波环境下微弱电磁频谱信号可解释增强与精确提取的理论和方法基础。
 
 
 % 内容二
