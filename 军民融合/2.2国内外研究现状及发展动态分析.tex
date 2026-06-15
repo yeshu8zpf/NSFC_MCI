@@ -108,6 +108,7 @@
 
 （3）基于信息效用的数据选择方法，主要从传感数据质量、事件检测收益和状态估计增益等角度选择更有价值的数据或传感观测，减少资源受限条件下的无效采集与传输。Bisdikian等人\cite{BisdikianKS13}围绕传感网络中的信息质量与信息价值进行建模，分析传感信息在决策过程中的效用差异。Bajovic等人\cite{BajovicSX11}面向无线传感网络事件检测任务，利用 Kullback--Leibler 距离和 Chernoff 距离构建传感器选择准则，以提升有限观测条件下的检测性能。Shen等人\cite{ShenV14}基于广义信息增益研究大规模传感网络中的传感器选择问题，通过选择信息贡献更高的观测降低目标跟踪误差。
 
+
 \begin{table}[htbp]\kaishu
 	\centering
 	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
@@ -118,8 +119,14 @@
 		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
 		\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 频谱数据价值评估与量化模型}}}  
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				频谱数据价值评估与量化模型
+			}
+		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于模型贡献的数据价值评估} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ghorbani 等人 \cite{GhorbaniZ19}，Yoon 等人 \cite{YoonAP20}，Sener 等人 \cite{SenerS18}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从样本对模型训练或任务性能的贡献出发，量化数据重要性，为数据价值建模和样本选择提供理论基础} \\
@@ -142,28 +149,51 @@
 				\linespread{0.6}\selectfont
 				频谱数据语义压缩与磁盘索引存储
 			}
-		}& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱数据语义压缩} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱语义向量的磁盘索引构建机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\ \cline{2-4} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱语义向量的磁盘索引维护机制} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} & \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\ \hline
+		}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于自监督表征的频谱数据语义压缩} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wen 等人 \cite{DBLP:journals/tmc/WenZWLZS26}，Zhou 等人 \cite{DBLP:journals/jsac/ZhouLZWWQC26}，Zhou 等人 \cite{DBLP:conf/icc/ZhouWWZC25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁语义} \\
+		\cline{2-4}
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 链上链下协同的频谱数据可信管理}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱语义向量的磁盘索引构建机制} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，Wang 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱语义向量的磁盘索引维护机制} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\
+		\hline
+		
+		\multirow{3}{1.4cm}[-3.4em]{
+			\centering\kaishu\wuhao
+			\parbox{1.2cm}{
+				\centering
+				\linespread{0.6}\selectfont
+				链上链下协同的频谱数据可信管理
+			}
+		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{链上链下协同的分层可信存证} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Freire 等人 \cite{FreireMNNS22}，王云涛等人 \cite{WangYT23}，Li 等人 \cite{LiHWWLC25}，林玮等人 \cite{LinW26}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将海量原始数据置于链下、摘要与元数据锚定上链，以低成本实现海上与船舶频谱数据的防篡改存证与事后追溯审计} \\
 		\cline{2-4}
+		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向溯源的可验证查询与认证数据结构} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人 \cite{XuZX19}，Wang 等人 \cite{WangXZXPP22}，Zhang 等人 \cite{ZhangXXTC19}，武沫旬等人 \cite{WuMX25}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于累加器与 Merkle 类认证数据结构支持轻节点验证查询完整性，在链上链下混合存储下兼顾验证效率与 Gas 开销} \\
 		\cline{2-4}
+		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{学习索引增强的轻量化可验证更新} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Kraska 等人 \cite{KraskaBCDP18}，Chang 等人 \cite{ChangLXLJ23}，谢晴晴等人 \cite{XieQQ23}，Xu 等人 \cite{XuHC18}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以学习索引替代树形结构并结合轻量化存储与共识单元编组，降低端侧索引维护与可验证更新的存储和共识开销} \\
 		\hline
 		
 	\end{tabular}
-	\caption{\kaishu{海杂波场景下有限算力端侧频谱数据智能存储技术
-	}}
+	\caption{\kaishu{海杂波场景下有限算力端侧频谱数据智能存储技术}}
 	\label{tab:resource_constrained_spectrum_data_management_related_work}
 \end{table}
+
+
 
 % B
 \textbf{频谱数据语义压缩与磁盘索引存储。}
