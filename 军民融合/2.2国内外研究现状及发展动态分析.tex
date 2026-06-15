@@ -286,18 +286,99 @@
 % B
 \textbf{xxx:}
 
-% C
-\textbf{xxx:}
+\textbf{频谱认知协同与分布式可信决策方法}：频谱认知协同与分布式可信决策方法：面向云边端异构网络、多节点协同感知和动态资源竞争场景，单一中心节点难以及时汇聚全局状态并完成低时延、高可靠决策，容易受到通信瓶颈、单点失效和信任不可验证等问题制约。认知协同与分布式可信决策方法通过多节点局部认知、跨节点信息交互、协同策略生成和可信验证机制，使系统能够在不依赖中心节点完全掌握全局信息的条件下形成可靠决策，并增强决策过程的可追溯性和结果可核验性。当前，相关研究主要可分为以下三类：
 
-% D
+（1）基于语义交互与推理复核的协同决策方法：此类方法侧重于利用智能体之间的语义通信、角色分工和推理反馈来提升复杂任务中的协同判断能力。AgentsCoMerge 面向匝道汇入场景构建了由场景观测与理解、层次化规划、智能体间通信和强化反思训练组成的协同决策框架，使多个网联自动驾驶车辆能够基于局部交通状态交换关键信息，并在连续交互中协调驾驶行为\cite{10976336}。LLM-SmartAudit 则将智能合约审计过程分解为代码分析、漏洞识别和报告生成等角色化任务，通过多智能体对话架构与 buffer-of-thought 机制维护审计过程中的中间判断和历史洞察，从而实现面向复杂漏洞识别的多轮分析与交叉验证\cite{11121619}。
+
+（2）基于策略学习与优化控制的协同决策方法：此类方法主要面向动态环境中的资源分配、路径规划、任务调度和群体控制问题，通过状态建模、策略学习、约束优化和分布式执行机制实现多节点协同行为生成。面向网络流量调度任务，TRPO 被用于构建信任域约束下的分布式策略学习机制，通过限制策略更新幅度提升调度过程的稳定性，并在不同流量负载和突发业务条件下降低链路拥塞与平均时延\cite{ren2025distributed}。在多 UAV 协同缓存网络中，相关研究将缓存决策、三维轨迹规划、功率分配和信道复用联合优化问题拆解为多个子问题，并分别利用 MAPPO 与 matching-DRL 进行求解，以提升内容命中率、系统吞吐量和低时延服务能力\cite{10412167}。针对多机器人系统中的竞争与协作并存问题，k-winner-take-all 机制、邻居共识通信和递归神经动力学求解器被结合用于分布式协调控制，使机器人能够在局部通信条件下完成任务选择、资源竞争和协同行为生成\cite{10521834}。
+
+（3）基于可信证据治理与共识验证的决策支撑方法：此类方法主要面向分布式协同决策中的输入不可靠、更新不可验和过程难追溯问题，通过证据筛选、数据清洗、参数融合和共识记录等机制，为多节点决策提供可信的数据基础与验证基础。在多源边缘视频分析场景中，Prioritized Information Bottleneck 框架基于信噪比、感兴趣区域和任务相关性筛选关键感知特征，并利用分布式在线学习过滤低价值消息，从而降低冗余传输对协同感知的影响\cite{10845862}。SPDC 将边缘服务器部署与分布式数据清洗联合建模，通过聚类部署和 Gossip 参数融合提升边缘数据清洗质量，为后续数据驱动决策提供更可靠的输入基础\cite{10930695}。COShard 将分片区块链共识与网络资源分配协同优化，通过动态分片、路由选择和带宽分配，在保障关键任务时延的同时提升链上协同吞吐能力\cite{11197552}。区块链赋能的联邦学习方法则利用数据本地化训练、链上模型更新验证和不可篡改记录，增强云边协同 IoT 场景中模型训练过程的隐私保护、抗攻击能力和可追溯性\cite{10849591}。
+
+
 \textbf{资源受限环境下频谱数据轻量化安全传输:}
-海上数据链带宽窄、易被侦听，端侧处理结果及高价值频谱数据须以最小开销实现安全回传。当前研究主要可划分为以下三类。
+在复杂海洋环境下，大量频谱传感器部署于低算力浮标节点与无人平台，需经由带宽受限、状态动态波动的无线信道向边缘计算节点汇聚感知数据。受感知节点计算资源匮乏、信道状态随机起伏、海量异构传感器跨域身份管理难度大三类约束叠加影响，传统依赖复杂密码运算的中心化安全传输方案难以直接落地。近年来，相关研究围绕轻量级安全传输技术展开系统探索，主要可划分为低算力节点轻量认证与密码协议、分布式信任协同与密钥管理、动态信道通信安全联合优化三个研究方向。
 
-（1）任务与语义驱动的选择性压缩传输方法。Joshi等人\cite{JoshiP26}面向无人机网络提出上下文感知的数字语义通信框架 DSC-UAV，仅传输任务相关语义特征，大幅压缩回传数据量；姜俊等人\cite{JiangJ25}提出差分动态压缩机制，依据数据价值动态调整传输频次与精度。
+（1） 面向低算力节点的轻量级认证与密码协议： 针对感知节点算力有限、难以承载高强度密码运算的问题，该方向研究从硬件级身份锚定与轻量化密码协议两方面切入，核心挑战在于在微控制器级算力约束下实现可信身份认证与数据安全防护。在硬件身份认证层面，Rullo 等人\cite{DBLP:journals/tdsc/RulloFVRDCLS25}提出基于PUF的标签认证架构，以芯片固有物理特征作为设备唯一身份标识，设计低交互开销的轻量级认证协议，在降低设备注册管理成本的同时压缩了攻击面；针对海洋信道干扰导致的响应稳定性问题，可结合BCH纠错码与模糊提取器在边缘辅助下完成响应重构，仅需节点执行哈希运算与基础解码操作即可实现硬件级可信认证。在轻量化密码协议层面，Zeng 等人\cite{DBLP:journals/tifs/ZengCZZH25}基于动态累加器与非交互零知识证明构建可撤销的跨域匿名认证方案，以简化交互流程实现跨域设备身份认证与非法节点撤销。
 
-（2）轻量级加密方法。Shafique等人\cite{Shafique22}结合位平面提取、混沌映射与离散小波变换设计面向无人机的抗噪轻量加密方案，在保证安全强度的同时显著缩短加解密时延；Sharma等人\cite{SharmaD21}将功能加密技术引入无人机异构网络，提供细粒度的访问授权能力。
+（2） 分布式信任协同与群组密钥管理： 随着感知节点规模扩张，点对点密钥协商与中心化身份管理模式会带来指数级增长的通信与运维开销，难以适配海洋广域部署场景，该方向的核心挑战在于构建高可扩展的分布式信任体系，降低大规模组网的安全管理成本。在跨域消息认证方面，Wang 等人\cite{DBLP:journals/tdsc/WangCZGZH24}针对边缘辅助跨域工业物联网场景，提出基于椭圆曲线密码的轻量级区块链消息认证方案，以边缘服务器作为认证中继，依托分布式账本维护跨域信任关系，全程不依赖双线性对运算即可保障消息的机密性、完整性与匿名性。在群组密钥管理方面，Hou 等人\cite{DBLP:journals/tdsc/HouPL26}提出基于区块链的轻量级物联网群组密钥管理方案，结合分层边缘架构与区块链不可篡改特性，实现大规模设备群组的密钥生成与分发自动化，可保障节点动态加入、退出时的前向与后向安全性。
 
-（3）物理层安全与隐蔽传输方法。郭振鑫\cite{GuoZX25}面向多无人机通信提出基于深度强化学习的抗干扰与反窃听传输策略，在不增加密码计算负担的前提下抑制敌方侦听。
+（3） 动态信道通信安全联合优化： 海洋无线链路具有强动态性，静态配置的安全策略无法适配所有信道工况，易出现安全资源浪费或传输失效的问题，该方向的核心挑战在于实现安全强度与传输效率的动态平衡。在分层共识架构层面，Zhu 等人\cite{DBLP:journals/jas/ZhuLLW25}提出基于改进PBFT与Raft的混合共识方案，通过拓扑感知的节点分组降低共识通信复杂度，以PBFT完成组间领导者身份验证，以密码校验增强日志复制安全性。在此基础上，动态信道感知驱动的自适应安全策略可进一步实现安全等级弹性调整，兼顾不同信道下的安全防护与传输连通性；针对海面遮挡导致的链路中断场景，还可结合逐跳身份认证与端到端加密构建多跳中继防护机制。此外，Tang 等人\cite{DBLP:journals/tifs/TangLSKZLYND25}提出的ROBY框架、Yang 等人\cite{DBLP:journals/tifs/YangMLLXKLD25}提出的多策略防御方案，其将信任机制从中心节点解耦至分布式共识的设计思路，也为频谱感知网络的边缘协同信任构建提供了理论借鉴。
+
+\begin{table}[htbp]\kaishu
+	\centering
+	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
+		\hline
+		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 轻量化边缘频谱数据认知模型}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于模型压缩与知识蒸馏的轻量化方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{MLD-Net \cite{ZhangX25}，ClST \cite{HouD24}，Baishya 等人 \cite{Baishya24}，孙妤等人 \cite{SunY26}，蒋婷等人 \cite{JiangT26}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过剪枝、量化与多粒度师生蒸馏，将大模型频谱认知能力迁移至端侧可承载的紧凑网络，以极小参数量保持高识别精度} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向低信噪比与小样本条件的鲁棒识别方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Jing 等人 \cite{JingZ24}，TFAF-Net \cite{MuS24}，IRelNet \cite{WuZ23}，姜鹏 \cite{JiangP23}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{融合注意力机制、度量学习与元学习，提升强杂波、样本稀缺条件下的辐射源识别判别力，已嵌入无人机/无人艇端侧平台} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向未知频谱目标的开集与开放世界识别方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Li 等人 \cite{LiT23}，Han 等人 \cite{HanZ25}，Krasnov 等人 \cite{Krasnov25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{突破闭集假设，引入专家知识与自监督机制，实现训练集外新型辐射源的拒识、发现与增量纳管} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 频谱知识驱动的自主决策与边缘在线学习}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{事件驱动的弹性推理与分级决策方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{BranchyNet \cite{Teerapittayanon16}，Pacheco 等人 \cite{Pacheco24}，Jia 等人 \cite{JiaH26}，E4 \cite{ZhangZ25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{依据输入难度动态调配算力，以早退机制与电压频率调节联合优化，在保持精度的同时显著压缩端侧推理时延与能耗} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{漂移感知的边缘在线学习与测试时自适应方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Uzlaner 等人 \cite{Uzlaner25}，RDumb \cite{Press23}，LightTune \cite{AliRE26}，杨张琪 \cite{YangZQ23}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以漂移检测按需触发轻量模型更新，规避持续自适应的高昂代价与长期性能崩塌，支撑动态环境下的增量学习} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{知识与语义驱动的频谱态势认知与决策方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等人 \cite{ZhangH25}，Hood 等人 \cite{Hood23}，姜俊等人 \cite{JiangJ25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以频谱知识图谱与语义态势统一组织多源测量与上下文信息，引导决策过程并支撑多平台在线知识演化} \\
+		\hline
+		
+				\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 频谱认知协同与分布式可信决策方法}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于语义交互与推理复核的协同决策方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{AgentsCoMerge \cite{10976336}，LLM-SmartAudit \cite{11121619}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过智能体语义通信、角色分工与推理反馈组织局部观测信息交互，在连续协同过程中形成多轮判断与交叉验证，提升复杂动态场景下的协同决策可靠性} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于策略学习与优化控制的协同决策方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{TRPO \cite{ren2025distributed}，多 UAV 协同缓存网络 \cite{10412167}，k-winner-take-all 分布式协调控制 \cite{10521834}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕资源分配、路径规划、任务调度与群体控制建立状态建模、策略学习和约束优化机制，实现多节点在局部通信条件下的分布式协同行为生成} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于可信证据治理与共识验证的决策支撑方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Prioritized Information Bottleneck \cite{10845862}，SPDC \cite{10930695}，COShard \cite{11197552}，区块链赋能的联邦学习方法 \cite{10849591}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向输入不可靠、更新不可验与过程难追溯问题，结合关键证据筛选、分布式数据清洗、参数融合和链上共识记录，为多节点协同决策提供可信数据基础与可验证支撑} \\
+		\hline
+
+		\setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{资源受限环境下频谱数据轻量化安全传输}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{轻量级安全传输方法} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Rullo 等人 \cite{DBLP:journals/tdsc/RulloFVRDCLS25}，Zeng 等人 \cite{DBLP:journals/tifs/ZengCZZH25}，Wang 等人 \cite{DBLP:journals/tdsc/WangCZGZH24}，Hou 等人 \cite{DBLP:journals/tdsc/HouPL26}，Zhu 等人 \cite{DBLP:journals/jas/ZhuLLW25}，Tang 等人 \cite{DBLP:journals/tifs/TangLSKZLYND25}，Yang 等人 \cite{DBLP:journals/tifs/YangMLLXKLD25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕轻量认证、分布式信任管理与动态信道安全优化，降低受限节点安全开销，支撑频谱感知数据的可信认证、安全汇聚与高效传输} \\
+		\hline
+
+		
+	\end{tabular}
+	\caption{\kaishu{面向海域自主侦测任务的边缘频谱智能处理方法总结}}
+	\label{tab:edge_spectrum_intelligent_processing_related_work}
+\end{table}
+
+
+
 
 尽管上述方法在模型轻量化、边缘自适应、可信协同与高效传输等方面取得了显著进展，但面向海杂波场景下的海域自主侦测任务，仍存在以下不足：（1）\textbf{端侧频谱认知能力碎片化，难以适应海杂波背景下的被动频谱观测}。现有轻量化方法聚焦于单一模型的压缩加速，鲁棒识别、未知目标发现与端侧部署各自独立、缺乏统一建模；且多在实验室数据或雷达回波域验证，未考虑海杂波与海况变化引起的频谱域偏移，跨场景部署时识别精度急剧退化。（2）\textbf{边缘在线学习缺乏知识驱动的触发机制与演化闭环}。现有测试时自适应方法依赖持续更新，其计算与能耗代价远超端侧承载能力，且长期运行易发生性能崩塌；模型更新的触发时机与更新对象缺乏频谱先验知识的引导，新发现目标的知识亦无法回馈知识库，难以支撑长航时任务中的持续认知演化。（3）\textbf{多平台协同侦测缺乏决策级的可信保障机制}。现有区块链无人机研究集中于身份认证与数据存证，仅能保证数据来源真实，未解决欺骗干扰与节点损毁条件下联合侦测判决的可信聚合问题；且经典共识协议面向稳定有线网络设计，在高动态、强对抗的海上自组网中难以兼顾开销与鲁棒性。（4）\textbf{安全传输与数据价值脱节，难以兼顾窄带链路下的时效与机密}。现有方案对全量数据统一加密回传，传输内容的筛选与传输过程的保密彼此割裂，缺乏价值驱动的选择性传输与轻量加密的协同设计，在带宽受限、敌方侦听的海上环境中传输效率与安全强度难以两全。
 
