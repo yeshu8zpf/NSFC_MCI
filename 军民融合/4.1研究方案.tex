@@ -265,9 +265,16 @@ $$
 
 % B
 
+\begin{figure}[t]\kaishu
+	\centering
+	\includegraphics[width=\textwidth]{fig/3B}
+	\caption{知识驱动的轻量化频谱信号识别与目标轨迹分析方法（研究内容3.B方案）}
+	\label{fig:3b}
+\end{figure}
+
 \textbf{B. 知识驱动的轻量化频谱信号识别与目标轨迹分析方法}
 
-本项目拟研究知识驱动的轻量化频谱信号识别与目标轨迹分析方法，整体框架如图\ref{fig:内容3-B}所示。
+本项目拟研究知识驱动的轻量化频谱信号识别与目标轨迹分析方法，整体框架如图 \ref{fig:3b}所示。
 
 针对海杂波残余背景下弱信号有无判别易受杂波起伏影响、固定门限虚警漏警严重的问题，本研究提出\textbf{基于轻量卷积网络的知识引导信号检测方法}。嫌疑无人船、非法小艇常使用低功率、突发短促的通信与遥控信号，淹没在随海况起伏的海杂波中，固定门限在大浪海况虚警频发、平静海况又易漏检。考虑到端侧需对宽频段频谱流持续实时检测，以轻量的 MobileNetV3 为骨干从时频谱 $\boldsymbol{X}$ 提取紧凑特征 $\boldsymbol{f}=\mathrm{MobileNet}(\boldsymbol{X})$；为使检测随海况自适应而非依赖固定门限，利用知识图谱提供的海况与频段占用先验构成的知识向量 $\boldsymbol{z}_{\mathrm{prior}}$ 对特征进行门控调制并判决信号有无：
 \begin{equation}\notag
