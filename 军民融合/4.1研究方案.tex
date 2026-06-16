@@ -59,15 +59,104 @@
 \begin{figure}[t]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1A}
-	\caption{\footnotesize 复杂海洋环境下电磁频谱信号时空耦合传播规律建模示意图（研究内容1.A）}
+	\caption{复杂海洋环境下电磁频谱信号时空耦合传播规律建模示意图}
 	\label{fig:1A}
 \end{figure}
 
 % B
 \textbf{1.B 基于干扰对消的微弱目标频谱特征增强方法}
 
-xxx
+本项目拟研究基于干扰对消的微弱目标频谱特征增强方法，重点解决强海杂波、同频辐射和平台运动残余共同作用下弱目标频谱特征被掩蔽的问题。该部分面向海警船船载频谱采集设备和端侧服务器即时处理需求，形成“多通道观测建模--参考干扰构造--目标保护型自适应对消--残余频谱增强”的技术路线。整体框架如图\ref{fig:1B}所示。
+\begin{figure}[htp]\kaishu
+	\centering
+	\includegraphics[width=\textwidth]{fig/1B}
+	\caption{基于干扰对消的微弱目标频谱特征增强方法}
+	\label{fig:1B}
+\end{figure}
 
+首先将船载频谱采集通道、阵列取样通道和可选无人机辅助采样统一表示为多通道观测向量：
+\begin{equation}\notag
+	\mathbf{x}_{k,f}
+	=
+	\mathbf{a}_s(\theta_s,f)s_{k,f}
+	+
+	\mathbf{A}_c(\Theta_c,f)\mathbf{c}_{k,f}
+	+
+	\mathbf{A}_i(\Theta_i,f)\mathbf{i}_{k,f}
+	+
+	\mathbf{n}_{k,f},
+\end{equation}
+其中，$k$ 表示时间帧，$f$ 表示频率单元，$s_{k,f}$ 为弱目标频谱分量，$\mathbf{c}_{k,f}$ 为海杂波分量，$\mathbf{i}_{k,f}$ 为同频或邻频人为干扰，$\mathbf{a}_s(\theta_s,f)$ 为目标方向导向矢量，$\mathbf{A}_c$ 和 $\mathbf{A}_i$ 分别描述海杂波散射角域和干扰到达角域。结合 1.A 中获得的海杂波谱宽、长尾参数和空间相关尺度，区分慢变海杂波背景、强同频干扰和短时目标扰动，为参考干扰构造提供先验。
+
+参考干扰构造采用“空间取样--抽头延时--权值合并”的结构。设第 $m$ 个取样通道在频率单元 $f$ 上的 $L$ 阶延时向量为
+\begin{equation}\notag
+	\mathbf{u}_{m,k,f}=
+	[x_{m,k,f},x_{m,k-1,f},\ldots,x_{m,k-L+1,f}]^{T},
+\end{equation}
+则参考信号提取回路的合并输出为
+\begin{equation}\notag
+	r_{k,f}=\sum_{m\in\mathcal{R}_{f}}\mathbf{q}_{m,f}^{H}\mathbf{u}_{m,k,f}
+	=\mathbf{q}_{f}^{H}\mathbf{u}_{k,f},
+\end{equation}
+其中，$\mathcal{R}_{f}$ 为由旁瓣取样通道、目标保护区域之外的邻近频带以及空域干扰主导方向组成的参考集合，$\mathbf{q}_{f}$ 为参考提取权值，$\mathbf{u}_{k,f}$ 为多通道延时取样向量。为降低目标泄漏，参考提取权值通过目标保护约束在线更新：
+\begin{equation}\notag
+	\mathbf{q}_{f}^{(t+1)}=
+	\mathbf{q}_{f}^{(t)}-
+	\mu_{1}\nabla_{\mathbf{q}_{f}^{*}}J_{r}(\mathbf{q}_{f}),
+\end{equation}
+\begin{equation}\notag
+	J_{r}=-\mathbb{E}\{|\mathbf{q}_{f}^{H}\mathbf{u}_{k,f}|^{2}\}
+	+\lambda_s|\mathbf{q}_{f}^{H}\mathbf{a}_{s,f}|^{2}
+	+\lambda_q\|\mathbf{q}_{f}\|_{2}^{2}.
+\end{equation}
+其中，第一项增强参考通道中的强海杂波和同频干扰能量，第二项惩罚目标方向泄漏，第三项约束权值幅度，避免海况突变时过度放大噪声。
+
+在干扰对消阶段，利用参考信号延时向量 $\mathbf{v}_{k,f}=[r_{k,f},r_{k-1,f},\ldots,r_{k-L+1,f}]^T$ 对主接收通道进行自适应抵消：
+\begin{equation}\notag
+	e_{k,f}=x_{0,k,f}-\mathbf{h}_{f}^{H}\mathbf{v}_{k,f},
+\end{equation}
+\begin{equation}\notag
+	\mathbf{h}_{f}^{(t+1)}=
+	\mathbf{h}_{f}^{(t)}+
+	\mu_{2}\frac{\mathbf{v}_{k,f}e_{k,f}^{*}}{\|\mathbf{v}_{k,f}\|_{2}^{2}+\delta},
+\end{equation}
+其中，$x_{0,k,f}$ 为主接收通道频谱采样，$\mathbf{h}_{f}$ 为对消权值，$\mu_2$ 为自适应步长，$\delta$ 为稳定项。在线运行时，根据残差功率、短时谱宽变化和目标特征保持度联合调整 $\mu_2$ 与窗口长度，使对消回路能够跟踪非平稳海杂波而不过度削弱弱目标。对于阵列通道可用的场景，进一步引入目标保护型空域权值：
+\begin{equation}\notag
+	\mathbf{w}_{f}^{\star}
+	=
+	\arg\min_{\mathbf{w}}
+	\mathbf{w}^{H}\left(\mathbf{R}_{ci}(f)+\epsilon\mathbf{I}\right)\mathbf{w},
+	\quad
+	\mathrm{s.t.}\ \mathbf{w}^{H}\mathbf{a}_s(\theta_s,f)=1,
+\end{equation}
+其中，$\mathbf{R}_{ci}(f)$ 为杂波与干扰协方差矩阵，$\epsilon\mathbf{I}$ 为对角加载项，用于缓解有限样本和杂波非均匀导致的协方差估计不稳定。
+
+对消后仍可能存在低速海杂波残留、旁瓣泄漏和热噪声，需要进一步增强目标频谱结构。设对消后的时频矩阵为 $\mathbf{Y}$，将残余谱图分解为慢变背景、目标候选稀疏成分和噪声项：
+\begin{equation}\notag
+	\min_{\mathbf{L},\mathbf{S}}
+	\|\mathbf{L}\|_{*}+\lambda\|\mathbf{S}\|_{1}+\rho\Phi(\mathbf{S}),
+	\quad
+	\mathrm{s.t.}\ \mathbf{Y}=\mathbf{L}+\mathbf{S}+\mathbf{E},
+\end{equation}
+其中，$\mathbf{L}$ 表示慢变残余杂波背景，$\mathbf{S}$ 表示目标候选稀疏成分，$\mathbf{E}$ 表示噪声和建模误差，$\Phi(\mathbf{S})$ 用于约束目标谱线的时间连续性、频率平滑性和空域一致性。进一步构造目标保护时频掩膜
+\begin{equation}\notag
+	M_{k,f}=\mathbb{I}\left(
+	\frac{|S_{k,f}|^2}{\widehat{P}_{c,k,f}+\widehat{P}_{n,k,f}+\epsilon}
+	>\eta_{k,f}
+	\right),
+	\quad
+	\widehat{S}_{k,f}=M_{k,f}Y_{k,f},
+\end{equation}
+其中，$\widehat{P}_{c,k,f}$ 和 $\widehat{P}_{n,k,f}$ 分别为残余杂波功率和噪声功率估计，$\eta_{k,f}$ 由海况等级、虚警约束和目标保护需求自适应确定。最终，以信杂噪比提升、特征保持和计算复杂度为联合准则优化参数：
+\begin{equation}\notag
+	\Theta^{\star}=\arg\max_{\Theta}
+	\left[
+	\Delta\mathrm{SINR}(\Theta)
+	-\alpha D_{\mathrm{feat}}(\Theta)
+	-\beta C_{\mathrm{comp}}(\Theta)
+	\right],
+\end{equation}
+其中，$\Theta$ 包括参考集合、抽头长度、步长、对角加载、分解权重、掩膜阈值和积累窗口等参数，$D_{\mathrm{feat}}$ 表示目标谱峰、带宽、调制边带和时频连续结构的失真度，$C_{\mathrm{comp}}$ 表示计算复杂度。通过上述方法，形成适配海警船端服务器即时处理需求的弱目标频谱增强结果，输出残余杂波估计、增强时频图、候选频段边界和特征保持度，为后续频谱事件判别、参数估计和端侧即时处理提供输入。
 
 % C
 \textbf{1.C. 基于多维联合表征的电磁频谱信号精确提取方法}
