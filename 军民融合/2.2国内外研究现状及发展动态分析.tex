@@ -9,9 +9,9 @@
 
 % A
 \textbf{复杂海洋环境下电磁频谱信号时空耦合传播规律建模:}
-复杂海洋环境下电磁频谱信号时空耦合传播规律建模涉及海面散射、海杂波统计、海气传播通道和多平台观测几何等多类因素。国外研究较早从 HF 与 VHF 海面回波机理出发，Barrick 建立了粗糙海面上 HF 与 VHF 传播与一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础\cite{Barrick1971RoughSeaPropagation}。在高分辨率海杂波统计建模方面，Jakeman 和 Pusey 提出的 K 分布散射模型以及 Ward 等关于海杂波散射、K 分布与雷达性能的系统研究，说明低掠射角海杂波具有明显非高斯长尾和海尖峰特征，平均功率模型难以解释弱目标可观测性变化\cite{Jakeman1978KDistribution,Ward2006SeaClutter}。近年来，国外研究逐步从经验统计模型转向复合高斯、多极化协方差和全波物理求解等方向，以提升模型对复杂海况和不同观测体制的适应性\cite{Ozgun2022FullWaveSeaClutter,Xie2022PolarimetricCompoundGaussian,Watts2022ChallengesSeaClutter}。
+复杂海洋环境下电磁频谱信号时空耦合传播规律建模涉及海面散射、海杂波统计、海气传播通道和多平台观测几何等多类因素。经典研究中，Ward 等系统总结海杂波散射、K 分布与雷达性能之间的关系，揭示低掠射角海杂波的非高斯长尾和海尖峰特征，是海杂波统计建模与弱目标可观测性分析的权威基础\cite{Ward2006SeaClutter}；Barrick 建立了粗糙海面上 HF 与 VHF 传播及一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础\cite{Barrick1971RoughSeaPropagation}。近年来，相关研究更多转向复合高斯、多极化协方差、非均匀非高斯杂波检测、双极化相干检测和跨场景鲁棒建模等方向，Xie 等面向复合高斯海杂波中的极化检测开展正则化协方差估计，Xue 等研究非均匀、非高斯海杂波中的雷达目标检测，Duan 等面向双极化相关海杂波中的小目标相干检测建立融合式自适应检测框架，Watts 则总结了海杂波建模在跨海况、跨频段和复杂目标背景下的主要挑战\cite{Xie2022PolarimetricCompoundGaussian,Xue2022PersymmetricSeaClutter,Duan2025FusionCoherent,Watts2022ChallengesSeaClutter}。这些研究表明，海杂波不能被简单视为平稳噪声，其统计长尾、极化相关和空间相关结构会直接改变微弱频谱成分的显现边界。
 
-国内在海杂波多普勒谱和海面微波散射方面形成了较系统的研究积累。Zhao 等基于 UHF 低掠射角现场数据，分析显著波高、风速、波向和入射角对海杂波 Doppler 频移与谱宽的影响，表明海况增强和观测几何变化会直接改变频谱背景形态\cite{Zhao2023UHFDopplerSeaClutter}。张金鹏等从 Bragg、白冠和破碎波等不同散射机制出发建立时变多普勒谱模型，指出短时谱不是稳定平均谱的简单截取，而会随散射机制占比变化呈现非平稳演化\cite{Zhang2018TimeVaryingDopplerSeaClutter}。姜文正等基于双尺度粗糙面散射模型研究微波海面散射场 Doppler 频移和谱宽，揭示极化、倾斜调制和遮蔽效应对频谱结构的影响\cite{Jiang2012MicrowaveSeaSurfaceDoppler}。在传播通道方面，ITU-R P.453 给出的无线电折射率表达为海气边界层传播建模提供标准依据，蒸发波导和表面波导研究进一步说明温湿压剖面会导致超视距传播、盲区漂移和远距离同频干扰\cite{ITURP453,Sit2021AtmosphericDuctingDL}。总体来看，国内外研究已从单一杂波强度建模扩展到海面散射、杂波统计和传播通道的多因素耦合建模，但面向海警船、无人机等多平台、低空近海、多目标场景的时空耦合传播规律仍缺少统一描述。
+在多普勒谱、海气通道和复杂传播背景方面，Xu 等面向高频天地波混合雷达，在海杂波背景下引入时间反演思想增强目标能量聚焦，体现了传播路径、海杂波背景和目标可观测性之间的耦合关系\cite{Xu2025HSSWRTR}。在传播通道方面，ITU-R P.453 给出的无线电折射率表达为海气边界层传播建模提供标准依据，温湿压剖面引起的折射率变化会进一步影响近海覆盖边界、盲区位置和远距离同频干扰风险\cite{ITURP453}。总体来看，国内外研究已从单一杂波强度建模扩展到海面散射、杂波统计和传播通道的多因素耦合建模，但面向海警船、无人机等多平台、低空近海、多目标场景的时空耦合传播规律仍缺少统一描述。
 
 \begin{table}[htbp]\kaishu
 	\centering
@@ -32,18 +32,18 @@
 			}
 		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海面散射与杂波统计联合表征} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Barrick \cite{Barrick1971RoughSeaPropagation}，Jakeman 和 Pusey \cite{Jakeman1978KDistribution}，Ward 等 \cite{Ward2006SeaClutter}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{揭示 Bragg 散射、一阶海杂波谱峰、非高斯长尾和海尖峰统计特征，为弱目标可观测性分析提供基础模型} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ward 等 \cite{Ward2006SeaClutter}，Barrick \cite{Barrick1971RoughSeaPropagation}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{系统刻画海杂波散射、K 分布长尾、一阶谱峰和粗糙海面传播机理，为弱目标可观测性分析提供经典模型} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{粗糙海面全波与极化统计建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ozgun 等 \cite{Ozgun2022FullWaveSeaClutter}，Xie 等 \cite{Xie2022PolarimetricCompoundGaussian}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从全波数值求解、复合高斯和多极化协方差角度刻画复杂海况、频段、极化和掠射角变化下的海面散射响应} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{复合高斯/极化海杂波建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xie 等 \cite{Xie2022PolarimetricCompoundGaussian}，Xue 等 \cite{Xue2022PersymmetricSeaClutter}，Duan 等 \cite{Duan2025FusionCoherent}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从复合高斯、极化协方差、非均匀非高斯杂波和双极化相关结构角度刻画弱目标显现条件下的杂波背景} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多普勒谱与海气传播通道建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhao 等 \cite{Zhao2023UHFDopplerSeaClutter}，张金鹏等 \cite{Zhang2018TimeVaryingDopplerSeaClutter}，ITU-R P.453 \cite{ITURP453}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析海况、风浪、散射机制和折射率剖面对 Doppler 频移、谱宽、传播损耗和覆盖边界的影响} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等 \cite{Xu2025HSSWRTR}，ITU-R P.453 \cite{ITURP453}，Watts \cite{Watts2022ChallengesSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{分析海况、风浪、观测几何、混合传播路径和折射率剖面对 Doppler 频移、谱宽、传播损耗和覆盖边界的影响} \\
 		\hline
 		
 		\multirow{3}{1.4cm}[-3.4em]{
@@ -60,13 +60,13 @@
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{空时自适应处理}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Melvin \cite{Melvin2004STAPOverview}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过阵列通道与时间维联合滤波抑制杂波脊和空间相关干扰，为目标保护型对消提供基础方法} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Melvin \cite{Melvin2004STAPOverview}，Sun 等 \cite{Sun2022GradientOrthogonalInterference}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过阵列通道与时间维联合滤波抑制杂波脊、空间相关干扰和正交结构干扰，为目标保护型对消提供基础方法} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{残余频谱特征增强}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Cai 等 \cite{Cai2021LearnedRPCA}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用低秩背景与稀疏异常分离增强弱目标谱峰、调制边带和短时连续轨迹} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{重尾杂波下残余特征增强}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Sangston 等 \cite{Sangston2012CoherentCGClutter}，De Maio 和 Orlando \cite{DeMaio2016SubspaceInterference}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{在重尾复合高斯杂波和结构化干扰条件下保持目标相干结构，为对消后弱目标谱峰和短时连续轨迹增强提供统计检测支撑} \\
 		\hline
 		
 		\multirow{3}{1.4cm}[-3.4em]{
@@ -101,13 +101,14 @@
 \textbf{基于干扰对消的微弱目标频谱特征增强方法:}
 海杂波干扰下微弱目标频谱特征增强的关键，是在海面强散射、同频辐射、平台运动残差和接收噪声共同作用下，抑制干扰背景并尽量保持目标信号的谱线、调制边带和短时连续结构。与一般通信抗干扰不同，海杂波具有显著的非高斯、非平稳和空时相关特征，且其谱宽、频移和海尖峰强度随海况、掠射角和平台姿态变化而变化，因此干扰对消方法需要同时利用海杂波统计先验、空间取样信息和目标保护约束。
 
-（1）海杂波先验驱动的干扰表征。面向非均匀海杂波和有限训练样本条件，Xie 等研究复合高斯海杂波下的极化雷达检测，利用正则化协方差估计提升有限样本条件下的杂波背景建模稳健性\cite{Xie2022PolarimetricCompoundGaussian}。Zhao 等基于 UHF 低掠射角现场数据分析海杂波 Doppler 频移和谱宽，指出显著波高、风速、波向和入射角会直接改变频谱背景结构\cite{Zhao2023UHFDopplerSeaClutter}。Watts 进一步总结海杂波建模在跨海况、跨频段和复杂目标环境下的挑战，说明单一经验模型难以支撑动态海况下的鲁棒对消\cite{Watts2022ChallengesSeaClutter}。这些研究表明，参考干扰构造应结合海况、谱宽、空间相关尺度和目标保护区域，而不能仅依赖固定邻频或固定门限。
+（1）海杂波先验驱动的干扰表征。面向非均匀海杂波和有限训练样本条件，Xie 等研究复合高斯海杂波下的极化雷达检测，利用正则化协方差估计提升有限样本条件下的杂波背景建模稳健性\cite{Xie2022PolarimetricCompoundGaussian}。Xue 等针对非均匀、非高斯海杂波中的目标检测构造中心对称约束检测方法，说明海杂波协方差结构和非高斯统计特征对虚警控制与弱目标显现具有直接影响\cite{Xue2022PersymmetricSeaClutter}。Duan 等面向双极化相关海杂波中的小目标相干检测问题，利用双极化通道相关结构增强目标与海杂波背景的区分能力\cite{Duan2025FusionCoherent}。Watts 进一步总结海杂波建模在跨海况、跨频段和复杂目标环境下的挑战，说明单一经验模型难以支撑动态海况下的鲁棒对消\cite{Watts2022ChallengesSeaClutter}。这些研究表明，参考干扰构造应结合海况、谱宽、空间相关尺度和目标保护区域，而不能仅依赖固定邻频或固定门限。
 
-（2）多通道自适应干扰对消。自适应噪声对消的基本思想是利用与干扰相关、与目标尽量不相关的参考输入，经自适应滤波估计干扰分量并从主通道抵消\cite{Widrow1975AdaptiveNoiseCancelling}；空时自适应处理则通过阵列通道和时间维联合滤波抑制杂波脊及空间相关干扰\cite{Melvin2004STAPOverview}。对于海警船船载频谱采集场景，这类思想可转化为“空间取样--抽头延时--权值合并--残差反馈”的两级处理结构：先由旁瓣取样通道、辅助天线或无人机协同采样形成干扰主导参考分量，再通过目标保护约束下的自适应权值更新完成主通道干扰抵消。然而，在强海杂波环境中，参考信号常受目标泄漏、平台姿态变化和训练样本污染影响，若缺少海况先验和目标保护机制，容易出现欠对消或过对消。
+（2）多通道自适应干扰对消。自适应噪声对消的基本思想是利用与干扰相关、与目标尽量不相关的参考输入，经自适应滤波估计干扰分量并从主通道抵消\cite{Widrow1975AdaptiveNoiseCancelling}；空时自适应处理则通过阵列通道和时间维联合滤波抑制杂波脊及空间相关干扰\cite{Melvin2004STAPOverview}。进一步地，结构化干扰下的子空间检测与正交干扰抑制研究，为“目标保护约束下的干扰对消”提供了可借鉴的统计判决框架\cite{Sun2022GradientOrthogonalInterference,DeMaio2016SubspaceInterference}。对于海警船船载频谱采集场景，这类思想可转化为“空间取样--抽头延时--权值合并--残差反馈”的两级处理结构：先由旁瓣取样通道、辅助天线或无人机协同采样形成干扰主导参考分量，再通过目标保护约束下的自适应权值更新完成主通道干扰抵消。然而，在强海杂波环境中，参考信号常受目标泄漏、平台姿态变化和训练样本污染影响，若缺少海况先验和目标保护机制，容易出现欠对消或过对消。
 
-（3）对消残余下的频谱特征增强。强干扰对消后，残余海杂波和热噪声仍会掩盖弱目标局部谱峰，因而需要在时频域继续增强目标结构。低秩背景与稀疏异常分离及其深度展开方法，为端侧实时背景分离和弱异常增强提供了可借鉴思路\cite{Cai2021LearnedRPCA}。面向海杂波场景，该类方法不能简单追求残余能量最小，而应同时约束目标谱峰、带宽、调制边带和短时连续轨迹的保持度，从而避免“强干扰被压低、弱目标也被抹除”的过对消问题。
+（3）对消残余下的频谱特征增强。强干扰对消后，残余海杂波和热噪声仍会掩盖弱目标局部谱峰，因而需要在时频域继续增强目标结构。Sangston 等针对重尾复合高斯杂波下的相干雷达目标检测建立可控虚警的统计检测框架，说明弱目标增强不能只压低残余能量，还需保持目标相干结构与杂波统计模型的一致性\cite{Sangston2012CoherentCGClutter}。面向海杂波场景，该类方法不能简单追求残余能量最小，而应同时约束目标谱峰、带宽、调制边带和短时连续轨迹的保持度，从而避免“强干扰被压低、弱目标也被抹除”的过对消问题。
 
 总体来看，现有工作为海杂波背景下的干扰对消和弱特征增强提供了重要基础，但仍存在三方面不足。第一，海杂波统计建模和自适应对消常相互割裂，谱宽、长尾参数、海况变化和目标保护约束尚未在同一框架中协同利用。第二，经典自适应对消和空时处理方法依赖相对稳定的参考通道和训练样本，而海警船近海观测中平台运动、海况突变和强同频辐射会导致参考信号不纯和协方差漂移。第三，残余频谱增强方法往往更关注背景抑制或异常突出，对弱目标谱峰、调制边带和短时连续结构的保持不足。因此，本项目需要研究物理先验约束下的多域联合干扰对消方法，形成兼顾杂波抑制、目标保护和端侧实时性的弱目标频谱特征增强机制。
+
 
 % C
 \textbf{基于多维联合表征的电磁频谱信号精确提取方法:}
