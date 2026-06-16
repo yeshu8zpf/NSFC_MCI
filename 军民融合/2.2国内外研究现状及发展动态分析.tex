@@ -118,11 +118,16 @@
 \textbf{频谱数据价值评估与量化模型:}
 在海警船端连续宽频段频谱监测场景下，原始 IQ 数据能够被长期留存，但连续频谱流中真正具有目标发现和相似检索价值的可疑事件高度稀疏。若对所有频谱片段或事件窗口均送入 AI 智能识别或写入向量索引，将导致推理资源浪费、向量索引冗余和相似检索效率下降。因此，频谱数据管理的前置环节在于建立轻量、可解释、可部署的数据价值评估模型，从连续频谱流中快速发现可疑事件，为后续 AI 智能识别触发和选择性事件入库提供依据。围绕数据价值评估与量化问题，现有研究大体可从模型贡献、信号状态和信息选择三个角度展开。
 
-（1）基于模型贡献的数据价值评估方法，主要从样本对模型训练或任务性能的影响出发，衡量不同数据样本的重要性。Ghorbani 等人\cite{GhorbaniZ19}提出 Data Shapley 方法，利用 Shapley value 对训练数据在模型性能中的边际贡献进行量化。Yoon 等人\cite{YoonAP20}提出基于强化学习的数据价值评估方法，通过数据价值估计器学习不同样本对目标任务性能的影响。Sener 等人\cite{SenerS18}从核心集选择角度构建主动学习方法，通过选择具有代表性的数据子集降低标注与训练开销。此类方法为数据价值建模和代表性样本选择提供了理论基础，但通常依赖离线训练或模型性能反馈，难以直接适配海警船端连续频谱流中的在线事件发现和实时精判触发需求。
 
-（2）基于信号状态的频谱价值判别方法，主要利用能量、协方差、历史状态和可信度等低成本特征判断频谱片段是否包含有效信号或异常变化。Zeng 等人\cite{ZengL09}基于统计协方差构建频谱感知算法，通过有限接收样本的协方差结构区分信号存在与噪声背景。Huang 等人\cite{HuangXWZ17}面向非协作频谱感知场景，引入历史感知数据挖掘机制，利用历史频谱状态提升频谱感知性能。在国内研究中，高鹏等人\cite{GaoLGLC18}提出基于可信度的双门限 DMM 协作频谱感知算法，通过可信度和双门限机制提升频谱状态判断的可靠性。此类方法计算开销较低，具备端侧部署基础，但多以固定片段或单次频谱状态判别为主，对短时突发、间歇重复和频点迁移等事件级频谱活动的上下文保持能力不足。
 
-（3）基于信息效用的数据选择方法，主要从传感数据质量、事件检测收益和状态估计增益等角度选择更有价值的数据或传感观测，减少资源受限条件下的无效采集与传输。Bisdikian 等人\cite{BisdikianKS13}围绕传感网络中的信息质量与信息价值进行建模，分析传感信息在决策过程中的效用差异。Bajovic 等人\cite{BajovicSX11}面向无线传感网络事件检测任务，利用 Kullback--Leibler 距离和 Chernoff 距离构建传感器选择准则，以提升有限观测条件下的检测性能。Shen 等人\cite{ShenV14}基于广义信息增益研究大规模传感网络中的传感器选择问题，通过选择信息贡献更高的观测降低目标跟踪误差。此类方法强调信息增益和观测选择，为频谱事件的价值排序提供了参考，但多数面向传感器或观测选择，尚未充分考虑连续频谱事件对 AI 精判、向量检索和后续取证复核的联合价值。
+（1）基于模型贡献的数据价值评估方法，主要从样本对模型训练、预测结果或任务性能的影响出发，衡量不同数据样本的重要性。Sim 等人\cite{SimXL22}系统总结了机器学习数据价值评估的基本构成、评价属性和开放挑战，为 Shapley value、影响函数和性能驱动的数据估值方法提供了统一分析框架。Jiang 等人\cite{JiangLZK23}提出 OpenDataVal 基准框架，集成多类数据价值评估算法与多种下游任务，用于比较不同样本价值估计方法在数据清洗、样本选择和模型性能提升中的效果。Park 等人\cite{ParkGILM23}提出 TRAK 数据归因方法，以可扩展方式估计训练样本对模型行为的影响，为大规模模型场景下的数据贡献分析提供了高效工具。此类方法为数据价值建模和代表性样本选择提供了理论基础，但多数依赖离线训练、模型性能反馈或目标模型影响估计，难以直接适配海警船端连续频谱流中的在线可疑事件发现和 AI 智能识别触发需求。
+
+（2）基于信号状态的频谱价值判别方法，主要利用能量分布、时频结构、历史状态和深度特征等低成本或可学习特征判断频谱片段是否包含有效信号或异常变化。Zhang 等人\cite{ZhangFKA21}面向共享频谱场景提出深度学习信号检测与分类方法，利用神经网络从频谱数据中学习可区分不同信号类型的特征表示，用于提升复杂共享频谱环境下的信号识别能力。Khalek 等人\cite{KhalekTH24}系统总结了机器学习驱动的认知无线电研究进展，指出机器学习已被广泛用于频谱感知、信号检测、动态频谱接入和无线网络自适应优化等任务。Abdelbaset 等人\cite{AbdelbasetKKHK24}进一步研究深度学习频谱感知方法，利用卷积神经网络提升认知无线电场景下的频谱占用识别能力。此类方法能够从信号状态和可学习特征中发现异常频谱活动，具备支撑端侧可疑事件发现的基础，但多以固定片段或单次频谱状态识别为主，对短时突发、间歇重复和频点迁移等事件级频谱活动的上下文保持能力不足。
+
+（3）基于信息效用的数据选择方法，主要从不确定性、多样性、覆盖性和信息增益等角度选择更有价值的数据样本或候选观测，减少资源受限条件下的无效处理与冗余索引。Saran 等人\cite{SaranYK0A23}提出面向深度神经网络的流式主动学习方法 VeSSAL，在样本到达时同时考虑不确定性与多样性，实现对连续数据流中高价值样本的在线选择。Yang 等人\cite{YangKM23}从可持续学习角度研究面向深度学习的数据高效核心集选择，通过选择具有代表性的训练子集降低大规模模型训练开销。Xia 等人\cite{XiaLZWWL24}研究带模型性能约束的精细化核心集选择问题，目标是在保证模型性能的前提下进一步压缩核心集规模，体现了代表性样本选择与资源开销控制之间的权衡。此类方法强调样本选择中的覆盖性、多样性和信息效用，为频谱事件的价值排序与选择性向量入库提供了参考，但多数面向通用数据集、标注预算或训练数据选择，尚未充分考虑连续频谱事件对 AI 智能识别触发、相似检索加速和后续取证复核的联合价值。
+
+
+
 
 
 
@@ -146,18 +151,20 @@
 			}
 		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于模型贡献的数据价值评估} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ghorbani 等人 \cite{GhorbaniZ19}，Yoon 等人 \cite{YoonAP20}，Sener 等人 \cite{SenerS18}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从样本对模型训练或任务性能的贡献出发，量化数据重要性，为数据价值建模和样本选择提供理论基础} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Sim 等人 \cite{SimXL22}，Jiang 等人 \cite{JiangLZK23}，Park 等人 \cite{ParkGILM23}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从样本对模型训练、预测结果或任务性能的影响出发，量化数据重要性，为数据价值建模和样本选择提供统一分析框架与评估基准} \\
+		
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于信号状态的频谱价值判别} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等人 \cite{ZengL09}，Huang 等人 \cite{HuangXWZ17}，高鹏等人 \cite{GaoLGLC18}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用协方差、历史频谱状态和可信度等低成本特征判断信号存在性与频谱状态可靠性，具备轻量端侧部署基础} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等人 \cite{ZhangFKA21}，Khalek 等人 \cite{KhalekTH24}，Abdelbaset 等人 \cite{AbdelbasetKKHK24}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用深度特征、时频结构与统计状态识别频谱异常活动，为端侧可疑事件发现提供基础支撑，但对事件级连续性建模能力有限} \\
+		
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于信息效用的数据选择} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Bisdikian 等人 \cite{BisdikianKS13}，Bajovic 等人 \cite{BajovicSX11}，Shen 等人 \cite{ShenV14}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从信息质量、事件检测收益和状态估计增益等角度选择高价值观测，减少资源受限条件下的冗余采集与无效传输} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Saran 等人 \cite{SaranYK0A23}，Yang 等人 \cite{YangKM23}，Xia 等人 \cite{XiaLZWWL24}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从不确定性、多样性与信息增益角度进行数据筛选，为频谱事件的在线选择与价值排序提供方法支撑} \\
 		\hline
 		
 		\multirow{3}{1.4cm}[-3.4em]{
@@ -193,17 +200,17 @@
 		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{链上链下协同的分层可信存证} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Freire 等人 \cite{FreireMNNS22}，王云涛等人 \cite{WangYT23}，Li 等人 \cite{LiHWWLC25}，林玮等人 \cite{LinW26}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将海量原始数据置于链下、摘要与元数据锚定上链，以低成本实现海上与船舶频谱数据的防篡改存证与事后追溯审计} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{将海量原始数据置于链下、摘要与元数据锚定上链，以低成本实现防篡改存证与事后追溯审计} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{面向溯源的可验证查询与认证数据结构} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人 \cite{XuZX19}，Wang 等人 \cite{WangXZXPP22}，Zhang 等人 \cite{ZhangXXTC19}，武沫旬等人 \cite{WuMX25}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于累加器与 Merkle 类认证数据结构支持轻节点验证查询完整性，在链上链下混合存储下兼顾验证效率与 Gas 开销} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于累加器与 Merkle 类认证结构支持轻节点验证查询完整性} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{学习索引增强的轻量化可验证更新} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Kraska 等人 \cite{KraskaBCDP18}，Chang 等人 \cite{ChangLXLJ23}，谢晴晴等人 \cite{XieQQ23}，Xu 等人 \cite{XuHC18}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{以学习索引替代树形结构并结合轻量化存储与共识单元编组，降低端侧索引维护与可验证更新的存储和共识开销} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{降低端侧索引维护与验证开销，实现高频更新下的可信管理} \\
 		\hline
 		
 	\end{tabular}
