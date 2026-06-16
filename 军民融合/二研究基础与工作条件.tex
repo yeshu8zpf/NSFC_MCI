@@ -31,7 +31,7 @@
 
 
 
-    （待补充）袁志民，
+    袁志民，中国人民解放军海军工程大学信息安全系密码系统工程教研室副主任，专业技术上校、讲师，国防科技大学系统工程专业工学博士。\textbf{长期从事通信安全、信息安全和密码工程等方面的教学与科研工作，在无线传感器网络安全、加权复杂网络抗毁性建模分析和密码系统工程等方向具有扎实的理论功底和丰富的工程实践能力。主持参与国家自然科学基金、国家863计划、国防173计划和装备综合研究等多项国家级与军队科研项目，主编通信、密码等教材10余部，参著《无线传感器网络安全与加权复杂网络抗毁性建模分析》等学术专著3部，在国内外学术期刊与国际会议上发表论文10余篇，授权国家发明专利10余项，获军队科技进步三等奖1项}。研究成果在通信与信息安全、密码工程及网络抗毁性等场景中得到实际验证与应用，\textcolor{red}{可为本项目中有限链路下频谱感知结果的轻量级安全传输、端侧频谱数据的可信存证与防篡改管理、多节点身份认证与分布式可信协同决策等任务提供关键技术基础。}
     }
 
     \vspace{0.3cm}
@@ -179,22 +179,26 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
 相控阵雷达谐波仿真示意图如图\ref{fig:RB_RS}所示，基于11行*11列面阵仿真，得到面阵主频方向图、面阵二次谐波方向图和面阵三次谐波方向图。通过仿真发现：相控阵雷达杂散辐射为随机分布，无方向性。
 
         \begin{figure}[h]
-            \centering   %居中放置
+           %居中放置
+
+\setlength{\subfigcapskip}{1em}
 
             \subfigure[
                 11行*11列面阵
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth}
+                \begin{minipage}{.48\linewidth}
                     \centering
                     \includegraphics{fig/ResearchBasic_RadarSimulate_a}
                 \end{minipage}
             }
+            \hfill
 \subfigure[
     杂乱仿真
 ] %为每个图片加上编号
 {
-    \begin{minipage}{\linewidth} %表示在该行所占空间的比例为0.4
+    \begin{minipage}{.48\linewidth}
+ %表示在该行所占空间的比例为0.4
         \centering
         \includegraphics{fig/ResearchBasic_RadarSimulate_b}
     \end{minipage}
@@ -206,22 +210,25 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
 雷达天线绕射电磁环境仿真如图\ref{fig:RB_ERS}所示。
 
         \begin{figure}[h]
-            \centering   %居中放置
+         %居中放置
+
+\setlength{\subfigcapskip}{1em}
 
             \subfigure[
                 两点间的绕射线
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth}
+                \begin{minipage}{.48\linewidth}
                     \centering
                     \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_a}
                 \end{minipage}
             }
+            \hfill
             \subfigure[
                 相控阵天线之间影响
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth} %表示在该行所占空间的比例为0.4
+                \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
                     \centering
                     \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_b}
                 \end{minipage}
@@ -245,13 +252,15 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
 利用发送端的信号和接收端的信号作为训练序列，采用线性模型和非线性模型进行干扰重构和对消，图\ref{fig:RB_M}是无干扰下线性模型和非线性模型建模效果
 
         \begin{figure}[h]
-            \centering   %居中放置
+            %居中放置
+
+\setlength{\subfigcapskip}{1em}
 
             \subfigure[
                 发射端频谱
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth}
+                \begin{minipage}{.48\linewidth}
                     \centering
                     \includegraphics{fig/ResearchBasic_Modeling_a}
                 \end{minipage}
@@ -260,7 +269,7 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
                 接收端信号频谱
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth} %表示在该行所占空间的比例为0.4
+                \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
                     \centering
                     \includegraphics{fig/ResearchBasic_Modeling_b}
                 \end{minipage}
@@ -278,13 +287,15 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
 
 
         \begin{figure}[h]
-            \centering   %居中放置
+              %居中放置
+
+\setlength{\subfigcapskip}{1em}
 
             \subfigure[
                 发射端频谱
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth}
+                \begin{minipage}{.48\linewidth}
                     \centering
                     \includegraphics{fig/ResearchBasic_InterferModeling_a}
                 \end{minipage}
@@ -293,7 +304,7 @@ eADR 的低开销原子持久性技术。该工作已发表在计算机并行体
                 接收端信号频谱
             ] %为每个图片加上编号
             {
-                \begin{minipage}{\linewidth} %表示在该行所占空间的比例为0.4
+                \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
                     \centering
                     \includegraphics{fig/ResearchBasic_InterferModeling_b}
                 \end{minipage}
