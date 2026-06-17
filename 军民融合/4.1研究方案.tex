@@ -17,7 +17,7 @@
 \begin{figure}[t]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1}
-	\caption{海杂波干扰下微弱电磁频谱信号传播规律分析与提取（研究内容1方案）}
+	\caption{海杂波干扰下微弱电磁频谱信号传播规律分析与提取}
 	\label{fig:solution1}
 \end{figure}
 % A
@@ -59,7 +59,7 @@
 \begin{figure}[t]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1A}
-	\caption{复杂海洋环境下电磁频谱信号时空耦合传播规律建模示意图}
+	\caption{复杂海洋环境下电磁频谱信号时空耦合传播规律建模}
 	\label{fig:1A}
 \end{figure}
 
@@ -164,7 +164,7 @@
 \begin{figure}[t]\kaishu
 \centering
 \includegraphics[width=\textwidth]{fig/研究方案1C.pdf}
-\caption{\footnotesize 基于多维联合表征的电磁频谱信号精确提取方法（研究内容1.C方案）}
+\caption{\footnotesize 基于多维联合表征的电磁频谱信号精确提取方法}
 \label{fig:4-1-C}
 \end{figure}
 
@@ -357,7 +357,7 @@
 \begin{figure}[t]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/solution3A}
-	\caption{面向电磁态势的频谱知识图谱构建与动态演化方法（研究内容3.A方案）}
+	\caption{面向电磁态势的频谱知识图谱构建与动态演化方法}
 	\label{fig}
 \end{figure}
 
@@ -407,7 +407,7 @@ z_{ik}>0
 \begin{figure}[t]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/3B}
-	\caption{知识驱动的轻量化频谱信号识别与目标轨迹分析方法（研究内容3.B方案）}
+	\caption{知识驱动的轻量化频谱信号识别与目标轨迹分析方法}
 	\label{fig:3b}
 \end{figure}
 
@@ -415,7 +415,8 @@ z_{ik}>0
 
 针对海杂波残余背景下需在算力受限的小型服务器上实时完成“有无判别—类型识别—轨迹研判”,而量化、蒸馏等压缩模型规模的传统轻量化路径难以兼顾多任务精度与端侧时效的矛盾,拟构建一种知识驱动的级联稀疏混合专家网络,将检测、识别、轨迹建模为结构异构的任务专家,以“大参数容量保证表达能力、推理时按需稀疏激活”实现推理层面的轻量化,其整体框架如图 \ref{fig:3b}所示:
 
-首先,由共享轻量主干对输入时频谱一次性提取通用特征 $\mathbf{f}$,并以频谱知识图谱的海况、频段占用与历史活动先验嵌入 $\mathbf{z}_{kg}$ 共同驱动门控:知识驱动的稀疏路由在当前任务 $m$ 的子专家中以 Top-1 方式选出唯一被激活者
+其中，先验嵌入 $\mathbf{z}_{kg}$ 来源于研究内容 3.1 构建并动态演化的电磁态势知识图谱——根据当前观测的海域、频段与时段检索对应局部子图，并将其聚合的海况统计、频段占用与历史活动模式编码为低维先验，供门控与各任务专家共享调用。首先,由共享轻量主干对输入时频谱一次性提取通用特征 $\mathbf{f}$,并以频谱知识图谱的海况、频段占用与历史活动先验嵌入 $\mathbf{z}_{kg}$ 共同驱动门控:知识驱动的稀疏路由在当前任务 $m$ 的子专家中以 Top-1 方式选出唯一被激活者
+
 \begin{equation}
 	k^{*}_{m}=\arg\max_{k}\big[\mathrm{Softmax}(\mathbf{W}_{m}[\mathbf{f};\mathbf{z}_{kg}])\big]_{k};
 \end{equation}
@@ -444,7 +445,7 @@ z_{ik}>0
 \begin{figure}[t]\kaishu
 \centering
 \includegraphics[width=\textwidth]{Fig/3.3算法图.pdf}
-\caption{\footnotesize 基于有限链路轻量安全传输与低延时确权的分布式可信协同决策方法（研究内容3.C方案）}
+\caption{基于有限链路轻量安全传输与低延时确权的分布式可信协同决策方法}
 \label{fig:3C}
 \end{figure}
 
@@ -478,7 +479,7 @@ z_{ik}>0
 \begin{figure}[htp]\kaishu
 	\centering
 	\includegraphics[width=0.8\textwidth]{fig/研究方案4}
-	\caption{海杂波场景电磁频谱数据智能处理原型系统验证（研究内容4方案）}
+	\caption{海杂波场景电磁频谱数据智能处理原型系统验证}
 	\label{fig:prototype_validation}
 \end{figure}
 
