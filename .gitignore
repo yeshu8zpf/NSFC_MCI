@@ -6,11 +6,4 @@
 *.log
 *.out
 main.pdf
-flatten_preview.ps1
 .claude/
-.lightest/
-文献调研/
-_preview.*
-_preview_flat.*
-*_standalone.*
-_devin_*
