@@ -25,7 +25,7 @@
 \textbf{1.A. 复杂海洋环境下电磁频谱信号时空耦合传播规律建模}
 
 本项目拟研究复杂海洋环境下电磁频谱信号时空耦合传播规律建模方法，围绕“海面散射--杂波统计--传播通道--可观测性”建立分层耦合技术路线。首先，以海警船近海低空观测几何为约束，建立海况、掠射角、极化方式、频段、天线高度和平台姿态等环境状态变量，分析其对海面散射强度、传播损耗和频谱展宽的共同影响。整体框架如图\ref{fig:1A}所示。海面散射层采用表面杂波雷达方程描述海杂波功率：
-\begin{equation}\notag
+\begin{equation}
 	P_c =
 	\frac{P_t G^2 \lambda^2}{(4\pi)^3 R^4}
 	\sigma^0 A_c ,
@@ -33,13 +33,13 @@
 其中，$\sigma^0$ 为归一化海面后向散射截面，$A_c$ 为海面照射单元面积。基于该表达，结合风速、浪高、浪向、掠射角和极化方式，分析海面粗糙散射强度随环境状态变化的规律，并进一步提取海杂波局部均值、海尖峰率和短时谱结构等背景参数。
 
 其次，针对低掠射角条件下接收频谱强度非单调起伏的问题，构建直达波与海面反射波叠加的多径传播模型。接收功率表示为
-\begin{equation}\notag
+\begin{equation}
 	P_r(d)=
 	P_{\mathrm{fs}}(d)
 	\left|1+\Gamma_p e^{-jk\Delta R}\right|^2 ,
 \end{equation}
 其中，$P_{\mathrm{fs}}(d)$ 为空间传播项，$\Gamma_p$ 为与极化、海水介电常数和掠射角相关的复反射系数，$\Delta R$ 为直达路径与海面反射路径差。通过该模型分析目标距离、天线高度、平台姿态和海面反射条件对相位起伏、深衰落位置和接收功率波动的影响。同时，引入无线电折射率和修正折射率：
-\begin{equation}\notag
+\begin{equation}
 	N=77.6\frac{P_{\mathrm{atm}}}{T}+3.73\times10^5\frac{e}{T^2},
 	\quad
 	M=N+0.157z ,
@@ -47,7 +47,7 @@
 其中，$P_{\mathrm{atm}}$、$T$、$e$ 和 $z$ 分别表示气压、绝对温度、水汽压和高度。基于该表达，刻画温湿压剖面、海温和蒸发波导对覆盖边界、超视距传播和异常频谱增强的影响。对海警船采集场景，进一步比较不同观测高度下修正折射率梯度变化对接收频谱稳定性的影响，识别由多径相消、波导捕获和粗糙海面散射共同造成的距离--频率可观测性起伏。
 
 最后，面向弱目标可观测性，建立海杂波统计与时频结构联合提取方法。将海杂波表示为复合高斯形式 $c=\sqrt{\tau}g$，其中 $\tau$ 表示慢变纹理，$g$ 表示快变散斑，用以刻画 K 分布长尾和海尖峰特征；同时根据短时功率谱 $S(f)$ 计算多普勒谱中心和谱宽：
-\begin{equation}\notag
+\begin{equation}
 	f_c=\frac{\int fS(f)\mathrm{d}f}{\int S(f)\mathrm{d}f},
 	\quad
 	B_\nu =
@@ -75,7 +75,7 @@
 \end{figure}
 
 首先将船载频谱采集通道、阵列取样通道和可选无人机辅助采样统一表示为多通道观测向量：
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{x}_{k,f}
 	=
 	\mathbf{a}_s(\theta_s,f)s_{k,f}
@@ -89,22 +89,22 @@
 其中，$k$ 表示时间帧，$f$ 表示频率单元，$s_{k,f}$ 为弱目标频谱分量，$\mathbf{c}_{k,f}$ 为海杂波分量，$\mathbf{i}_{k,f}$ 为同频或邻频人为干扰，$\mathbf{a}_s(\theta_s,f)$ 为目标方向导向矢量，$\mathbf{A}_c$ 和 $\mathbf{A}_i$ 分别描述海杂波散射角域和干扰到达角域。结合 1.A 中获得的海杂波谱宽、长尾参数和空间相关尺度，区分慢变海杂波背景、强同频干扰和短时目标扰动，为参考干扰构造提供先验。
 
 参考干扰构造采用“空间取样--抽头延时--权值合并”的结构。设第 $m$ 个取样通道在频率单元 $f$ 上的 $L$ 阶延时向量为
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{u}_{m,k,f}=
 	[x_{m,k,f},x_{m,k-1,f},\ldots,x_{m,k-L+1,f}]^{T},
 \end{equation}
 则参考信号提取回路的合并输出为
-\begin{equation}\notag
+\begin{equation}
 	r_{k,f}=\sum_{m\in\mathcal{R}_{f}}\mathbf{q}_{m,f}^{H}\mathbf{u}_{m,k,f}
 	=\mathbf{q}_{f}^{H}\mathbf{u}_{k,f},
 \end{equation}
 其中，$\mathcal{R}_{f}$ 为由旁瓣取样通道、目标保护区域之外的邻近频带以及空域干扰主导方向组成的参考集合，$\mathbf{q}_{f}$ 为参考提取权值，$\mathbf{u}_{k,f}$ 为多通道延时取样向量。为降低目标泄漏，参考提取权值通过目标保护约束在线更新：
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{q}_{f}^{(t+1)}=
 	\mathbf{q}_{f}^{(t)}-
 	\mu_{1}\nabla_{\mathbf{q}_{f}^{*}}J_{r}(\mathbf{q}_{f}),
 \end{equation}
-\begin{equation}\notag
+\begin{equation}
 	J_{r}=-\mathbb{E}\{|\mathbf{q}_{f}^{H}\mathbf{u}_{k,f}|^{2}\}
 	+\lambda_s|\mathbf{q}_{f}^{H}\mathbf{a}_{s,f}|^{2}
 	+\lambda_q\|\mathbf{q}_{f}\|_{2}^{2}.
@@ -112,16 +112,16 @@
 其中，第一项增强参考通道中的强海杂波和同频干扰能量，第二项惩罚目标方向泄漏，第三项约束权值幅度，避免海况突变时过度放大噪声。
 
 在干扰对消阶段，利用参考信号延时向量 $\mathbf{v}_{k,f}=[r_{k,f},r_{k-1,f},\ldots,r_{k-L+1,f}]^T$ 对主接收通道进行自适应抵消：
-\begin{equation}\notag
+\begin{equation}
 	e_{k,f}=x_{0,k,f}-\mathbf{h}_{f}^{H}\mathbf{v}_{k,f},
 \end{equation}
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{h}_{f}^{(t+1)}=
 	\mathbf{h}_{f}^{(t)}+
 	\mu_{2}\frac{\mathbf{v}_{k,f}e_{k,f}^{*}}{\|\mathbf{v}_{k,f}\|_{2}^{2}+\delta},
 \end{equation}
 其中，$x_{0,k,f}$ 为主接收通道频谱采样，$\mathbf{h}_{f}$ 为对消权值，$\mu_2$ 为自适应步长，$\delta$ 为稳定项。在线运行时，根据残差功率、短时谱宽变化和目标特征保持度联合调整 $\mu_2$ 与窗口长度，使对消回路能够跟踪非平稳海杂波而不过度削弱弱目标。对于阵列通道可用的场景，进一步引入目标保护型空域权值：
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{w}_{f}^{\star}
 	=
 	\arg\min_{\mathbf{w}}
@@ -132,14 +132,14 @@
 其中，$\mathbf{R}_{ci}(f)$ 为杂波与干扰协方差矩阵，$\epsilon\mathbf{I}$ 为对角加载项，用于缓解有限样本和杂波非均匀导致的协方差估计不稳定。
 
 对消后仍可能存在低速海杂波残留、旁瓣泄漏和热噪声，需要进一步增强目标频谱结构。设对消后的时频矩阵为 $\mathbf{Y}$，将残余谱图分解为慢变背景、目标候选稀疏成分和噪声项：
-\begin{equation}\notag
+\begin{equation}
 	\min_{\mathbf{L},\mathbf{S}}
 	\|\mathbf{L}\|_{*}+\lambda\|\mathbf{S}\|_{1}+\rho\Phi(\mathbf{S}),
 	\quad
 	\mathrm{s.t.}\ \mathbf{Y}=\mathbf{L}+\mathbf{S}+\mathbf{E},
 \end{equation}
 其中，$\mathbf{L}$ 表示慢变残余杂波背景，$\mathbf{S}$ 表示目标候选稀疏成分，$\mathbf{E}$ 表示噪声和建模误差，$\Phi(\mathbf{S})$ 用于约束目标谱线的时间连续性、频率平滑性和空域一致性。进一步构造目标保护时频掩膜
-\begin{equation}\notag
+\begin{equation}
 	M_{k,f}=\mathbb{I}\left(
 	\frac{|S_{k,f}|^2}{\widehat{P}_{c,k,f}+\widehat{P}_{n,k,f}+\epsilon}
 	>\eta_{k,f}
@@ -148,7 +148,7 @@
 	\widehat{S}_{k,f}=M_{k,f}Y_{k,f},
 \end{equation}
 其中，$\widehat{P}_{c,k,f}$ 和 $\widehat{P}_{n,k,f}$ 分别为残余杂波功率和噪声功率估计，$\eta_{k,f}$ 由海况等级、虚警约束和目标保护需求自适应确定。最终，以信杂噪比提升、特征保持和计算复杂度为联合准则优化参数：
-\begin{equation}\notag
+\begin{equation}
 	\Theta^{\star}=\arg\max_{\Theta}
 	\left[
 	\Delta\mathrm{SINR}(\Theta)
@@ -278,27 +278,27 @@
 % A
 
 针对频谱数据体量庞大、价值分布不均且全量上链开销过高的问题，本课题研究\textbf{事件驱动的链上链下分层存证与动态摘要机制}。首先，按取证价值将频谱数据分层差异化存储：体量可达每秒数 GB 的原始 IQ 数据与压缩向量特征链下存储、仅上链内容哈希与存储指针，事件窗口片段上链细粒度摘要，采集元数据与操作日志直接轻量化上链；并结合事件窗口与自监督价值评估得分，以双阈值将记录分为高、低两档，同级别事件依次上链，低价值事件可被高价值事件抢占式上链、纯海杂波背景段不上链，将稀疏有价值样本与海量海杂波噪声背景区分对待。其次，为兼顾防篡改与可检索，对每条记录生成多模复合摘要：
-\begin{equation}\notag
+\begin{equation}
 	d_i=\left(H_c(r_i),\, h_{\mathrm{lsh}}(\psi_i),\, m_i\right),
 \end{equation}
 其中，$H_c(\cdot)$ 表示强抗碰撞内容哈希（SHA-256 或国密 SM3）用于防篡改校验，$\psi_i$ 表示记录的时频特征，$h_{\mathrm{lsh}}(\cdot)$ 表示对 $\psi_i$ 的局部敏感哈希用于抗噪相似比对，$m_i$ 表示采集元数据。进一步，对事件窗口 $W$ 内记录以有序默克尔树聚合，并将窗口根作为聚合摘要上链：
-\begin{equation}\notag
+\begin{equation}
 	D_W=\mathrm{SMTRoot}\!\left(\{d_i\mid r_i\in W\}\right),\qquad D'=\mathrm{Update}(D,e_t),
 \end{equation}
 其中，$e_t=(\mathrm{op},\mathrm{id},\Delta)$ 表示增、删、改事件，更新仅需沿受影响叶子到根重算 $O(\log n)$ 个节点；取证时提供记录摘要 $d_i$ 及其认证路径 $\pi_i$，即可对窗口根验证其归属与未被篡改，解决聚合后单条记录的可追溯问题。最后，设计适配海上弱网的异步上链协议，端侧采集后先写本地日志并按价值优先级入队、链路可用时批量打包提交并为每笔分配单调序号，断链恢复后按序号断点续传，从而在弱网环境下保证端侧采集不被链路阻塞、链上证据不丢失。
 
 针对多源频谱信息关联复杂、高价值证据查询定位与取证溯源困难的问题，本课题提出\textbf{结合频谱特征的可验证分级索引构建方法}。首先，利用存证阶段生成的记录摘要 $d_i$ 及其元数据 $m_i$，将记录标识 $id_i$、可信摘要 $d_i$ 与检索属性联合构建索引项。其中，$m_i$ 包含时段、频段、观测节点、调制样式和事件类型等信息。针对精确证据定位需求，按"时段→频段→节点→制式/事件"由粗到细构建多维分级索引。其中，时段与频段属于连续范围型属性，采用 B+树组织以支持高效区间检索；节点、调制样式及事件类型属于离散枚举型属性，采用倒排结构组织以支持快速等值匹配。各层内部节点同时维护子节点的聚合哈希摘要，使索引树兼具默克尔认证能力，查询结果可附带从叶到根的哈希路径作为真实性与完整性证明。与此同时，利用摘要中的局部敏感哈希指纹 $h_{\mathrm{lsh}}(\psi_i)$ 构建频谱相似检索索引，实现历史频谱事件的快速关联与溯源分析。由此形成“结构化属性检索+频谱相似检索”的双路径协同机制：前者支持按时段、频段、观测节点及信号类型等条件进行多维组合范围查询，实现高价值证据快速定位；后者支持输入任意频谱波形或频谱片段，通过相似指纹匹配快速回溯历史相似事件及关联记录。其次，在查询匹配获得候选结果集 $C$ 的同时，同步生成体积受控的验证对象：
-\begin{equation}\notag
+\begin{equation}
 	VO_C=\left(\mathrm{MPath}(C),\, \mathrm{ABF}(T,Q)\right),
 \end{equation}
 其中，$\mathrm{MPath}(C)$ 表示候选结果对应的默克尔认证路径，用于证明查询结果真实存在且未被篡改；$\mathrm{ABF}(T,Q)$ 表示与查询条件相关的聚合布隆过滤器，用于证明不存在被遗漏的满足条件记录。最终，查询结果可结合链上窗口根摘要进行一致性验证，在返回目标证据的同时提供可复核的真实性与完整性证明；并通过默克尔路径裁剪与聚合布隆压缩降低验证对象规模，支撑海上弱网环境下高价值频谱证据的快速定位、可信查询与可验证取证。
 
 针对端侧弱算力、弱网下查询既要高效又要可信、且索引需随频谱数据高频变化持续维护的问题，本课题探讨\textbf{基于学习索引的高效可验证查询与索引--摘要协同更新优化机制}。首先，针对频谱记录在时段与频段上的可学习分布，训练学习索引模型将查询定位由逐级遍历转化为模型预测后小范围探查：
-\begin{equation}\notag
+\begin{equation}
 	\widehat{pos}=M(f),\qquad C=\mathrm{Probe}\!\left(T,\left[\widehat{pos}-\varepsilon,\ \widehat{pos}+\varepsilon\right]\right),
 \end{equation}
 其中，$M(\cdot)$ 表示学习索引模型，$\widehat{pos}$ 为预测位置，$\varepsilon$ 为探查区间偏差。其次，将查询、结果、验证对象与链上摘要状态进行一致性校验：
-\begin{equation}\notag
+\begin{equation}
 	b=\mathrm{Verify}\!\left(Q,C,VO_C,D_{\mathrm{chain}}\right),
 \end{equation}
 其中，$D_{\mathrm{chain}}$ 表示当前链上摘要状态，$\mathrm{Verify}(\cdot)$ 同时校验结果的正确性（由默克尔存在性证明保证）与完整性（由聚合布隆非遗漏证明保证），当 $b=0$ 时即定位被篡改或丢失的频谱记录；并沿操作日志重建“采集--压缩--入库--检索”流转链路、结合默克尔包含证明追溯至具体事件窗口与采集设备，配合编队多节点的拜占庭容错共识，在部分节点数据异常时仍可经多数一致维护整体可信，形成抗抵赖、可审计的全生命周期可信追溯。最后，针对高频更新采用冷热分层协同更新，一次写入在单遍历中同步更新默克尔路径、布隆过滤器与学习索引参数，对转入新海域或新频段引起的模型概念漂移仅作阈值触发的局部增量再训练而非全量重训，在降低端侧维护开销的同时保持高效可验证查询与防篡改追溯。
@@ -417,15 +417,15 @@ $$
 针对海杂波残余背景下需在算力受限的小型服务器上实时完成“有无判别—类型识别—轨迹研判”,而量化、蒸馏等压缩模型规模的传统轻量化路径难以兼顾多任务精度与端侧时效的矛盾,拟构建一种知识驱动的级联稀疏混合专家网络,将检测、识别、轨迹建模为结构异构的任务专家,以“大参数容量保证表达能力、推理时按需稀疏激活”实现推理层面的轻量化,其整体框架如图 \ref{fig:3b}所示:
 
 首先,由共享轻量主干对输入时频谱一次性提取通用特征 $\mathbf{f}$,并以频谱知识图谱的海况、频段占用与历史活动先验嵌入 $\mathbf{z}_{kg}$ 共同驱动门控:知识驱动的稀疏路由在当前任务 $m$ 的子专家中以 Top-1 方式选出唯一被激活者
-\begin{equation}\notag
+\begin{equation}
 	k^{*}_{m}=\arg\max_{k}\big[\mathrm{Softmax}(\mathbf{W}_{m}[\mathbf{f};\mathbf{z}_{kg}])\big]_{k};
 \end{equation}
 级联门控按“检测→识别→轨迹”逐级判定本阶段是否触发
-\begin{equation}\notag
+\begin{equation}
 	b_{m}=\mathbb{1}\!\left[\,b_{m-1}=1 \wedge \rho_{m-1}>\tau_{m-1}\,\right];
 \end{equation}
 被激活子专家在门控控制下给出该阶段输出并作为下一阶段输入
-\begin{equation}\notag
+\begin{equation}
 	\mathbf{o}_{m}=b_{m}\,E_{m,k^{*}_{m}}(\mathbf{f},\mathbf{z}_{kg}).
 \end{equation}
 其中,$m\in\{\text{检测},\text{识别},\text{轨迹}\}$ 为任务阶段,$\mathbf{W}_{m}$ 为门控参数,$E_{m,k^{*}_{m}}$ 为被激活子专家,$b_{m}\in\{0,1\}$ 为级联门控,$\rho_{m-1}$、$\tau_{m-1}$ 为上一阶段置信度与阈值(检测为首阶段恒激活)。由此绝大多数海杂波背景窗口在检测阶段即早退,单次推理仅计算被触发的少量专家,在低算力下保障实时性。
