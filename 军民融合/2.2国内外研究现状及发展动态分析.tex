@@ -12,11 +12,11 @@
 \textbf{电磁频谱信号传播规律:}
 围绕海域电磁频谱信号传播规律，现有研究大体可从海面散射与杂波统计联合表征、复合高斯/极化海杂波建模、多普勒谱与海气传播通道建模三个角度展开。
 
-（1）海面散射与杂波统计联合表征。Ward 等人\cite{Ward2006SeaClutter}系统总结海杂波散射、K 分布与雷达性能之间的关系，揭示低掠射角海杂波的非高斯长尾和海尖峰特征，是海杂波统计建模与弱目标可观测性分析的权威基础。Barrick 等人\cite{Barrick1971RoughSeaPropagation}建立了粗糙海面上高频（HF）与甚高频（VHF）传播及一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础。
+（1）海面散射与杂波统计联合表征。Rosenberg等人\cite{Rosenberg2021RadarSeaClutterBook}系统总结海杂波建模、统计分布和对海目标检测方法。Watts等人\cite{Watts2022ChallengesSeaClutter}进一步讨论跨海况、跨频段和复杂观测几何下海杂波模型的鲁棒性挑战，说明海杂波统计长尾、海尖峰和空间相关结构会直接影响弱目标可观测性。
 
-（2）复合高斯/极化海杂波建模。近年来，相关研究更多转向复合高斯、多极化协方差、非均匀非高斯杂波检测和双极化相干检测等方向。Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}面向复合高斯海杂波中的极化检测开展正则化协方差估计，提升有限样本条件下的杂波背景建模稳健性。Xue 等人\cite{Xue2022PersymmetricSeaClutter}研究非均匀、非高斯海杂波中的雷达目标检测，说明海杂波协方差结构和非高斯统计特征对虚警控制具有直接影响。Duan 等人\cite{Duan2025FusionCoherent}面向双极化相关海杂波中的小目标相干检测建立融合式自适应检测框架，利用双极化通道相关结构增强目标与海杂波背景的区分能力。
+（2）复合高斯/极化海杂波建模。近年来，相关研究更多转向复合高斯、多极化协方差、非均匀非高斯杂波检测和双极化相干检测等方向。Xie等人\cite{Xie2022PolarimetricCompoundGaussian}面向复合高斯海杂波中的极化检测开展正则化协方差估计，提升有限样本条件下的杂波背景建模稳健性。Xue等人\cite{Xue2022PersymmetricSeaClutter}研究非均匀、非高斯海杂波中的雷达目标检测，说明海杂波协方差结构和非高斯统计特征对虚警控制具有直接影响。Duan等人\cite{Duan2025FusionCoherent}面向双极化相关海杂波中的小目标相干检测建立融合式自适应检测框架，利用双极化通道相关结构增强目标与海杂波背景的区分能力。
 
-（3）多普勒谱与海气传播通道建模。Xu 等人\cite{Xu2025HSSWRTR}面向高频天地波混合雷达，在海杂波背景下引入时间反演思想增强目标能量聚焦，体现了传播路径、海杂波背景和目标可观测性之间的耦合关系。ITU-R P.453\cite{ITURP453} 给出的无线电折射率表达为海气边界层传播建模提供标准依据，温湿压剖面引起的折射率变化会进一步影响近海覆盖边界、盲区位置和远距离同频干扰风险。Watts 等人\cite{Watts2022ChallengesSeaClutter}进一步总结海杂波建模在跨海况、跨频段和复杂目标背景下的主要挑战，指出单一经验模型难以支撑动态海况下的鲁棒表征。
+（3）多普勒谱与海气传播通道建模。Xu等人\cite{Xu2025HSSWRTR}面向高频天地波混合雷达，在海杂波背景下引入时间反演思想增强目标能量聚焦，体现了传播路径、海杂波背景和目标可观测性之间的耦合关系。ITU-R P.453\cite{ITURP453} 给出的无线电折射率表达为海气边界层传播建模提供标准依据，温湿压剖面引起的折射率变化会进一步影响近海覆盖边界、盲区位置和远距离同频干扰风险。
 
 
 \begin{table}[htbp]\kaishu
@@ -38,8 +38,8 @@
 			}
 		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海面散射与杂波统计联合表征} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ward 等人\cite{Ward2006SeaClutter}，Barrick 等人\cite{Barrick1971RoughSeaPropagation}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{刻画 K 分布长尾和一阶谱峰，支撑海杂波散射与传播机理分析} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Rosenberg 等人\cite{Rosenberg2021RadarSeaClutterBook}，Watts 等人\cite{Watts2022ChallengesSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{系统刻画海杂波建模、统计长尾、海尖峰和目标检测难点，支撑海杂波散射与传播机理分析} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{复合高斯/极化海杂波建模} 
@@ -48,7 +48,7 @@
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多普勒谱与海气传播通道建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人\cite{Xu2025HSSWRTR}，ITU-R P.453\cite{ITURP453}，Watts 等人\cite{Watts2022ChallengesSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人\cite{Xu2025HSSWRTR}，ITU-R P.453\cite{ITURP453}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{结合时间反演、折射率模型和挑战分析，刻画多普勒谱与海气传播影响} \\
 		\hline
 		
@@ -62,14 +62,14 @@
 				
 			}
 		}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海杂波先验与参考构造}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}，Xue 等人\cite{Xue2022PersymmetricSeaClutter}，Duan 等人\cite{Duan2025FusionCoherent}，Watts 等人\cite{Watts2022ChallengesSeaClutter}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{结合极化协方差、非高斯统计和双极化相关结构，构造海杂波先验参考} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{结构干扰与目标保护建模}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Rong 等人\cite{Rong2022ClutterFreeTraining}，Guo 等人\cite{Guo2024PersymmetricSubspaceSeaClutter}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用无杂波训练样本、中心对称结构和结构化干扰模型，构造目标保护约束下的干扰参考与判决统计} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{自适应对消与残余增强}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Widrow 等人\cite{Widrow1975AdaptiveNoiseCancelling}，Melvin 等人\cite{Melvin2004STAPOverview}，Sun 等人\cite{Sun2022GradientOrthogonalInterference}，Sangston 等人\cite{Sangston2012CoherentCGClutter}，De Maio 等人\cite{DeMaio2016SubspaceInterference}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过自适应滤波、空时联合处理和子空间检测，抑制干扰并保持目标相干结构} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Sun 等人\cite{Sun2022GradientOrthogonalInterference}，De Maio 等人\cite{DeMaio2016SubspaceInterference}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过正交干扰抑制、子空间检测和目标保护约束，抑制强干扰并保持目标相干结构} \\
 		\hline
 		
 		\multirow{3}{1.4cm}[-3.4em]{
@@ -80,19 +80,19 @@
 				多维联合表征精确提取
 			}
 		}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于统计特征解析的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{杨洪娟等人\cite{Yang2022JointFeature}，Shi 等人\cite{Shi2025SDPSeaClutter}，刘剑锋等人\cite{Liu2025HOCCSS}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用高阶累积量与星座图聚类特征、对称点模式图像特征和压缩重构中的四阶时序相关性提升信号区分与感知能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于解析统计特征的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等人\cite{Zeng2009EVD}，Tekbiyik 等人\cite{Tekbiyik2021SCF}，闫文康等人\cite{Yan2021WaveletHOC}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用特征值、循环谱和高阶统计量，提取低信噪比下可判别特征} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于时频结构特征的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{李世通等人\cite{Li2022RadarTFHOS}，Wu 等人\cite{Wu2023BIWVD}，Jiang 等人\cite{Jiang2022LPI}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用时频图像与高次频谱特征、双三次插值魏格纳-维尔分布和局部密集连接网络提升低信噪比下信号识别能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等人\cite{Zhang2016TFD}，Akyon 等人\cite{Akyon2018FFCNN}，Liu 等人\cite{Liu2019SeaClutterHF}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时频分布、脉内调制和高维特征，增强非平稳信号结构表达} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于数据驱动表征学习的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Cai 等人\cite{Cai2022Transformer}，程风云等人\cite{Cheng2024SignalEnhancement}，杨静雅等人\cite{Yang2023CNNTransformerAMC}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过自注意力网络和卷积神经网络与自注意力网络融合架构提升复杂条件下信号表征与识别能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{O'Shea 等人\cite{OShea2016CRMN,OShea2016URL}，Cai 等人\cite{Cai2022CLCNN}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于原始同相正交（IQ）表征和对比学习，提升复杂噪声下调制特征泛化能力} \\
 		\hline
 		
 	\end{tabular}
@@ -103,11 +103,11 @@
 % B
 
 \textbf{目标频谱特征增强:}
-围绕海杂波干扰下的目标频谱特征增强问题，现有研究大体可从海杂波先验与参考构造、自适应对消与残余增强两个角度展开。
+围绕海杂波干扰下的目标频谱特征增强问题，现有研究大体可从结构干扰与目标保护建模、自适应对消与残余增强两个角度展开。
 
-（1）海杂波先验与参考构造。面向非均匀海杂波和有限训练样本条件，Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}通过正则化协方差估计提升复合高斯海杂波背景建模稳健性。Xue 等人\cite{Xue2022PersymmetricSeaClutter}利用中心对称约束处理非均匀、非高斯海杂波检测问题。Duan 等人\cite{Duan2025FusionCoherent}利用双极化通道相关结构增强小目标与海杂波背景的区分能力。Watts 等人\cite{Watts2022ChallengesSeaClutter}指出跨海况、跨频段和复杂目标条件下的海杂波鲁棒建模仍具挑战。
+（1）结构干扰与目标保护建模。面向船载或无人机协同采集中的参考样本污染、结构化同频干扰和非均匀海杂波问题，Rong 等人\cite{Rong2022ClutterFreeTraining}利用无杂波训练数据开展高斯干扰下自适应雷达检测，为参考样本不可靠条件下的干扰参数估计提供了近年统计检测框架。Guo 等人\cite{Guo2024PersymmetricSubspaceSeaClutter}进一步研究非高斯海杂波与结构化干扰共存条件下的中心对称子空间检测，说明干扰参考构造需要同时考虑海杂波重尾、空间协方差结构和目标子空间保护约束。
 
-（2）自适应对消与残余增强。Widrow 等人\cite{Widrow1975AdaptiveNoiseCancelling}提出的自适应噪声对消方法，为利用参考输入估计并抵消主通道干扰提供了基础框架。Melvin 等人\cite{Melvin2004STAPOverview}总结的空时自适应处理方法，可通过阵列通道和时间维联合滤波抑制杂波脊及空间相关干扰。Sun 等人\cite{Sun2022GradientOrthogonalInterference}开展正交干扰抑制研究，为目标保护约束下的对消判决提供了参考。De Maio 等人\cite{DeMaio2016SubspaceInterference}开展结构化干扰下子空间检测研究，为结构化背景下的干扰抑制提供了统计判决框架。Sangston 等人\cite{Sangston2012CoherentCGClutter}针对重尾复合高斯杂波下的相干雷达目标检测建立可控虚警检测方法，说明对消后弱目标增强不能只压低残余能量，还需保持目标相干结构。
+（2）自适应对消与残余增强。Sun 等人\cite{Sun2022GradientOrthogonalInterference}开展正交干扰下的梯度检验与自适应子空间检测研究，为目标保护约束下的对消判决提供了参考。De Maio 等人\cite{DeMaio2016SubspaceInterference}开展结构化干扰下子空间信号检测研究，为结构化背景下的干扰抑制提供了统计判决框架。上述工作表明，对消后弱目标增强不能只追求残余能量最小，还需要联合约束目标相干结构、干扰子空间泄漏和海杂波尾部残留，才能在低信杂比条件下保持可解释的频谱特征。
 
 
 
