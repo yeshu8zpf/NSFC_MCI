@@ -73,106 +73,21 @@
         \end{figure}
 
 
-        \textbf{（3）基于LSM-tree的键值存储数据库优化工作
+        \textbf{（3）面向数据库的高效索引优化
         }
 
-
-针对LSM-Tree键值存储的写放大问题，提出了重映射压缩方案，有效减少传统压缩中的重复写入，该工作发表在CCF B会议DATE2025上；针对传统关系型数据库日志记录的重复写入问题，提出了闪存转换层日志方案，该工作发表在CCF B期刊JSA上；针对键值数据库的合并性能问题，研究了压缩对尾部延迟的影响，显示出频繁的延迟峰值，提出有限压缩以减少尾部延迟，该工作发表在EI会议SAC2021上。\textbf{目前申请人已有的这些研究成果将为本项目在软硬件协同架构下优化键值数据库和固态盘性能打下坚实的理论和工程实践基础。}具体文献如下：
-
+     针对数据库系统面临的索引写放大严重、日志记录重复开销高以及合并操作尾部延迟大等挑战，提出了面向数据库的高效索引与存储优化方法体系。首先，面向数据库索引存在的写放大难题，提出了基于重映射机制的压缩方案，通过优化数据映射关系实现了对传统压缩过程中重复写入问题的有效抑制；其次，面向传统关系型数据库日志记录中的冗余写入问题，提出了基于闪存转换层的日志管理方案，通过底层存储与上层日志的协同有效缓解了系统的I/O瓶颈；最后，面向键值数据库合并过程中的性能波动问题，深入分析了压缩策略对尾部延迟的影响机理，针对延迟峰值现象提出了有限压缩优化策略，显著降低了系统的长尾延迟。相关研究成果发表于SAC、DATE、JSA等领域内顶会顶刊。上述研究成果为本项目在软硬件协同架构下优化键值数据库和固态盘性能奠定了坚实的理论和工程实践基础。
 
 
 
-\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt]
+        \textbf{（4）高密度存储设备的读取性能优化}
 
-\item{ \underline{Zhenghao Yin}, \textbf{Yajuan Du}, Yi Fan, Sam H.
-Noh, Eliminating duplicate writes of logging via no-logging flash translation
-layer in SSDs. Journal of Systems Architectur  (JSA), Volume 160, 2025 (CCF B类期刊)}
-\item {\underline{Yi Fan}, \textbf{Yajuan Du}, Sam H. Noh, RemapCom:
-Optimizing Compaction Performance of LSM Trees via Data Block Remapping in
-SSDs. Design, Automation \& Test in Europe (DATE'25)（CCF B类会议）}
-\item {\underline{Yongchao Hu},\textbf{Yajuan
-Du*}, Reducing Tail Latency of LSM-tree based Key-value Store via Limited
-Compaction. The 36th ACM/SIGAPP Symposium on Applied Computing. (SAC’21) )（EI）
-}
-\end{itemize}
-
-        \textbf{（4）高密度闪存的读性能优化}
-
-对LDPC码带来的读取性能下降问题，利用数据的读取特性，提出了一种轻量级的数据刷新方法LDR。该工作发表在国际设计自动化领域顶级会议DAC 2017 (CCF-A)上。针对LDPC码纠正低页和高页解码延迟不平衡带来的闪存读性能问题，提出了一种基于可靠性的闪存块分类方法和数据放置方案。发表在计算机系统与高性能计算领域的重要国际会议ICCD 2017 (CCF-B)上。针对LDPC码与BP译码算法会带来较高的译码延迟开销问题，提出了一种保留错误感知的LDPC解码方案来提高NAND闪存的读取性能。该工作发表在TECS2017期刊上（CCF B）。基于真实FPGA测试平台上观察的闪存特性，并在此基础上提出了一种基于成对比特错误的LDPC解码方案。该工作发表在TCAD 2018 期刊上（CCF A)。针对高密度闪存的读取性能，提出了一种具有细粒度LDPC读取的LDPC级预测方法PreLDPC。该工作发表在TCAD 2022期刊上(CCF A)。\textbf{这些读性能优化工作将为本项目在固态盘读写性能优化方面提供强有力的研究基础和技术支撑。}
-
-相关文献列表：
-    \begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt]
-
-        \item {
-            \textbf{Yajuan Du},
-Qiao Li, Liang Shi, Deqing Zou, Hai Jin, and Chun Jason Xue. Reducing LDPC Soft
-Sensing Latency by Lightweight Data Refresh for Flash Read Performance
-Improvement. In Proceedings of the 54th Annual Design Automation Conference
-2017 (DAC '17).（CCF A）
-        }
-        \item {
-        Qiao Li,
-Liang Shi, Yejia Di, \textbf{Yajuan Du}, Chun J. Xue and Edwin H.M. Sha.Exploiting
-Process Variation for Read Performance Improvement on LDPC Based Flash Memory
-Storage Systems.2017 IEEE International Conference on Computer Design (ICCD).（CCF B）
-        }
-        \item {
-        Fei Wu, Meng
-Zhang, \textbf{Yajuan Du}, Xubin He, Ping Huang, Changsheng Xie, and Jiguang Wan. A
-Program Interference Error Aware LDPC Scheme for Improving NAND Flash Decoding
-Performance. ACM Transactions on Embedded Computing Systems（TECS),vol.
-16, no. 5s,pp.1-20.（CCF B）
-        }
-        \item {
-        Meng Zhang,
-Fei Wu, \textbf{Yajuan Du}, Weihua Liu and Changsheng Xie.Pair-Bit Errors Aware LDPC
-Decoding in MLC NAND Flash Memory.IEEE Transactions on Computer-Aided Design of
-Integrated Circuits and Systems(TCAD), vol. 38, no. 12, pp. 2312-2320.（CCF A）
-        }
-        \item {
-            \textbf{Yajuan Du},
-Yuan Gao, Siyi Huang, and Qiao Li. 2023. LDPC Level Prediction Toward Read
-Performance of High-Density Flash Memories. IEEE Transactions on Computer-Aided
-Design of Integrated Circuits and Systems(TCAD), vol. 42, no. 10, pp.
-3264-3274.（CCF A）
-        }
-        \end{itemize}
-
-
-        \textbf{（5）高密度闪存的读性能优化}
-
-
-
-
-针对固态盘日益增加的页面迁移导致的性能悬崖问题，提出了一种提前迁移受害块页面的GC辅助方法PreGC，以缓解GC引起的性能悬崖。该工作发表在CODES + ISSS 2019 会议上(CCF-B)。针对垃圾回收和磨损均衡之间缺乏的通信导致重复清理的问题，提出了一种统一的块清理方法UniBC，将两种调用条件统一考虑，降低整体块清理的成本。该工作发表在SAC2019会议上。\textbf{这些垃圾回收机制优化工作，将为本项目提出的全栈数据搬运方案提供扎实的理论基础和有力的技术保障。}
-
-相关文献列表：
-
-
-\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt]
-    \item \textbf{Yajuan Du}, \underline{Wei Liu}, Rui Wang, Yao Zhou, and Jason Xue. 2019. PreGC: Pre-migrating valid pages to relieve performance cliff of 3D solid-state drives: work-in-progress. In Proceedings of the International Conference on Hardware/Software Codesign and System Synthesis Companion (CODES/ISSS '19).（CCF B类会议）
-    \item \textbf{Yajuan Du}, \underline{Wei Liu}, Yu Zhu, and Meng Zhang. 2019. United SSD block cleaning via constrained victim block selection. In Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing (SAC '19).（CCF B类会议）
-\end{itemize}
-
-
-    \textbf{(6)持久性内存一致性问题研究方面}
-
-
-通过利用英特尔为Optane PM引入的eADR(增强型异步DRAM刷新)技术，提出了一种基于
-eADR 的低开销原子持久性技术。该工作已发表在计算机并行体系结构领域的顶级会议PACT 2022 上(CCF B)。针对对持久性内存系统的性能和寿命优化问题，提出一种耐久性感知的持久性内存异地更新机制。该工作发表在《计算机研究与发展》期刊上（中文CCF A）。\textbf{这些针对数据一致性问题的优化方案，将为本项目提出的硬件日志工作提供技术参考和方案有效性对比}，相关文献列表如下：
-
-\begin{itemize}[itemsep=0pt, topsep=0pt, parsep=0pt]
-    \item \underline{Taiyu Zhou}, \textbf{Yajuan Du}, Fan Yang, Xiaojian Liao, Youyou Lu. Efficient Atomic Durability on eADR-enabled Persistent Memory. In the 31st International Conference on Parallel Architectures and Compilation Techniques (PACT'22)（CCF B类会议）
-    \item \underline{蔡长兴},\textbf{杜亚娟},周泰宇.耐久性感知的持久性内存异地更新[J].计算机研究与发展,2022,59(03):553-567.（CCF推荐A类中文期刊）
-\end{itemize}
-
-        (注：下划线作者为申请人指导的学生)
+        针对LDPC码引入的读取性能下降与译码延迟开销等问题，提出了面向固态盘的高效读性能优化方法体系。首先，面向LDPC码带来的读取性能下降问题，利用数据的读取特性提出了一种轻量级数据刷新方法LDR，有效减少了传统刷新带来的重复写入开销。其次，面向LDPC码纠正低页和高页解码延迟不平衡带来的闪存读性能瓶颈，提出了一种基于可靠性的闪存块分类方法和数据放置方案，实现了存储资源的优化配置。最后，针对LDPC码与BP译码算法的高延迟开销及高密度闪存读取难题，提出了保留错误感知LDPC解码、基于成对比特错误的LDPC解码以及细粒度LDPC级预测方法PreLDPC等一系列优化方案，相关研究成果发表于TECS 2017、TCAD 2018及TCAD 2022等CCF A/B类高水平期刊和会议。这些读性能优化工作为本项目在固态盘读写性能优化方面提供了强有力的研究基础和技术支撑。
 
     \textbf{（7）雷达杂波辐射干扰机理研究}
 
 
-搭建舰用相控阵雷达测试环境，开展雷达带外发射和杂散发射产生机理及干扰耦合特性仿真研究。针对舰艇大功率微波设备和微波数据链系统的电磁兼容问题，分析雷达宽带杂散干扰对数据链通信的干扰作用机理，分析数据链系统电磁受干扰机理，提出舰载微波数据链通信设备辐射干扰防护需求。
-相控阵雷达谐波仿真示意图如图\ref{fig:RB_RS}所示，基于11行*11列面阵仿真，得到面阵主频方向图、面阵二次谐波方向图和面阵三次谐波方向图。通过仿真发现：相控阵雷达杂散辐射为随机分布，无方向性。
+    针对舰艇大功率微波设备和微波数据链系统的电磁兼容问题，分析雷达宽带杂散干扰对数据链通信的干扰作用机理，分析数据链系统电磁受干扰机理，提出舰载微波数据链通信设备辐射干扰防护需求，搭建舰用相控阵雷达测试环境，开展雷达带外发射和杂散发射产生机理及干扰耦合特性仿真研究。相控阵雷达谐波仿真示意图如图\ref{fig:RB_RS}所示，基于11行*11列面阵仿真，得到面阵主频方向图、面阵二次谐波方向图和面阵三次谐波方向图。通过仿真发现：相控阵雷达杂散辐射为随机分布，无方向性。
 
         \begin{figure}[h]\kaishu
            %居中放置
