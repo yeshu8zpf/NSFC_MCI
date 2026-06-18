@@ -279,11 +279,11 @@
 
 \textbf{分布式可信决策}：围绕分布式可信决策问题，现有研究大体可从语义协同、策略优化和可信验证三个角度展开。
 
-（1）基于语义交互与推理复核的协同决策方法：此类方法侧重于利用智能体之间的语义通信、角色分工和推理反馈来提升复杂任务中的协同判断能力。AgentsCoMerge\cite{10976336} 面向匝道汇入场景构建了由场景观测与理解、层次化规划、智能体间通信和强化反思训练组成的协同决策框架，使多个网联自动驾驶车辆能够基于局部交通状态交换关键信息，并在连续交互中协调驾驶行为。LLM-SmartAudit\cite{11121619} 则将智能合约审计过程分解为代码分析、漏洞识别和报告生成等角色化任务，通过多智能体对话架构与 buffer-of-thought 机制维护审计过程中的中间判断和历史洞察，从而实现面向复杂漏洞识别的多轮分析与交叉验证。
+（1）语义交互与推理复核：此类方法侧重于利用智能体之间的语义通信、角色分工和推理反馈来提升复杂任务中的协同判断能力。AgentsCoMerge\cite{10976336} 面向匝道汇入场景构建了由场景观测与理解、层次化规划、智能体间通信和强化反思训练组成的协同决策框架，使多个网联自动驾驶车辆能够基于局部交通状态交换关键信息，并在连续交互中协调驾驶行为。LLM-SmartAudit\cite{11121619} 则将智能合约审计过程分解为代码分析、漏洞识别和报告生成等角色化任务，通过多智能体对话架构与 buffer-of-thought 机制维护审计过程中的中间判断和历史洞察，从而实现面向复杂漏洞识别的多轮分析与交叉验证。
 
-（2）基于策略学习与优化控制的协同决策方法：此类方法主要面向动态环境中的资源分配、路径规划、任务调度和群体控制问题，通过状态建模、策略学习、约束优化和分布式执行机制实现多节点协同行为生成。面向网络流量调度任务，现有研究例如\cite{ren2025distributed}通过限制策略更新幅度提升调度过程的稳定性，并在不同流量负载和突发业务条件下降低链路拥塞与平均时延。在多 UAV 协同缓存网络中，相关研究例如\cite{10412167}将缓存决策、三维轨迹规划、功率分配和信道复用联合优化问题拆解为多个子问题，并分别利用 MAPPO 与 matching-DRL 进行求解，以提升内容命中率、系统吞吐量和低时延服务能力。针对多机器人系统中的竞争与协作并存问题，k-winner-take-all 机制、邻居共识通信和递归神经动力学求解器在例如研究\cite{10521834}的解决方案中被结合用于分布式协调控制，使机器人能够在局部通信条件下完成任务选择、资源竞争和协同行为生成。
+（2）策略学习与优化控制：此类方法主要面向动态环境中的资源分配、路径规划、任务调度和群体控制问题，通过状态建模、策略学习、约束优化和分布式执行机制实现多节点协同行为生成。面向网络流量调度任务，现有研究例如\cite{ren2025distributed}通过限制策略更新幅度提升调度过程的稳定性，并在不同流量负载和突发业务条件下降低链路拥塞与平均时延。在多 UAV 协同缓存网络中，相关研究例如\cite{10412167}将缓存决策、三维轨迹规划、功率分配和信道复用联合优化问题拆解为多个子问题，并分别利用 MAPPO 与 matching-DRL 进行求解，以提升内容命中率、系统吞吐量和低时延服务能力。针对多机器人系统中的竞争与协作并存问题，k-winner-take-all 机制、邻居共识通信和递归神经动力学求解器在例如研究\cite{10521834}的解决方案中被结合用于分布式协调控制，使机器人能够在局部通信条件下完成任务选择、资源竞争和协同行为生成。
 
-（3）基于可信治理的协同决策方法：此类方法主要面向分布式协同决策中的全链路可信支撑问题，通过可信证据治理、共识验证与安全传输机制增强多节点决策过程的整体可信性。在多源边缘视频分析场景中，Prioritized Information Bottleneck 框架\cite{10845862}面向任务相关感知信息筛选关键特征，并利用分布式在线学习过滤低价值消息，从而降低冗余传输对协同感知的影响。SPDC\cite{10930695} 将边缘服务器部署与分布式数据清洗联合建模，并通过 Gossip 参数融合提升边缘数据清洗质量，为后续数据驱动决策提供更可靠的输入基础。COShard\cite{11197552} 将分片区块链共识与网络资源分配协同优化，在保障关键任务时延的同时提升链上协同吞吐能力。区块链赋能的联邦学习方法例如研究\cite{10849591}则通过链上可信训练管理机制，增强云边协同 IoT 场景中模型训练过程的隐私保护、抗攻击能力和可追溯性。在安全传输层面，相关研究进一步从可信接入、跨域信任维护和通信过程防护等方面支撑分布式协同决策，例如 Rullo 等人\cite{DBLP:journals/tdsc/RulloFVRDCLS25}提出基于 PUF 的轻量级设备认证方法，以硬件物理特征增强低算力节点的可信接入能力；Wang 等人\cite{DBLP:journals/tdsc/WangCZGZH24}面向边缘辅助跨域工业物联网场景构建轻量级区块链消息认证方案，以分布式账本维护跨域信任关系；Zhu 等人\cite{DBLP:journals/jas/ZhuLLW25}则通过改进 PBFT 与 Raft 的混合共识机制降低通信复杂度，并提升动态通信过程中的安全验证能力。
+（3）可信治理与共识验证：此类方法主要面向分布式协同决策中的全链路可信支撑问题，通过可信证据治理、共识验证与安全传输机制增强多节点决策过程的整体可信性。在多源边缘视频分析场景中，Prioritized Information Bottleneck 框架\cite{10845862}面向任务相关感知信息筛选关键特征，并利用分布式在线学习过滤低价值消息，从而降低冗余传输对协同感知的影响。SPDC\cite{10930695} 将边缘服务器部署与分布式数据清洗联合建模，并通过 Gossip 参数融合提升边缘数据清洗质量，为后续数据驱动决策提供更可靠的输入基础。COShard\cite{11197552} 将分片区块链共识与网络资源分配协同优化，在保障关键任务时延的同时提升链上协同吞吐能力。区块链赋能的联邦学习方法例如研究\cite{10849591}则通过链上可信训练管理机制，增强云边协同 IoT 场景中模型训练过程的隐私保护、抗攻击能力和可追溯性。在安全传输层面，相关研究进一步从可信接入、跨域信任维护和通信过程防护等方面支撑分布式协同决策，例如 Rullo 等人\cite{DBLP:journals/tdsc/RulloFVRDCLS25}提出基于 PUF 的轻量级设备认证方法，以硬件物理特征增强低算力节点的可信接入能力；Wang 等人\cite{DBLP:journals/tdsc/WangCZGZH24}面向边缘辅助跨域工业物联网场景构建轻量级区块链消息认证方案，以分布式账本维护跨域信任关系；Zhu 等人\cite{DBLP:journals/jas/ZhuLLW25}则通过改进 PBFT 与 Raft 的混合共识机制降低通信复杂度，并提升动态通信过程中的安全验证能力。
 
 
 \begin{table}[htbp]\kaishu
@@ -328,22 +328,22 @@
 	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于无源观测开展运动目标定位与轨迹估计，研究状态估计与预测方法} \\
 	\hline
 		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 数据安全传输}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于语义交互与推理复核的协同决策方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{AgentsCoMerge \cite{10976336}，LLM-SmartAudit \cite{11121619}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过智能体语义通信、角色分工与推理反馈组织局部观测信息交互，在连续协同过程中形成多轮判断与交叉验证，提升复杂动态场景下的协同决策可靠性} \\
-		\cline{2-4}
-		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于策略学习与优化控制的协同决策方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{TRPO \cite{ren2025distributed}，多 UAV 协同缓存网络 \cite{10412167}，k-winner-take-all 分布式协调控制 \cite{10521834}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕资源分配、路径规划、任务调度与群体控制建立状态建模、策略学习和约束优化机制，实现多节点在局部通信条件下的分布式协同行为生成} \\
-		\cline{2-4}
-		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于可信证据治理与共识验证的决策支撑方法} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Prioritized Information Bottleneck \cite{10845862}，SPDC \cite{10930695}，COShard \cite{11197552}，区块链赋能的联邦学习方法 \cite{10849591}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向输入不可靠、更新不可验与过程难追溯问题，结合关键证据筛选、分布式数据清洗、参数融合和链上共识记录，为多节点协同决策提供可信数据基础与可验证支撑} \\
-		\hline
+	\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+				\linespread{0.6}\selectfont 分布式可信决策}}}  
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{语义交互与推理复核} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{AgentsCoMerge\cite{10976336}，LLM-SmartAudit\cite{11121619}} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过智能体语义通信、角色分工与推理反馈机制组织多节点信息交互，使协同主体能够在连续交互中形成多轮判断与交叉验证，提升复杂动态场景下的协同决策可靠性} \\
+	\cline{2-4}
+	
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{策略学习与优化控制} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{TRPO\cite{ren2025distributed}，多 UAV 协同缓存网络\cite{10412167}，k-winner-take-all 分布式协调控制\cite{10521834}} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向动态环境中的协同行为生成问题，通过策略学习与优化控制方法协调多节点任务执行，使分布式主体能够在局部通信条件下实现稳定协同} \\
+	\cline{2-4}
+	
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{可信治理与共识验证} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Prioritized Information Bottleneck\cite{10845862}，SPDC\cite{10930695}，COShard\cite{11197552}，区块链赋能的联邦学习方法\cite{10849591}，PUF 轻量级设备认证\cite{DBLP:journals/tdsc/RulloFVRDCLS25}，轻量级区块链消息认证\cite{DBLP:journals/tdsc/WangCZGZH24}，混合共识机制\cite{DBLP:journals/jas/ZhuLLW25}} 
+	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向分布式协同决策中的全链路可信支撑问题，通过可信证据治理、共识验证与安全传输机制增强多节点决策过程的整体可信性，提升协同感知、模型更新和通信交互过程中的可信保障能力} \\
+	\hline
 		
 	\end{tabular}
 	\caption{\kaishu{面向海域自主侦测任务的边缘频谱智能处理方法总结}}
