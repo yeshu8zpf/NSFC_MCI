@@ -12,11 +12,11 @@
 \textbf{电磁频谱信号传播规律:}
 围绕海域电磁频谱信号传播规律，现有研究大体可从海面散射与杂波统计联合表征、复合高斯/极化海杂波建模、多普勒谱与海气传播通道建模三个角度展开。
 
-（1）海面散射与杂波统计联合表征。Ward 等人\cite{Ward2006SeaClutter}系统总结海杂波散射、K 分布与雷达性能之间的关系，揭示低掠射角海杂波的非高斯长尾和海尖峰特征，是海杂波统计建模与弱目标可观测性分析的权威基础。Barrick 等人\cite{Barrick1971RoughSeaPropagation}建立了粗糙海面上高频（HF）与甚高频（VHF）传播及一阶海面散射理论，为低频海杂波谱峰位置、海况反演和粗糙海面传播损耗分析奠定基础。
+（1）海面散射与杂波统计联合表征。Rosenberg等人\cite{Rosenberg2021RadarSeaClutterBook}系统总结海杂波建模、统计分布和对海目标检测方法。Watts等人\cite{Watts2022ChallengesSeaClutter}进一步讨论跨海况、跨频段和复杂观测几何下海杂波模型的鲁棒性挑战，说明海杂波统计长尾、海尖峰和空间相关结构会直接影响弱目标可观测性。
 
-（2）复合高斯/极化海杂波建模。近年来，相关研究更多转向复合高斯、多极化协方差、非均匀非高斯杂波检测和双极化相干检测等方向。Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}面向复合高斯海杂波中的极化检测开展正则化协方差估计，提升有限样本条件下的杂波背景建模稳健性。Xue 等人\cite{Xue2022PersymmetricSeaClutter}研究非均匀、非高斯海杂波中的雷达目标检测，说明海杂波协方差结构和非高斯统计特征对虚警控制具有直接影响。Duan 等人\cite{Duan2025FusionCoherent}面向双极化相关海杂波中的小目标相干检测建立融合式自适应检测框架，利用双极化通道相关结构增强目标与海杂波背景的区分能力。
+（2）复合高斯/极化海杂波建模。近年来，相关研究更多转向复合高斯、多极化协方差、非均匀非高斯杂波检测和双极化相干检测等方向。Xie等人\cite{Xie2022PolarimetricCompoundGaussian}面向复合高斯海杂波中的极化检测开展正则化协方差估计，提升有限样本条件下的杂波背景建模稳健性。Xue等人\cite{Xue2022PersymmetricSeaClutter}研究非均匀、非高斯海杂波中的雷达目标检测，说明海杂波协方差结构和非高斯统计特征对虚警控制具有直接影响。Duan等人\cite{Duan2025FusionCoherent}面向双极化相关海杂波中的小目标相干检测建立融合式自适应检测框架，利用双极化通道相关结构增强目标与海杂波背景的区分能力。
 
-（3）多普勒谱与海气传播通道建模。Xu 等人\cite{Xu2025HSSWRTR}面向高频天地波混合雷达，在海杂波背景下引入时间反演思想增强目标能量聚焦，体现了传播路径、海杂波背景和目标可观测性之间的耦合关系。ITU-R P.453\cite{ITURP453} 给出的无线电折射率表达为海气边界层传播建模提供标准依据，温湿压剖面引起的折射率变化会进一步影响近海覆盖边界、盲区位置和远距离同频干扰风险。Watts 等人\cite{Watts2022ChallengesSeaClutter}进一步总结海杂波建模在跨海况、跨频段和复杂目标背景下的主要挑战，指出单一经验模型难以支撑动态海况下的鲁棒表征。
+（3）多普勒谱与海气传播通道建模。Xu等人\cite{Xu2025HSSWRTR}面向高频天地波一体化雷达，在海杂波背景下引入时间反演思想增强目标能量聚焦，体现了传播路径、海杂波背景和目标可观测性之间的耦合关系。ITU-R P.453\cite{ITURP453} 给出的无线电折射率表达为海气边界层传播建模提供标准依据，温湿压剖面引起的折射率变化会进一步影响近海覆盖边界、盲区位置和远距离同频干扰风险。
 
 
 \begin{table}[htbp]\kaishu
@@ -34,12 +34,12 @@
 			\parbox{1.2cm}{
 				\centering
 				\linespread{0.6}\selectfont
-				时空耦合传播规律建模
+				电磁频谱信号传播规律
 			}
 		}
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海面散射与杂波统计联合表征} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ward 等人\cite{Ward2006SeaClutter}，Barrick 等人\cite{Barrick1971RoughSeaPropagation}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{刻画 K 分布长尾和一阶谱峰，支撑海杂波散射与传播机理分析} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Rosenberg 等人\cite{Rosenberg2021RadarSeaClutterBook}，Watts 等人\cite{Watts2022ChallengesSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{系统刻画海杂波建模、统计长尾、海尖峰和目标检测难点，支撑海杂波散射与传播机理分析} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{复合高斯/极化海杂波建模} 
@@ -48,7 +48,7 @@
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{多普勒谱与海气传播通道建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人\cite{Xu2025HSSWRTR}，ITU-R P.453\cite{ITURP453}，Watts 等人\cite{Watts2022ChallengesSeaClutter}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xu 等人\cite{Xu2025HSSWRTR}，ITU-R P.453\cite{ITURP453}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{结合时间反演、折射率模型和挑战分析，刻画多普勒谱与海气传播影响} \\
 		\hline
 		
@@ -62,14 +62,14 @@
 				
 			}
 		}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海杂波先验与参考构造}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}，Xue 等人\cite{Xue2022PersymmetricSeaClutter}，Duan 等人\cite{Duan2025FusionCoherent}，Watts 等人\cite{Watts2022ChallengesSeaClutter}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{结合极化协方差、非高斯统计和双极化相关结构，构造海杂波先验参考} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{结构干扰与目标保护建模}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Rong 等人\cite{Rong2022ClutterFreeTraining}，Guo 等人\cite{Guo2024PersymmetricSubspaceSeaClutter}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用无杂波训练样本、中心对称结构和结构化干扰模型，构造目标保护约束下的干扰参考与判决统计} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{自适应对消与残余增强}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Widrow 等人\cite{Widrow1975AdaptiveNoiseCancelling}，Melvin 等人\cite{Melvin2004STAPOverview}，Sun 等人\cite{Sun2022GradientOrthogonalInterference}，Sangston 等人\cite{Sangston2012CoherentCGClutter}，De Maio 等人\cite{DeMaio2016SubspaceInterference}}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过自适应滤波、空时联合处理和子空间检测，抑制干扰并保持目标相干结构} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Sun 等人\cite{Sun2022GradientOrthogonalInterference}，De Maio 等人\cite{DeMaio2016SubspaceInterference}}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过正交干扰抑制、子空间检测和目标保护约束，抑制强干扰并保持目标相干结构} \\
 		\hline
 		
 		\multirow{3}{1.4cm}[-3.4em]{
@@ -80,19 +80,19 @@
 				多维联合表征精确提取
 			}
 		}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于统计特征解析的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{杨洪娟等人\cite{Yang2022JointFeature}，Shi 等人\cite{Shi2025SDPSeaClutter}，刘剑锋等人\cite{Liu2025HOCCSS}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用高阶累积量与星座图聚类特征、对称点模式图像特征和压缩重构中的四阶时序相关性提升信号区分与感知能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于解析统计特征的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等人\cite{Zeng2009EVD}，Tekbiyik 等人\cite{Tekbiyik2021SCF}，闫文康等人\cite{Yan2021WaveletHOC}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用特征值、循环谱和高阶统计量，提取低信噪比下可判别特征} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于时频结构特征的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{李世通等人\cite{Li2022RadarTFHOS}，Wu 等人\cite{Wu2023BIWVD}，Jiang 等人\cite{Jiang2022LPI}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用时频图像与高次频谱特征、双三次插值魏格纳-维尔分布和局部密集连接网络提升低信噪比下信号识别能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等人\cite{Zhang2016TFD}，Akyon 等人\cite{Akyon2018FFCNN}，Liu 等人\cite{Liu2019SeaClutterHF}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时频分布、脉内调制和高维特征，增强非平稳信号结构表达} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于数据驱动表征学习的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Cai 等人\cite{Cai2022Transformer}，程风云等人\cite{Cheng2024SignalEnhancement}，杨静雅等人\cite{Yang2023CNNTransformerAMC}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过自注意力网络和卷积神经网络与自注意力网络融合架构提升复杂条件下信号表征与识别能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{O'Shea 等人\cite{OShea2016CRMN,OShea2016URL}，Cai 等人\cite{Cai2022CLCNN}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于原始同相正交（IQ）表征和对比学习，提升复杂噪声下调制特征泛化能力} \\
 		\hline
 		
 	\end{tabular}
@@ -103,16 +103,18 @@
 % B
 
 \textbf{目标频谱特征增强:}
-围绕海杂波干扰下的目标频谱特征增强问题，现有研究大体可从海杂波先验与参考构造、自适应对消与残余增强两个角度展开。
+围绕海杂波干扰下的目标频谱特征增强问题，现有研究大体可从结构干扰与目标保护建模、自适应对消与残余增强两个角度展开。
 
-（1）海杂波先验与参考构造。面向非均匀海杂波和有限训练样本条件，Xie 等人\cite{Xie2022PolarimetricCompoundGaussian}通过正则化协方差估计提升复合高斯海杂波背景建模稳健性。Xue 等人\cite{Xue2022PersymmetricSeaClutter}利用中心对称约束处理非均匀、非高斯海杂波检测问题。Duan 等人\cite{Duan2025FusionCoherent}利用双极化通道相关结构增强小目标与海杂波背景的区分能力。Watts 等人\cite{Watts2022ChallengesSeaClutter}指出跨海况、跨频段和复杂目标条件下的海杂波鲁棒建模仍具挑战。
+（1）结构干扰与目标保护建模。面向船载或无人机协同采集中的参考样本污染、结构化同频干扰和非均匀海杂波问题，Rong 等人\cite{Rong2022ClutterFreeTraining}利用无杂波训练数据开展高斯干扰下自适应雷达检测，为参考样本不可靠条件下的干扰参数估计提供了近年统计检测框架。Guo 等人\cite{Guo2024PersymmetricSubspaceSeaClutter}进一步研究非高斯海杂波与结构化干扰共存条件下的中心对称子空间检测，说明干扰参考构造需要同时考虑海杂波重尾、空间协方差结构和目标子空间保护约束。
 
-（2）自适应对消与残余增强。Widrow 等人\cite{Widrow1975AdaptiveNoiseCancelling}提出的自适应噪声对消方法，为利用参考输入估计并抵消主通道干扰提供了基础框架。Melvin 等人\cite{Melvin2004STAPOverview}总结的空时自适应处理方法，可通过阵列通道和时间维联合滤波抑制杂波脊及空间相关干扰。Sun 等人\cite{Sun2022GradientOrthogonalInterference}开展正交干扰抑制研究，为目标保护约束下的对消判决提供了参考。De Maio 等人\cite{DeMaio2016SubspaceInterference}开展结构化干扰下子空间检测研究，为结构化背景下的干扰抑制提供了统计判决框架。Sangston 等人\cite{Sangston2012CoherentCGClutter}针对重尾复合高斯杂波下的相干雷达目标检测建立可控虚警检测方法，说明对消后弱目标增强不能只压低残余能量，还需保持目标相干结构。
+（2）自适应对消与残余增强。Sun 等人\cite{Sun2022GradientOrthogonalInterference}开展正交干扰下的梯度检验与自适应子空间检测研究，为目标保护约束下的对消判决提供了参考。De Maio 等人\cite{DeMaio2016SubspaceInterference}开展结构化干扰下子空间信号检测研究，为结构化背景下的干扰抑制提供了统计判决框架。上述工作表明，对消后弱目标增强不能只追求残余能量最小，还需要联合约束目标相干结构、干扰子空间泄漏和海杂波尾部残留，才能在低信杂比条件下保持可解释的频谱特征。
 
 
 
 % C
 \textbf{电磁频谱信号提取方法:}
+围绕复杂电磁环境下的信号提取问题，现有研究大体可从统计特征解析、时频结构特征和数据驱动表征学习三个角度展开。
+
 （1）\textbf{基于统计特征解析的信号提取方法。}杨洪娟等人\cite{Yang2022JointFeature}面向卫星单信号与混合信号调制识别问题，联合利用高阶累积量和星座图聚类特征构造判别参数，提高了不同调制成分的区分能力。Shi 等人\cite{Shi2025SDPSeaClutter}将海杂波背景下的小目标检测转化为图像特征判别问题，利用对称点模式图像特征刻画目标回波对海杂波背景的局部扰动，并构造基于随机森林的检测器。刘剑锋等人\cite{Liu2025HOCCSS}利用相邻时刻重构信号的四阶累积量刻画高阶时序相关性，并与压缩重构过程结合，提高了宽带频谱信号的感知与恢复能力。
 
 
@@ -189,12 +191,12 @@
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用自监督学习、频谱基础模型和物理增强表征，将高维频谱映射为低维特征，在压缩体积的同时保留关键电磁信息} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{海量频谱表征向量的磁盘索引构建机制} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{向量数据的磁盘索引构建机制} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Simhadri 等人 \cite{DBLP:conf/nips/SubramanyaDSKK19}，Chen 等人 \cite{DBLP:conf/nips/ChenZWLLLYW21}，常健 等人 \cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}，Yue 等人 \cite{DBLP:journals/pvldb/YueZXXZDGZJ25}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过内存压缩表示、外存全量特征存储、聚类连续布局和图布局优化，突破内存容量限制并降低随机外存访问开销} \\
 		\cline{2-4}
 		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态频谱表征向量的磁盘索引维护机制} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{向量数据的磁盘索引维护机制} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Singh 等人 \cite{DBLP:journals/corr/abs-2105-09613}，Xu 等人 \cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}，Yu 等人 \cite{DBLP:journals/pvldb/YuLGXLZSZLY25}} 
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向连续数据流和高频更新，采用内存缓冲、后台合并、原地维护和拓扑感知局部更新，降低重构与同步开销} \\
 		\hline
@@ -234,9 +236,9 @@
 
 （1）基于自监督表征的频谱数据压缩： 频谱表征压缩通过将高维原始信号映射为低维稠密特征向量，实现数据降维与信息保留的有效权衡，其核心挑战在于强杂波与无标签环境下的鲁棒特征提取。Wen 等人\cite{DBLP:journals/tmc/WenZWLZS26}提出自适应频率掩码自编码器，通过动态掩蔽能量分布提取无标签射频数据的内在规律，在大幅压缩数据体积的同时有效重构了关键电磁特征。Zhou 等人\cite{DBLP:journals/jsac/ZhouLZWWQC26}构建面向频谱管理的基础大模型，利用多任务自监督机制处理海量原始信号，实现了跨频段、抗干扰的高密度通用特征编码。针对大规模频谱态势高开销的存储难题，Zhou 等人\cite{DBLP:conf/icc/ZhouWWZC25}进一步探索物理增强的表征压缩框架，仅提取并缓存表征电磁传播行为的稀疏物理信息，以极低的存储与检索开销实现了射频特征的高精度重建。
 
-（2）向量的磁盘索引构建机制：磁盘索引构建旨在通过内外存协同组织突破端侧内存容量限制，其核心挑战在于缓解高维向量带来的外存拥塞与随机读取瓶颈。Simhadri等人\cite{DBLP:conf/nips/SubramanyaDSKK19}提出面向异构介质的索引架构，将轻量压缩表示驻留内存、全量特征下沉外存，初步解除了索引全量驻留内存的物理限制。为降低频繁的外存读取开销，Chen等人\cite{DBLP:conf/nips/ChenZWLLLYW21}通过特征数据聚类实现外存连续存储，发挥顺序读写的高效性以减少端侧访存次数。常健等人\cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}将学习索引引入数据查询，利用学习模型拟合数据分布以替代部分传统索引结构，在压缩索引存储开销的同时支撑高效可验证的查询定位。在此基础上，Yue等人\cite{DBLP:journals/pvldb/YueZXXZDGZJ25}提出单调路径感知的图布局优化机制，通过智能边筛选使高维图拓扑深度贴合底层物理介质，将随机跨页读取深度转化为局部顺序数据流，显著降低了外存访问开销。
+（2）向量数据的磁盘索引构建机制：磁盘索引构建旨在通过内外存协同组织突破端侧内存容量限制，其核心挑战在于缓解高维向量带来的外存拥塞与随机读取瓶颈。Simhadri等人\cite{DBLP:conf/nips/SubramanyaDSKK19}提出面向异构介质的索引架构，将轻量压缩表示驻留内存、全量特征下沉外存，初步解除了索引全量驻留内存的物理限制。为降低频繁的外存读取开销，Chen等人\cite{DBLP:conf/nips/ChenZWLLLYW21}通过特征数据聚类实现外存连续存储，发挥顺序读写的高效性以减少端侧访存次数。常健等人\cite{DBLP:journals/pacmmod/WangXYWPKGXGX24}将学习索引引入数据查询，利用学习模型拟合数据分布以替代部分传统索引结构，在压缩索引存储开销的同时支撑高效可验证的查询定位。在此基础上，Yue等人\cite{DBLP:journals/pvldb/YueZXXZDGZJ25}提出单调路径感知的图布局优化机制，通过智能边筛选使高维图拓扑深度贴合底层物理介质，将随机跨页读取深度转化为局部顺序数据流，显著降低了外存访问开销。
 
-（3）向量的磁盘索引维护机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟的索引维护。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
+（3）向量数据的磁盘索引维护机制：随着端侧感知数据的连续涌入，高频特征更新极易引发严重的读写开销，其核心挑战在于如何实现低延迟的索引维护。Singh等人\cite{DBLP:journals/corr/abs-2105-09613}提出支持流式写入的分级索引架构，通过内存缓冲区临时承接更新请求并设计后台异步合并机制，有效实现了动态特征数据的快速可见与实时可用。针对特征更新引发的全局重构代价，Xu等人\cite{DBLP:conf/sosp/XuLLXCZLYYYCY23}提出原地增量更新架构，通过局部重平衡替代全局索引重组，显著降低了高频写入时的同步开销。为进一步优化高频插入带来的图结构计算代价，Yu等人\cite{DBLP:journals/pvldb/YuLGXLZSZLY25}设计了拓扑感知的局部更新策略，通过精准评估新节点的受影响区域，仅对局部子图进行路由重连，高效维持了动态图谱的检索质量与结构稳定性。
 
 % C
 \textbf{频谱数据可信管理：}
