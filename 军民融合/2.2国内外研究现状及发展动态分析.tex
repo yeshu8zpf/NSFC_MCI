@@ -80,19 +80,19 @@
 				多维联合表征精确提取
 			}
 		}
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于解析统计特征的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zeng 等人\cite{Zeng2009EVD}，Tekbiyik 等人\cite{Tekbiyik2021SCF}，闫文康等人\cite{Yan2021WaveletHOC}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用特征值、循环谱和高阶统计量，提取低信噪比下可判别特征} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于统计特征解析的信号提取} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{杨洪娟等人\cite{Yang2022JointFeature}，Shi 等人\cite{Shi2025SDPSeaClutter}，刘剑锋等人\cite{Liu2025HOCCSS}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用高阶累积量与星座图聚类特征、对称点模式图像特征和压缩重构中的四阶时序相关性提升信号区分与感知能力} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于时频结构特征的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Zhang 等人\cite{Zhang2016TFD}，Akyon 等人\cite{Akyon2018FFCNN}，Liu 等人\cite{Liu2019SeaClutterHF}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时频分布、脉内调制和高维特征，增强非平稳信号结构表达} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{李世通等人\cite{Li2022RadarTFHOS}，Wu 等人\cite{Wu2023BIWVD}，Jiang 等人\cite{Jiang2022LPI}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用时频图像与高次频谱特征、双三次插值魏格纳-维尔分布和局部密集连接网络提升低信噪比下信号识别能力} \\
 		\cline{2-4}
 		
 		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{基于数据驱动表征学习的信号提取} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{O'Shea 等人\cite{OShea2016CRMN,OShea2016URL}，Cai 等人\cite{Cai2022CLCNN}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于原始同相正交（IQ）表征和对比学习，提升复杂噪声下调制特征泛化能力} \\
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Cai 等人\cite{Cai2022Transformer}，程风云等人\cite{Cheng2024SignalEnhancement}，杨静雅等人\cite{Yang2023CNNTransformerAMC}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过自注意力网络和卷积神经网络与自注意力网络融合架构提升复杂条件下信号表征与识别能力} \\
 		\hline
 		
 	\end{tabular}
@@ -113,13 +113,13 @@
 
 % C
 \textbf{电磁频谱信号提取方法:}
-围绕复杂背景下的电磁频谱信号提取问题，现有研究大体可从判别特征、时频纹理和深度表征三个角度展开。
 
-（1）\textbf{海杂波背景下弱目标判别特征提取方法。}Duan 等人\cite{Duan2025FusionCoherent}面向双极化相关海杂波中的小目标检测问题，提出融合式自适应相干检测方法，利用双极化通道之间的相关结构增强目标与海杂波的区分能力。Shi 等人\cite{Shi2025SDPSeaClutter}将海杂波背景下的小目标检测转化为图像特征判别问题，利用对称点模式图像特征刻画目标回波对海杂波背景的局部扰动，并构造阈值可控的随机森林检测器。Xu 等人\cite{Xu2025HSSWRTR}面向高频天地波混合雷达，在海杂波背景下引入时间反演思想和广义似然比检测器，增强了复杂传播背景下弱目标能量聚焦和特征凸显能力。
+（1）\textbf{基于统计特征解析的信号提取方法。}杨洪娟等人\cite{Yang2022JointFeature}面向卫星单信号与混合信号调制识别问题，联合利用高阶累积量和星座图聚类特征构造判别参数，提高了不同调制成分的区分能力。Shi 等人\cite{Shi2025SDPSeaClutter}将海杂波背景下的小目标检测转化为图像特征判别问题，利用对称点模式图像特征刻画目标回波对海杂波背景的局部扰动，并构造基于随机森林的检测器。刘剑锋等人\cite{Liu2025HOCCSS}利用相邻时刻重构信号的四阶累积量刻画高阶时序相关性，并与压缩重构过程结合，提高了宽带频谱信号的感知与恢复能力。
 
-（2）\textbf{复杂电磁信号时频结构与谱域纹理特征提取方法。}李世通等人\cite{Li2022RadarTFHOS}提出基于时频图像和高次频谱特征的雷达信号识别方法，利用 Choi-Williams 分布获取雷达信号时频图像，并结合灰度共生矩阵和高次谱特征提升低信噪比条件下的识别能力。Zhang 等人\cite{Zhang2021EfficientAMR}提出基于参数估计与信号变换的自动调制识别模型，将先验参数估计与深度网络相结合，提高了调制结构特征的表达效率。程风云等人\cite{Cheng2024SignalEnhancement}将同相正交（IQ）全局特征、高阶累积量与信号增强网络结合，用于复杂信道和小样本条件下的调制识别，体现了统计特征、数据增强和判别模型融合的有效性。
 
-（3）\textbf{多维联合深度表征与轻量化特征学习方法。}Peng 等人\cite{Peng2019ConstellationDL}利用星座图与深度神经网络开展调制分类，表明将信号结构映射为图像特征后，可以增强深度模型对调制模式的表征能力。Zhang 等人\cite{Zhang2022AMRSurvey}系统梳理了深度学习调制识别中的模型结构、数据集和应用挑战，指出深度模型虽具有较强特征学习能力，但仍受模型复杂度、泛化能力和可解释性约束。杨静雅等人\cite{Yang2023CNNTransformerAMC}提出 CNN-Transformer 轻量级智能调制识别算法，通过卷积网络提取局部特征，并利用通道注意力和 Transformer 时域注意力捕获关键时间维和通道维特征，兼顾识别精度与端侧部署需求。
+（2）\textbf{基于时频结构特征的信号提取方法。}李世通等人\cite{Li2022RadarTFHOS}将雷达信号变换为时频图像，并联合提取纹理特征和高次频谱特征，实现低信噪比条件下的雷达信号识别。Wu 等人\cite{Wu2023BIWVD}采用双三次插值魏格纳-维尔分布提升雷达脉内调制信号的时频分辨率，强化了不同调制类型在时频域中的结构差异。Jiang 等人\cite{Jiang2022LPI}将低截获概率雷达信号转换为时频图像，并利用局部密集连接网络抑制噪声干扰和增强时频纹理特征，提高了弱信号波形识别性能。
+
+（3）\textbf{基于数据驱动表征学习的信号提取方法。}Cai 等人\cite{Cai2022Transformer}提出基于自注意力网络的调制识别方法，通过学习信号序列中不同片段之间的全局关联特征提升低信噪比条件下的识别能力。程风云等人\cite{Cheng2024SignalEnhancement}融合同相正交数据全局特征、高阶累积量和信号增强网络，提高了复杂信道及小样本条件下调制特征的表达鲁棒性。杨静雅等人\cite{Yang2023CNNTransformerAMC}构建卷积神经网络与自注意力网络结合的轻量化调制识别模型，通过局部特征提取、通道注意力和时域注意力协同刻画信号关键结构，并兼顾识别精度与端侧部署需求。
 
 % 综上所述，现有研究在海杂波传播建模、目标频谱特征增强和复杂电磁信号提取等方面取得了较好进展，但多数方法仍主要面向相对稳定的雷达观测场景或单一信号处理环节，尚难以系统支撑海警船船载频谱采集中强海杂波、海气传播扰动、平台姿态变化和弱目标信号耦合并存的复杂条件。一方面，海杂波统计建模、海气传播通道分析与弱目标可观测性之间仍缺少统一描述；另一方面，强干扰对消、目标保护和后续频谱特征提取之间尚未形成闭环协同机制。因此，本项目拟面向海杂波环境下电磁频谱信号提取需求，研究海杂波传播规律、目标频谱特征增强和多维联合表征提取的一体化方法，为后续端侧频谱数据轻量管理和边缘智能处理提供高质量频谱信息输入。
 
