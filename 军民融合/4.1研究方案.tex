@@ -2,9 +2,9 @@
 
 本项目拟采取的总体研究思路如图\ref{fig:solutions}所示：本项目以“杂波解析微弱增强、端侧轻量可信存储、知识驱动可信决策”为指导思想，围绕海杂波场景电磁频谱智能处理中“微弱信号提取难、端侧轻量可信管理难、多平台协同可信决策难”三大核心挑战，构建系统化的理论与技术体系。首先，在信号感知方面，研究\textbf{海杂波干扰下电磁频谱信号的时空耦合传播建模、认知无线电智能感知与空域干扰对消增强方法}，为后续处理提供高质量频谱特征输入；其次，在数据管理方面，研究\textbf{事件驱动价值评估、表征压缩存储优化与链上链下协同可信管理方法}，突破端侧资源受限下海量频谱数据“存不下、查不快、信不过”的瓶颈，为数据全生命周期提供可靠基座；接着，在智能认知方面，研究\textbf{频谱知识图谱动态演化、知识驱动的边缘在线学习与分布式可信协同决策方法}，实现知识持续演化与多平台可信判决，为自主侦测提供敏捷可信的决策支持；最后，\textbf{集成上述理论与方法，开展原型系统应用验证}，评估所提方法在强海杂波、端侧受限与多平台动态对抗等复杂场景下的适用性与有效性，推动关键技术落地与优化。
 
-\begin{figure}[p!]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
-	\includegraphics[width=\textwidth]{fig/research_solutions}
+	\includegraphics[width=0.8\textwidth]{fig/research_solutions}
 	\caption{本项目的研究方案}
 	\label{fig:solutions}
 \end{figure}
@@ -14,7 +14,7 @@
 \noindent \textbf{4.1.1 研究内容一方案：海杂波干扰下微弱电磁频谱信号传播规律分析与提取}
 
 本研究方案面向海警船搭载频谱采集设备与船载服务器的近海巡查场景，针对嫌疑无人船、非法改装艇等弱目标电磁辐射信号在强海杂波、多径传播、平台运动和同频干扰共同作用下“传播机理不清、目标显现不稳、弱信号提取困难”的问题，按照“传播规律建模--干扰对消增强--多维联合提取”的技术主线展开。如图\ref{fig:solution1}所示。首先，研究复杂海洋环境下电磁频谱信号时空耦合传播规律，明确海况、频段、掠射角、观测高度和平台姿态对传播损耗、频谱展宽、海杂波长尾起伏及弱信号可观测性的影响；其次，利用传播规律和海杂波统计先验，构建面向强杂波背景的干扰对消与微弱目标频谱特征增强方法；最后，融合时域、频域、时频域、空域、能量域和调制域等多维观测信息，实现目标候选区域稳定定位、信号片段精确分离和关键参数反演，为后续端侧存储、边缘即时智能处理和试验验证提供高质量频谱事件输入。
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1}
 	\caption{海杂波干扰下微弱电磁频谱信号传播规律分析与提取}
@@ -56,7 +56,7 @@
 	\right]^{1/2}.
 \end{equation}
 在实现路径上，先对船载频谱采集数据、气象水文数据和平台位姿数据进行统一时间标定，形成“频率--距离--方位--高度--海况”的样本索引；再利用分段平稳窗口估计传播损耗、杂波长尾参数、短时谱宽、相干时间和空间相关特征，区分由海况变化引起的慢变背景漂移与由平台运动或目标运动引起的瞬时频谱扰动；最后采用物理约束参数回归与实测数据校准相结合的方法，建立环境状态到传播规律参数的映射关系。该部分不直接展开目标识别算法，而是输出复杂海洋环境下电磁频谱信号时空耦合传播规律图谱，明确不同海况、频段、掠射角和观测高度下的传播损耗区间、频谱展宽范围、海杂波尾部强度和弱信号可感知边界，为后续微弱信号提取、即时智能处理和试验验证提供可解释的物理先验与关键参数输入。
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1A}
 	\caption{电磁频谱信号传播规律}
@@ -67,7 +67,7 @@
 \textbf{（2）基于干扰对消的微弱目标频谱特征增强方法}
 
 本项目拟研究基于干扰对消的微弱目标频谱特征增强方法，重点解决强海杂波、同频辐射和平台运动残余共同作用下弱目标频谱特征被掩蔽的问题。该部分面向海警船船载频谱采集设备和端侧服务器即时处理需求，形成”多通道观测建模--参考干扰构造--目标保护型自适应对消--残余频谱增强”的技术路线。整体框架如图\ref{fig:1B}所示。
-\begin{figure}[htp]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/1B}
 	\caption{基于干扰对消的微弱目标频谱特征增强方法}
@@ -141,7 +141,7 @@
 % C
 \textbf{（3）面向微弱电磁信号的多维表征提取方法}
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 \centering
 \includegraphics[width=\textwidth]{fig/研究方案1C.pdf}
 \caption{面向微弱电磁信号的多维表征提取方法}
@@ -162,7 +162,7 @@
 \noindent \textbf{4.1.2 研究内容二方案：有限算力端侧频谱数据的可信管理和轻量存储方法}
 
 针对连续频谱数据体量大的问题，本项目拟研究有限算力端侧频谱数据的可信管理和轻量存储方法（如图\ref{fig:solution2}所示）。首先，构建事件窗口驱动的频谱数据价值评估模型，从连续频谱流中提取具有识别价值与存储价值的关键事件。其次，研究基于表征压缩的频谱向量数据库存储优化方法，降低端侧存储负载并提升相似检索效率。最后，构建链上链下协同的频谱数据可信管理方法，实现频谱数据从采集、压缩、入库、检索到追溯的全生命周期可信管理。通过上述方法的协同优化，提升海杂波场景下频谱数据的高价值提取、高效存储检索和可信追溯能力，为海警船端无人艇侦察任务中的持续感知、证据复核和事后取证提供支撑。
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/2}
 	\caption{有限算力端侧频谱数据的可信管理和轻量存储方法}
@@ -172,7 +172,7 @@
 
 \textbf{（1）事件窗口驱动的频谱数据价值评估模型}
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/2A}
 	\caption{事件窗口驱动的频谱数据价值评估模型}
@@ -212,7 +212,7 @@
 
 针对原始频谱数据规模大与动态更新频繁的挑战，本项目拟提出基于表征压缩的频谱向量数据库存储优化方法，对原始数据提取向量表征，并使用高存储局部性、可更新的向量数据库进行存储，整体框架如图\ref{fig:2B}所示。
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/2B}
 	\caption{基于表征压缩的频谱向量数据库存储优化方法}
@@ -249,7 +249,7 @@
 
 %本项目拟研究链上链下协同的可追溯频谱数据可信管理方法，整体框架如图\ref{fig:research_solution_2C}所示。
 %
-%\begin{figure}[t]\kaishu
+%\begin{figure}[t!]\kaishu
 %	\centering
 %	\includegraphics[width=\textwidth]{fig/research_solution_2C}
 %	\caption{链上链下协同的可追溯频谱数据可信管理方法}
@@ -285,7 +285,7 @@
 
 本项目拟研究链上链下协同的可追溯频谱数据可信管理方法，整体框架如图\ref{fig:research_solution_2C}所示。
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/research_solution_2C}
 	\caption{链上链下协同的可追溯频谱数据可信管理方法}
@@ -342,7 +342,7 @@
 \noindent\textbf{4.1.3 研究内容三方案：面向海域自主侦测任务的边缘频谱智能处理方法}
 
 针对海杂波干扰下海域自主侦测任务中频谱态势动态变化、边缘节点资源受限、多节点局部认知结果难以一致可信协同的问题，如图\ref{fig:solution3}所示，本项目构建“频谱知识建模、边缘认知学习、分布式可信协同”三位一体的边缘频谱智能处理研究框架，研究面向资源受限边缘场景的频谱即时认知与自主决策方法。面向复杂海域环境下频谱事件难以持续组织与动态更新的问题，构建电磁频谱知识库及其动态管理机制，形成可支撑态势理解和任务推理的频谱知识表示；在此基础上，面向边缘端低算力、低时延约束下的自主侦测需求，研究频谱知识驱动的边缘认知、策略响应与在线更新方法，提升节点对弱目标线索、异常状态和任务态势的快速判断能力；进一步面向多边缘节点认知冲突、可信性差异和有限链路传输约束，研究频谱认知协同与分布式可信决策方法，实现多节点感知结果的可信融合、协同确权和决策留证。通过上述研究，形成从频谱知识组织到边缘即时认知、再到多节点可信协同决策的一体化处理机制，为海域自主侦测任务提供低时延、可核验、可追溯的边缘频谱智能处理能力。
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/solution3}
 	\caption{面向海域自主侦测任务的边缘频谱智能处理方法}
@@ -352,7 +352,7 @@
 % A
 %\textbf{3.A. 面向电磁态势的频谱知识图谱构建与动态演化方法}
 
-%\begin{figure}[t]\kaishu
+%\begin{figure}[t!]\kaishu
 %	\centering
 %	\includegraphics[width=\textwidth]{fig/solution3A}
 %	\caption{面向电磁态势的频谱知识图谱构建与动态演化方法（研究内容2.A方案）}
@@ -388,7 +388,7 @@
 
 \textbf{（1） 面向电磁态势的频谱知识图谱构建与动态演化方法}
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/solution3A}
 	\caption{面向电磁态势的频谱知识图谱构建与动态演化方法}
@@ -438,14 +438,14 @@ z_{ik}>0
 
 % B
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/3B}
 	\caption{知识驱动的轻量化频谱信号识别与目标轨迹分析方法}
 	\label{fig:3b}
 \end{figure}
 
-\textbf{（2） 知识驱动的轻量化频谱信号识别与目标轨迹分析方法}
+\textbf{（2） 频谱知识驱动的轻量化目标识别与轨迹分析方法}
 
 针对海杂波残余背景下需在算力受限的小型服务器上实时完成“有无判别—类型识别—轨迹研判”,而量化、蒸馏等压缩模型规模的传统轻量化路径难以兼顾多任务精度与端侧时效的矛盾,拟构建一种知识驱动的级联稀疏混合专家网络,将检测、识别、轨迹建模为结构异构的任务专家,以“大参数容量保证表达能力、推理时按需稀疏激活”实现推理层面的轻量化,其整体框架如图 \ref{fig:3b}所示:
 
@@ -476,7 +476,7 @@ z_{ik}>0
 
 本项目拟研究基于轻量安全传输与低延时确权的可信协同决策方法，整体框架如图\ref{fig:3C}所示。
 
-\begin{figure}[t]\kaishu
+\begin{figure}[t!]\kaishu
 \centering
 \includegraphics[width=\textwidth]{Fig/3.3算法图.pdf}
 \caption{基于轻量安全传输与低延时确权的可信协同决策方法}
@@ -510,7 +510,7 @@ z_{ik}>0
 \noindent \textbf{4.1.4 研究内容四方案：海杂波场景电磁频谱数据智能处理原型系统验证}
 
 
-\begin{figure}[htp]\kaishu
+\begin{figure}[t!]\kaishu
 	\centering
 	\includegraphics[width=\textwidth]{fig/研究方案4}
 	\caption{海杂波场景电磁频谱数据智能处理原型系统验证}
