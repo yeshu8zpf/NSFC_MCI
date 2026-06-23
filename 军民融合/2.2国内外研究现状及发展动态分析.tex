@@ -246,6 +246,70 @@
 % 内容三
 \subsubsection{2.2.3 边缘频谱数据智能处理与可信协同}
 
+\begin{table}[htbp]\kaishu
+	\centering
+	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
+		\hline
+		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
+		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 数据表征与图谱演化}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{数据表征与语义融合} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{ CompGCN\cite{DBLP:conf/iclr/VashishthSNT20}, HGT\cite{DBLP:conf/www/HuDWS20}, 孙佳琛等人\cite{SUN2021}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过异构图建模与多关系表示学习，统一表达不同类型的数据、实体及关系，为复杂数据融合与结构化表征提供基础} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{知识图谱构建与实体关系建模} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{EventKG\cite{DBLP:conf/esws/GottschalkD18}，RREA\cite{DBLP:conf/cikm/MaoWXWL20}, LargeEA\cite{DBLP:journals/pvldb/GeLCZG21}, Xu等人\cite{DBLP:journals/staeors/XuZJS21}, 许述文等人\cite{XU2020}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕事件、实体和时间关系建立图谱关联，并结合实体对齐实现跨源知识匹配与融合} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态知识图谱更新与演化} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{RE-NET\cite{jin2020recurrent}, Niu 等人\cite{DBLP:conf/aaai/NiuL23}, Wang 等人\cite{DBLP:conf/nips/WangSLWHLPY24}, Continual Entity Alignment\cite{DBLP:conf/semweb/WangCLSJHH22}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时序事件建模、规则推理与持续实体对齐，实现新增实体、关系和事件条件下的图谱动态更新} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 信号检测识别与轨迹分析}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{频谱信号检测} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Uvaydov 等人 \cite{uvaydov2021deepsense}，Zhang 等人 \cite{zhang2021signal}，Liu 等人 \cite{DBLP:journals/jsac/LiuWLL19}，Olesinski 等人 \cite{DBLP:journals/sensors/OlesinskiP23}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用深度网络从频谱观测中检出信号，提升宽频段感知能力} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{辐射源信号识别} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wang 等人 \cite{DBLP:journals/tsp/WangBXZJ22}，Ding 等人 \cite{DBLP:conf/icc/DingZZWH22}，Zhang 等人 \cite{zhang2022openset}，Zhou 等人 \cite{DBLP:journals/icl/ZhouZMZZJ22}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向辐射源类型识别开展深度学习建模，探索样本受限下的识别能力} \\
+		\cline{2-4}
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{目标定位与轨迹分析} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ma 等人 \cite{ma2022altitude}，Revach 等人 \cite{revach2022kalmannet}，Jia 等人 \cite{jia2025kalmangru}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于无源观测开展运动目标定位与轨迹估计，研究状态估计与预测方法} \\
+		\hline
+		
+		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
+					\linespread{0.6}\selectfont 分布式可信决策}}}  
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{语义交互与推理复核} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{AgentsCoMerge\cite{10976336}，LLM-SmartAudit\cite{11121619}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过多智能体语义交互与推理复核，提升复杂任务中的协同判断可靠性} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{策略学习与优化控制} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{TRPO\cite{ren2025distributed}，Qin等人\cite{10412167}，Liu等人\cite{10521834}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用策略学习与优化控制生成分布式协同行为，提升动态环境下的任务执行效率} \\
+		\cline{2-4}
+		
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{可信治理与共识验证} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{SPDC\cite{10930695}，COShard\cite{11197552}，Kumar等人\cite{10849591}，PUF \cite{DBLP:journals/tdsc/RulloFVRDCLS25}} 
+		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从证据治理、共识验证与传输可信层面，增强协同决策过程的可验证性与可信保障能力} \\
+		\hline
+		
+	\end{tabular}
+	\caption{\kaishu{频谱数据智能处理和可信决策研究现状总结}}
+	\label{tab:edge_spectrum_intelligent_processing_related_work}
+\end{table}
+
 % 主要从数据表征与知识图谱演化、认知协同与分布式可信决策方法、资源受限环境下数据轻量化安全传输三个方面对现有工作展开调研。
 端侧频谱数据即时智能处理旨在资源受限的端侧节点上，将连续采集的频谱观测快速转化为可理解、可研判、可协同的态势认知结果。然而，海域侦测中频谱数据多源异构且持续动态变化，离散的频谱事件难以直接支撑目标关联与态势推理，亟需统一表征并组织为可持续演化的知识结构，并在此基础上完成信号检测、辐射源识别与目标定位轨迹解算等核心认知任务；同时，单节点观测存在盲区且虚警率高，多平台协同又受带宽、间歇链路与节点互信不足的制约，难以保障决策的时效性与可信性。因此，现有工作主要从数据表征与图谱演化、频谱信号检测识别与轨迹分析、分布式可信决策三个方面展开研究。
 
@@ -282,69 +346,7 @@
 
 % Wang 等人\cite{DBLP:journals/tdsc/WangCZGZH24}面向边缘辅助跨域工业物联网场景构建轻量级区块链消息认证方案，以分布式账本维护跨域信任关系；Zhu 等人\cite{DBLP:journals/jas/ZhuLLW25}则通过改进 PBFT 与 Raft 的混合共识机制降低通信复杂度，并提升动态通信过程中的安全验证能力。
 
-\begin{table}[htbp]\kaishu
-	\centering
-	\begin{tabular}{|m{1.5cm}|m{2.8cm}|m{4.0cm}|m{4.9cm}|}
-		\hline
-		\multicolumn{1}{|c|}{\kaishu\wuhao{}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{分类}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{代表工作}} & 
-		\multicolumn{1}{c|}{\kaishu\wuhao{主要贡献点}} \\
-		\hline
-		
-		\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-					\linespread{0.6}\selectfont 数据表征与图谱演化}}}  
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{数据表征与语义融合} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{ CompGCN\cite{DBLP:conf/iclr/VashishthSNT20}, HGT\cite{DBLP:conf/www/HuDWS20}, 孙佳琛等人\cite{SUN2021}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过异构图建模与多关系表示学习，统一表达不同类型的数据、实体及关系，为复杂数据融合与结构化表征提供基础} \\
-		\cline{2-4}
-		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{知识图谱构建与实体关系建模} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{EventKG\cite{DBLP:conf/esws/GottschalkD18}，RREA\cite{DBLP:conf/cikm/MaoWXWL20}, LargeEA\cite{DBLP:journals/pvldb/GeLCZG21}, Xu等人\cite{DBLP:journals/staeors/XuZJS21}, 许述文等人\cite{XU2020}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{围绕事件、实体和时间关系建立图谱关联，并结合实体对齐实现跨源知识匹配与融合} \\
-		\cline{2-4}
-		
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{动态知识图谱更新与演化} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{RE-NET\cite{jin2020recurrent}, Niu 等人\cite{DBLP:conf/aaai/NiuL23}, Wang 等人\cite{DBLP:conf/nips/WangSLWHLPY24}, Continual Entity Alignment\cite{DBLP:conf/semweb/WangCLSJHH22}} 
-		& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过时序事件建模、规则推理与持续实体对齐，实现新增实体、关系和事件条件下的图谱动态更新} \\
-		\hline
-		
-	\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-				\linespread{0.6}\selectfont 信号检测识别与轨迹分析}}}  
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{频谱信号检测} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Uvaydov 等人 \cite{uvaydov2021deepsense}，Zhang 等人 \cite{zhang2021signal}，Liu 等人 \cite{DBLP:journals/jsac/LiuWLL19}，Olesinski 等人 \cite{DBLP:journals/sensors/OlesinskiP23}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用深度网络从频谱观测中检出信号，提升宽频段感知能力} \\
-	\cline{2-4}
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{辐射源信号识别} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Wang 等人 \cite{DBLP:journals/tsp/WangBXZJ22}，Ding 等人 \cite{DBLP:conf/icc/DingZZWH22}，Zhang 等人 \cite{zhang2022openset}，Zhou 等人 \cite{DBLP:journals/icl/ZhouZMZZJ22}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{面向辐射源类型识别开展深度学习建模，探索样本受限下的识别能力} \\
-	\cline{2-4}
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{目标定位与轨迹分析} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{Ma 等人 \cite{ma2022altitude}，Revach 等人 \cite{revach2022kalmannet}，Jia 等人 \cite{jia2025kalmangru}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{基于无源观测开展运动目标定位与轨迹估计，研究状态估计与预测方法} \\
-	\hline
-		
-	\vspace{1em}\raisebox{-1em}{\multirow{3}{1.4cm}{\centering\kaishu\wuhao\parbox{1.2cm}{\centering
-				\linespread{0.6}\selectfont 分布式可信决策}}}  
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{语义交互与推理复核} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{AgentsCoMerge\cite{10976336}，LLM-SmartAudit\cite{11121619}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{通过多智能体语义交互与推理复核，提升复杂任务中的协同判断可靠性} \\
-	\cline{2-4}
-	
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{策略学习与优化控制} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{TRPO\cite{ren2025distributed}，Qin等人\cite{10412167}，Liu等人\cite{10521834}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{利用策略学习与优化控制生成分布式协同行为，提升动态环境下的任务执行效率} \\
-	\cline{2-4}
-	
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao\centering{可信治理与共识验证} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{SPDC\cite{10930695}，COShard\cite{11197552}，Kumar等人\cite{10849591}，PUF \cite{DBLP:journals/tdsc/RulloFVRDCLS25}} 
-	& \setlength{\baselineskip}{0.7em}\kaishu\wuhao{从证据治理、共识验证与传输可信层面，增强协同决策过程的可验证性与可信保障能力} \\
-	\hline
-		
-	\end{tabular}
-	\caption{\kaishu{频谱数据智能处理和可信决策研究现状总结}}
-	\label{tab:edge_spectrum_intelligent_processing_related_work}
-\end{table}
+
 
 %综上所述，尽管现有研究在微弱信号检测、海量数据存储管理与边缘智能处理等方面取得了阶段性进展，但相关理论与方法大多面向单一环节、稳定信道或理想环境数据，难以系统支撑海杂波强干扰、端侧算力与链路严重受限、多平台动态对抗条件下的海域电磁频谱自主侦测任务，海杂波场景下“感知—存储—认知”全链条的协同处理仍面临诸多挑战。因此，本项目首先研究海杂波环境下电磁频谱信号的传播规律与微弱信号频谱特征增强机理，实现强杂波背景下微弱信号频谱特征的提取，为后续处理提供高质量的频谱信息输入；其次，探索事件驱动价值评估、表征压缩与链上链下协同存证一体化的轻量管理方法，实现有限算力端侧频谱数据的高效存储与可信溯源，为频谱数据全生命周期提供可靠的数据基座；接着，构建频谱知识库、边缘在线学习与分布式可信决策一体化框架，实现云边端知识的低损迁移与多平台协同的可信判决，为自主侦测提供敏捷而可信的决策保障；最后，在海杂波场景电磁频谱数据智能处理原型系统中进行关键技术的抽样验证。本项目的顺利实施，一方面有望破解海域自主侦测中“微弱信号提取难”“端侧轻量可信管理难”“多平台协同可信决策难”三大挑战，另一方面能够为我国海洋权益维护、海上执法与海域态势感知提供坚实的科技支撑。
 
