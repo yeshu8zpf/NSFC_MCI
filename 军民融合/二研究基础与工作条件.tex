@@ -16,7 +16,7 @@
 
 本项目申请人肖江博士是华中科技大学计算机科学与技术学院教授、博士生导师。近五年以第一作者/通讯作者发表论文37篇，其中CCF A类论文18篇、B类论文12篇；据Web of Science数据统计，\textbf{申请人是全球区块链领域近五年以第一作者/通讯作者发表高水平（CCF A/B类）学术论文数量最多的40岁以下青年学者}；论文谷歌学术引用5169次，单篇最高引用647次；获国际会议最佳论文奖5次。\textbf{主持首批国家重点研发计划区块链专项的青年科学家项目“高并发可扩展区块链存储的基础理论和方法研究”}，以及3项国家自然科学基金（2项面上、1项青年）、1项湖北省重点研发计划项目等。以第一完成人授权中国发明专利12项、美国发明专利10项。入选湖北省青年科技晨光计划、CCF-Intel青年学者计划，获ACM中国（武汉）新星奖。担任区块链前沿学术刊物《IEEE Blockchain Technical Briefs》创刊编委，《Frontiers of Computer Science》（FCS）期刊青年编委（CCF B），《Blockchain Research and Applications》（BCRA）期刊编委（CCF B），并先后5次受邀在CCGrid、ICPADS、MDM、BlockSys等重要学术会议上担任区块链专题研讨会主席。
 
-\textbf{申请人在学术前沿研究成果和项目支持和组织方面具有丰富经验，与本项目要求契合较高。}
+\textbf{申请人在学术前沿研究成果、项目支持和组织方面具有丰富经验，与本项目要求高度契合。}
 在前沿研究方面，申请人长期深耕区块链底层存储与可信计算，在高并发场景下的轻量级数据可信存储、分布式共识机制、链上链下协同审计等方面积累了系统性成果，可为海杂波场景下电磁频谱数据的可信存储以及多节点协同决策结果的可信保障提供坚实的理论与技术支撑。
 在项目主持与组织管理方面，申请人拥有丰富的国家级重大科研项目组织实施经验，具备成熟的跨学科、跨单位大型科研团队统筹管理能力与全流程项目把控能力。
 申请人承担的国家重点研发计划青年科学家项目汇聚计算机、电子信息、通信工程等多领域研究骨干，负责牵头统筹项目整体技术路线、拆解子课题任务、明晰分工体系并协调跨团队协同攻关，同步推进阶段性成果转化迭代，有效保障项目高质量、按期推进。
@@ -42,9 +42,136 @@
 
 \vspace{0.3cm}
 {\kaishu
-近年来，项目申请人和主要参与者一直从事与本项目科研任务相关的研究工作，并已取得了一系列紧密相关的创新成果，代表性成果如下：
+近年来，项目申请人和主要参与者一直从事频谱信号干扰对消、数据库索引及存储优化、区块链轻量化存储及数据监管等与本项目科研任务相关的研究工作，并已取得了一系列紧密相关的创新成果，可为本项目各研究方案提供支撑，代表性成果如下：
 
-\textbf{（1）轻量可扩展存储}
+\textbf{（1）雷达杂波辐射干扰机理研究}
+
+针对舰艇大功率微波设备与微波数据链系统的电磁兼容难题，以及雷达宽带杂散干扰对数据链通信的作用机理问题，项目团队提出了雷达杂散辐射干扰及数据链系统电磁受干扰机理分析方法。基于该机理，团队搭建了舰用相控阵雷达测试环境，研制了雷达带外发射与杂散发射干扰耦合仿真分析系统。该系统开展了基于11行×11列面阵的主频、二次及三次谐波方向图仿真，以及雷达天线绕射电磁环境仿真研究（图\ref{fig:RB_RS}，\ref{fig:RB_ERS}），揭示了雷达带外发射产生机理，发现了相控阵雷达杂散辐射呈随机分布且无方向性的规律。这些成果为本项目提供了舰载微波数据链通信设备辐射干扰防护需求的确立依据与仿真技术基础，保障了本项目在复杂电磁环境下通信系统的兼容性与可靠性。
+
+    \begin{figure}[h]\kaishu
+        %居中放置
+
+        \setlength{\subfigcapskip}{1em}
+
+        \subfigure[
+            11行×11列面阵
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth}
+                \centering
+                \includegraphics{fig/ResearchBasic_RadarSimulate_a}
+            \end{minipage}
+        }
+        \hfill
+        \subfigure[
+            杂乱仿真
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth}
+%表示在该行所占空间的比例为0.4
+                \centering
+                \includegraphics{fig/ResearchBasic_RadarSimulate_b}
+            \end{minipage}
+        }
+        \caption{海杂波团队下的相控阵雷达杂散仿真示意图}
+        \label{fig:RB_RS}
+    \end{figure}
+
+
+    \begin{figure}[h]\kaishu
+        %居中放置
+
+        \setlength{\subfigcapskip}{1em}
+
+        \subfigure[
+            两点间的绕射线
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth}
+                \centering
+                \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_a}
+            \end{minipage}
+        }
+        \hfill
+        \subfigure[
+            相控阵天线之间影响
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
+                \centering
+                \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_b}
+            \end{minipage}
+        }
+        \caption{海杂波团队下的雷达天线绕射电磁环境仿真}
+        \label{fig:RB_ERS}
+    \end{figure}
+
+
+    \textbf{（2）数据链干扰对消机理研究}
+
+    针对大功率微波设备对直扩数据链通信的脉冲电磁干扰及抗干扰评估难题，项目团队提出了基于误码率分析的干扰作用机理与自适应滤波对消方法。基于该机理，团队研发了干扰信号建模与抗干扰性能评估系统。该系统利用射频注入采集波形，采用记忆多项式非线性模型与线性FIR滤波器实现了无干扰及脉冲干扰下的信号重构与参数辨识（图\ref{fig:RB_M}，\ref{fig:RB_IM}），明确了针对对消系统的信号处理性能需求，并设计了一种基于中断率（丢包率和误包率结合）的数据链抗干扰评估方法，有效验证了干扰容限及系统性能变化规律。这些成果为本项目的顺利实施创造了条件，打下了坚实的基础。
+
+    \begin{figure}[h]\kaishu
+        %居中放置
+
+        \setlength{\subfigcapskip}{1em}
+
+        \subfigure[
+            发射端频谱
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth}
+                \centering
+                \includegraphics{fig/ResearchBasic_Modeling_a}
+            \end{minipage}
+        }
+        \subfigure[
+            接收端信号频谱
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
+                \centering
+                \includegraphics{fig/ResearchBasic_Modeling_b}
+            \end{minipage}
+        }
+        \caption{
+            无干扰下线性模型和非线性模型建模
+        }
+        \label{fig:RB_M}
+    \end{figure}
+
+
+
+    \begin{figure}[h]\kaishu
+        %居中放置
+
+        \setlength{\subfigcapskip}{1em}
+
+        \subfigure[
+            发射端频谱
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth}
+                \centering
+                \includegraphics{fig/ResearchBasic_InterferModeling_a}
+            \end{minipage}
+        }
+        \subfigure[
+            接收端信号频谱
+        ] %为每个图片加上编号
+        {
+            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
+                \centering
+                \includegraphics{fig/ResearchBasic_InterferModeling_b}
+            \end{minipage}
+        }
+        \caption{脉冲干扰下线性模型和非线性模型}
+        \label{fig:RB_IM}
+    \end{figure}
+
+}
+
+\textbf{（3）轻量可扩展存储}
 
 在区块链的存储扩展方面，提出了一种可灵活扩展的弹性图式区块链存储模型（ 图\ref{fig:MorphDAG}），形成了解决区块链存储可扩展性问题的新思路和新方法。相比于现有区块链存储模型，弹性图式区块链存储模型解决了海量区块链数据场景下存储开销大、查询验证难、处理效率低等瓶颈难题，具有数据并发处理效率高、验证计算开销低等显著性能优势。基于该新型存储模型，申请人提出了基于默克尔关键路径的协作式存储策略、轻量级排序默克尔树查询验证方法、基于地址依赖的图式并发控制机制等创新性技术，解决了安全数据存储、可信查询搜索、高效事务处理等方面的关键技术难题，并研发了开源图式区块链存储系统（MorphDAG，\url{https://github.com/CGCL-codes/MorphDAG-prototype}），获IEEE国际元计算大赛一等奖。相关成果以第一/通讯作者发表于VLDB'24、ICDE'24、INFOCOM'26、IPDPS'24、SRDS'24、ICDCS'23、ICDCS'22、ICDCS'20、ICDCS'19、ACSAC'22、IEEE TDSC'26、IEEE TIFS'24、IEEE TKDE'22、IEEE TKDE'23、IEEE TKDE'24等，以第一完成人授权/申请发明专利14项（其中美国专利6项）。
     \begin{figure}[h]\kaishu
@@ -53,8 +180,28 @@
         \caption{可灵活扩展的弹性图式区块链存储模型}
         \label{fig:MorphDAG}
     \end{figure}
+\textbf{（4）高密度存储设备的读取性能优化}
 
-\textbf{（2）区块链数据智能分析与监管治理方法}
+针对LDPC码引入的读取性能下降与译码延迟开销等问题，提出了面向固态盘的高效读性能优化方法体系。首先，面向LDPC码带来的读取性能下降问题，利用数据的读取特性提出了一种轻量级数据刷新方法LDR，有效减少了传统刷新带来的重复写入开销。其次，面向LDPC码纠正低页和高页解码延迟不平衡带来的闪存读性能瓶颈（图\ref{fig:read_sample}），提出了一种基于可靠性的闪存块分类方法和数据放置方案，实现了存储资源的优化配置。最后，针对LDPC码与BP译码算法的高延迟开销及高密度闪存读取难题，提出了保留错误感知LDPC解码、基于成对比特错误的LDPC解码以及细粒度LDPC级预测方法PreLDPC等一系列优化方案，相关研究成果发表于ACM TECS'17、IEEE TCAD'18及IEEE TCAD'22等CCF A/B类高水平期刊和会议。这些读性能优化工作为本项目在固态盘读写性能优化方面提供了强有力的研究基础和技术支撑。
+\begin{figure}[t]\kaishu
+    \centering
+    \includegraphics[width=\textwidth]{fig/高密度闪存的错误特征和读采样问题}
+    \caption{高密度闪存的错误特征和读采样问题}
+    \label{fig:read_sample}
+\end{figure}
+
+\textbf{（5）面向数据库的高效索引优化}
+
+针对数据库系统面临的索引写放大严重、日志记录重复开销高以及合并操作尾部延迟大等挑战，提出了面向数据库的高效索引与存储优化方法体系。首先，面向数据库索引存在的写放大难题，提出了基于重映射机制的压缩方案，通过优化数据映射关系实现了对传统压缩过程中重复写入问题的有效抑制；其次，面向传统关系型数据库日志记录中的冗余写入问题，提出了基于闪存转换层的日志管理方案，通过底层存储与上层日志的协同有效缓解了系统的I/O瓶颈（图\ref{fig:IO_problem}）；最后，面向键值数据库合并过程中的性能波动问题，深入分析了压缩策略对尾部延迟的影响机理，针对延迟峰值现象提出了有限压缩优化策略，显著降低了系统的长尾延迟。相关研究成果发表于SAC、DATE、JSA等领域内重要会议与期刊。上述研究成果为本项目在软硬件协同架构下优化键值数据库和固态盘性能奠定了坚实的理论和工程实践基础。
+\begin{figure}[t]\kaishu
+    \centering
+    \includegraphics[width=\textwidth]{fig/向量库中图索引中的随机IO问题}
+    \caption{向量库中图索引中的随机I/O问题}
+    \label{fig:IO_problem}
+\end{figure}
+
+
+\textbf{（6）区块链数据智能分析与监管治理方法}
 
 数据分析与异常监管是复杂开放环境中实现数据可信流转、异常风险识别与责任追溯的关键技术。针对异常行为模式隐蔽、监管追溯困难等问题，项目团队提出区块链数据智能分析与监管治理方法体系（图\ref{fig:RB_OCSA}）。首先，面向复杂多链环境下身份信息可信验证难、恶意实体跨链问责难的问题，提出基于多源属性验证的去中心化身份管理方法，实现身份属性、可信凭证与可追溯问责信息的联合建模与验证；其次，面向套利行为链路复杂、时序演化特征显著的问题，提出基于交易时空结构特征的区块链套利行为识别模型，有效表征具有时间维度动态演化性和空间维度地址隐匿性的异常行为；最后，面向欺诈行为早期识别困难、多源信息难以协同利用的问题，提出基于自然语言处理和异构图建模的检测方法，融合代码、文本和交易行为等信息，提升了异常风险预警能力。相关研究成果以第一/通讯作者发表于IEEE JSAC、电子与信息学报等CCF A、CCF
 T1期刊，并获得GPC'25国际会议最佳论文奖。上述研究获得湖北省重点研发计划、广东省重点研发计划等项目支持，相关研究成果已在区块链跨链身份可信验证、异常行为识别与欺诈风险预警等场景开展验证，为复杂开放环境下数据管理与可信追溯提供技术支撑。
@@ -84,30 +231,13 @@ T1期刊，并获得GPC'25国际会议最佳论文奖。上述研究获得湖北
 
 
 
-    \textbf{（3）面向数据库的高效索引优化}
 
-    针对数据库系统面临的索引写放大严重、日志记录重复开销高以及合并操作尾部延迟大等挑战，提出了面向数据库的高效索引与存储优化方法体系。首先，面向数据库索引存在的写放大难题，提出了基于重映射机制的压缩方案，通过优化数据映射关系实现了对传统压缩过程中重复写入问题的有效抑制；其次，面向传统关系型数据库日志记录中的冗余写入问题，提出了基于闪存转换层的日志管理方案，通过底层存储与上层日志的协同有效缓解了系统的I/O瓶颈（图\ref{fig:IO_problem}）；最后，面向键值数据库合并过程中的性能波动问题，深入分析了压缩策略对尾部延迟的影响机理，针对延迟峰值现象提出了有限压缩优化策略，显著降低了系统的长尾延迟。相关研究成果发表于SAC、DATE、JSA等领域内重要会议与期刊。上述研究成果为本项目在软硬件协同架构下优化键值数据库和固态盘性能奠定了坚实的理论和工程实践基础。
-    \begin{figure}[t]\kaishu
-        \centering
-        \includegraphics[width=\textwidth]{fig/向量库中图索引中的随机IO问题}
-        \caption{向量库中图索引中的随机I/O问题}
-        \label{fig:IO_problem}
-    \end{figure}
 
-    \textbf{（4）高密度存储设备的读取性能优化}
-
-    针对LDPC码引入的读取性能下降与译码延迟开销等问题，提出了面向固态盘的高效读性能优化方法体系。首先，面向LDPC码带来的读取性能下降问题，利用数据的读取特性提出了一种轻量级数据刷新方法LDR，有效减少了传统刷新带来的重复写入开销。其次，面向LDPC码纠正低页和高页解码延迟不平衡带来的闪存读性能瓶颈（图\ref{fig:read_sample}），提出了一种基于可靠性的闪存块分类方法和数据放置方案，实现了存储资源的优化配置。最后，针对LDPC码与BP译码算法的高延迟开销及高密度闪存读取难题，提出了保留错误感知LDPC解码、基于成对比特错误的LDPC解码以及细粒度LDPC级预测方法PreLDPC等一系列优化方案，相关研究成果发表于ACM TECS'17、IEEE TCAD'18及IEEE TCAD'22等CCF A/B类高水平期刊和会议。这些读性能优化工作为本项目在固态盘读写性能优化方面提供了强有力的研究基础和技术支撑。
-    \begin{figure}[t]\kaishu
-        \centering
-        \includegraphics[width=\textwidth]{fig/高密度闪存的错误特征和读采样问题}
-        \caption{高密度闪存的错误特征和读采样问题}
-        \label{fig:read_sample}
-    \end{figure}
-    \textbf{（5）知识图谱持续构建}
+    \textbf{（7）知识图谱持续构建}
 
     针对动态知识增量更新的挑战，项目团队提出了持续知识图谱表示学习方法。该方法构建能够随时间演化的结构化知识表征，为图谱的持续构建提供可迁移的特征表示与事实锚定能力。相比于现有的多模态知识图谱建模，持续图谱表示学习有效消解了显式推理与隐式推理的孤立困境，促进了二者在统一框架下的深度融合。在4个多领域数据集上的链接预测实验表明，持续表示学习方法在不同演化场景下均具有良好的预测性能与稳健性，尤其在结构分布变化时仍能保持较强的适应能力。相关研究成果发表在AAAI'25、IJCAI'26、KDD'26等CCF A类会议和期刊，为本项目构建知识驱动的频谱信号分析方法奠定了必要的图表示学习基础。
 
-    \textbf{（6）混合专家架构加速多任务协同推理}
+    \textbf{（8）混合专家架构加速多任务协同推理}
 
     针对多传感器时序数据存在非平稳结构突变的问题，项目团队提出一种基于结构感知路由机制的混合专家时序异常检测方法。基于该方法，构建空间路由与时序路由双模块，通过专属专家网络分流适配各传感器时序数据，剥离结构突变带来的检测干扰，适配通用工业时序异常检测场景（图\ref{fig:ME}）。相比于现有基于数据结构一致性判别异常的主流检测模型，本团队方法解决了多传感器系统随机非平稳结构突变误识别这一痛点问题，并且在覆盖五大工业领域的8个公开数据集上验证了方法在识别准确率上的显著优势。相关成果发表于WWW'26、ACM TOIS、EAAI等会议和期刊，为本项目推理路径的动态路由与协同优化提供了可扩展的模型基础。
 
@@ -120,132 +250,7 @@ T1期刊，并获得GPC'25国际会议最佳论文奖。上述研究获得湖北
         \label{fig:ME}
     \end{figure}
 
-\textbf{（7）雷达杂波辐射干扰机理研究}
 
-针对舰艇大功率微波设备与微波数据链系统的电磁兼容难题，以及雷达宽带杂散干扰对数据链通信的作用机理问题，项目团队提出了雷达杂散辐射干扰及数据链系统电磁受干扰机理分析方法。基于该机理，团队搭建了舰用相控阵雷达测试环境，研制了雷达带外发射与杂散发射干扰耦合仿真分析系统。该系统开展了基于11行×11列面阵的主频、二次及三次谐波方向图仿真，以及雷达天线绕射电磁环境仿真研究（图\ref{fig:RB_RS}，\ref{fig:RB_ERS}），揭示了雷达带外发射产生机理，发现了相控阵雷达杂散辐射呈随机分布且无方向性的规律。这些成果为本项目提供了舰载微波数据链通信设备辐射干扰防护需求的确立依据与仿真技术基础，保障了本项目在复杂电磁环境下通信系统的兼容性与可靠性。
-
-    \begin{figure}[h]\kaishu
-        %居中放置
-
-\setlength{\subfigcapskip}{1em}
-
-        \subfigure[
-            11行×11列面阵
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth}
-                \centering
-                \includegraphics{fig/ResearchBasic_RadarSimulate_a}
-            \end{minipage}
-        }
-        \hfill
-\subfigure[
-杂乱仿真
-] %为每个图片加上编号
-{
-\begin{minipage}{.48\linewidth}
-%表示在该行所占空间的比例为0.4
-    \centering
-    \includegraphics{fig/ResearchBasic_RadarSimulate_b}
-\end{minipage}
-}
-        \caption{海杂波团队下的相控阵雷达杂散仿真示意图}
-        \label{fig:RB_RS}
-    \end{figure}
-
-
-    \begin{figure}[h]\kaishu
-        %居中放置
-
-\setlength{\subfigcapskip}{1em}
-
-        \subfigure[
-            两点间的绕射线
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth}
-                \centering
-                \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_a}
-            \end{minipage}
-        }
-        \hfill
-        \subfigure[
-            相控阵天线之间影响
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
-                \centering
-                \includegraphics{fig/ResearchBasic_ElectronicRadarSimulate_b}
-            \end{minipage}
-        }
-        \caption{海杂波团队下的雷达天线绕射电磁环境仿真}
-        \label{fig:RB_ERS}
-    \end{figure}
-
-
-\textbf{（8）数据链干扰对消机理研究}
-
-针对大功率微波设备对直扩数据链通信的脉冲电磁干扰及抗干扰评估难题，项目团队提出了基于误码率分析的干扰作用机理与自适应滤波对消方法。基于该机理，团队研发了干扰信号建模与抗干扰性能评估系统。该系统利用射频注入采集波形，采用记忆多项式非线性模型与线性FIR滤波器实现了无干扰及脉冲干扰下的信号重构与参数辨识（图\ref{fig:RB_M}，\ref{fig:RB_IM}），明确了针对对消系统的信号处理性能需求，并设计了一种基于中断率（丢包率和误包率结合）的数据链抗干扰评估方法，有效验证了干扰容限及系统性能变化规律。这些成果为本项目的顺利实施创造了条件，打下了坚实的基础。
-
-    \begin{figure}[h]\kaishu
-        %居中放置
-
-\setlength{\subfigcapskip}{1em}
-
-        \subfigure[
-            发射端频谱
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth}
-                \centering
-                \includegraphics{fig/ResearchBasic_Modeling_a}
-            \end{minipage}
-        }
-        \subfigure[
-            接收端信号频谱
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
-                \centering
-                \includegraphics{fig/ResearchBasic_Modeling_b}
-            \end{minipage}
-        }
-        \caption{
-无干扰下线性模型和非线性模型建模
-}
-        \label{fig:RB_M}
-    \end{figure}
-
-
-
-    \begin{figure}[h]\kaishu
-            %居中放置
-
-\setlength{\subfigcapskip}{1em}
-
-        \subfigure[
-            发射端频谱
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth}
-                \centering
-                \includegraphics{fig/ResearchBasic_InterferModeling_a}
-            \end{minipage}
-        }
-        \subfigure[
-            接收端信号频谱
-        ] %为每个图片加上编号
-        {
-            \begin{minipage}{.48\linewidth} %表示在该行所占空间的比例为0.4
-                \centering
-                \includegraphics{fig/ResearchBasic_InterferModeling_b}
-            \end{minipage}
-        }
-        \caption{脉冲干扰下线性模型和非线性模型}
-        \label{fig:RB_IM}
-    \end{figure}
-
-}
 
 {\sihao \kaishu \color{MsBlue}
 \textbf{2．工作条件}（包括已具备的实验条件，尚缺少的实验条件和拟解决的途径，包括利用国家实验室、全国重点实验室和部门重点实验室等研究基地的计划与落实情况）；
